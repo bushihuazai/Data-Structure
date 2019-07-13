@@ -22,7 +22,7 @@
 西文字符，对于中文字符，则会跳过。
 */
 
-int Scanf (FILE *fp, char *format, ...)
+int Scanf(FILE *fp, char *format, ...)
 {
 	int *i;
 	char *ch, *s;
@@ -31,14 +31,14 @@ int Scanf (FILE *fp, char *format, ...)
 	int tmp;
 	va_list ap;
 
-	len = strlen (format);
+	len = strlen(format);
 
-	va_start (ap, format);
+	va_start(ap, format);
 
 	for (count = 0, k = 2; k <= len; k = k + 2) {
-		while ((tmp = getc (fp)) != EOF) {		//跳过所有非西文字符
+		while ((tmp = getc(fp)) != EOF) {		//跳过所有非西文字符
 			if ((tmp >= 0 && tmp <= 127)) {
-				ungetc (tmp, fp);			//遇到首个西文字符，将此西文字符放入输入流
+				ungetc(tmp, fp);			//遇到首个西文字符，将此西文字符放入输入流
 				break;
 			}
 		}
@@ -48,59 +48,59 @@ int Scanf (FILE *fp, char *format, ...)
 		}
 
 		if (format[k - 1] == 'c') {			//读取字符
-			ch = va_arg (ap, char *);
+			ch = va_arg(ap, char *);
 
 			if (tmp != EOF) {
-				count += fscanf (fp, "%c", ch);
+				count += fscanf(fp, "%c", ch);
 			}
 		}
 
 		if (format[k - 1] == 'd') {			//读取整型
-			i = va_arg (ap, int *);
+			i = va_arg(ap, int *);
 
-			while ((tmp = getc (fp)) != EOF) {
+			while ((tmp = getc(fp)) != EOF) {
 				if ((tmp >= '0' && tmp <= '9') || tmp == '-' || tmp == '+') {
-					ungetc (tmp, fp);
+					ungetc(tmp, fp);
 					break;
 				}
 			}
 
 			if (tmp != EOF) {
-				count += fscanf (fp, "%d", i);
+				count += fscanf(fp, "%d", i);
 			}
 		}
 
 		if (format[k - 1] == 'f') {			//读取浮点型
-			f = va_arg (ap, float *);
+			f = va_arg(ap, float *);
 
-			while ((tmp = getc (fp)) != EOF) {
-				if ((tmp >= '0' && tmp <= '9') || tmp == '-' || tmp == '+' || tmp == '.' ) {
-					ungetc (tmp, fp);
+			while ((tmp = getc(fp)) != EOF) {
+				if ((tmp >= '0' && tmp <= '9') || tmp == '-' || tmp == '+' || tmp == '.') {
+					ungetc(tmp, fp);
 					break;
 				}
 			}
 
 			if (tmp != EOF) {
-				count += fscanf (fp, "%f", f);
+				count += fscanf(fp, "%f", f);
 			}
 		}
 
 		if (format[k - 1] == 's') {			//读取字符串
-			s = va_arg (ap, char *);
+			s = va_arg(ap, char *);
 
-			while ((tmp = getc (fp)) != EOF && (!isprint (tmp) || tmp == ' '));
+			while ((tmp = getc(fp)) != EOF && (!isprint(tmp) || tmp == ' '));
 
 			n = 0;
-			if (!feof (fp)) {
-				ungetc (tmp, fp);
-				while ((tmp = getc (fp)) != EOF) {
-					if (isprint (tmp) && tmp != ' ') {
+			if (!feof(fp)) {
+				ungetc(tmp, fp);
+				while ((tmp = getc(fp)) != EOF) {
+					if (isprint(tmp) && tmp != ' ') {
 						s[n++] = tmp;
 					} else {
 						break;
 					}
 				}
-				ungetc (tmp, fp);
+				ungetc(tmp, fp);
 			}
 
 			s[n] = '\0';
@@ -109,7 +109,7 @@ int Scanf (FILE *fp, char *format, ...)
 		}
 	}
 
-	va_end (ap);
+	va_end(ap);
 
 	return count;
 }

@@ -14,7 +14,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                //"-finput-charset=zh_CN.GBK",
+                "-finput-charset=UTF-8",
+                //"-fexec-charset=zh_CN.GBK",
+                "-fexec-charset=UTF-8",
             ],
             "options": {
                 "cwd": "C:\\MinGW\\bin"

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "sequencelist.h": "c",
+        "singlylinkedlist.h": "c"
+    }
+}

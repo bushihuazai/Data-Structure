@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	SqList L;
 	int i;
 	LElemType_Sq e;
-	//setlocale(LC_ALL,"zh_CN.GBK");
+	setlocale(LC_ALL,"zh_CN.GBK");
 	printf("1\nFunc InitList_Sq test...\n");		//1.FuncInitList_Sqtest
 	{
 		printf("Initial顺序表 L ...\n");

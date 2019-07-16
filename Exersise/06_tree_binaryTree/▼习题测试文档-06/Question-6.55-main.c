@@ -51,7 +51,7 @@ int Algo_6_55(FILE *fp, BiTree *T)	//改编自二叉树先序创建算法
 	
 	Scanf(fp, "%c", &ch);
 	
-	if(ch == '^')					//此处结点为空，则视为“欠”一个结点，返回-1 
+	if(ch == '^')					//此处结点 is empty，则视为“欠”一个结点，返回-1 
 	{
 		*T = NULL;
 		return -1;	

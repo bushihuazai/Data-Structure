@@ -265,7 +265,7 @@ void StrPrint_H(HString S)
 	int i;
 
 	if(StrEmpty_H(S))
-		printf("S为空串，不可输出！");
+		printf("S is empty串，不可输出!");
 
 	for(i=0; i<S.length; i++)
 		printf("%c", S.ch[i]);

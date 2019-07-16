@@ -49,7 +49,7 @@ void OpenForDay()
 	gTotalTime = 0;					//Initial累计时间和客户数为0 
 	gCustomerNum = 0;
 			
-	InitList_L(&gEv);				//Initial事件链表为空表
+	InitList_L(&gEv);				//Initial事件链表 is empty表
 
 	gEn.OccurTime = 0;				//设定第一个客户到达事件 
 	gEn.NType = Arrive;
@@ -135,7 +135,7 @@ void CustomerDeparture()						//处理客户离开事件,gEn.NType>0
 
 void Invalid()
 {
-	printf("运行错误！");
+	printf("运行错误!");
 		exit(OVERFLOW);
 }
 

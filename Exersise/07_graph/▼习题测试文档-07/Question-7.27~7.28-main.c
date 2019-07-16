@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	Algo_7_27(G, i, j, k);
 	printf("%c 到 %c 之间", v1, v2);
 	mark ? printf("存在") : printf("不存在");
-	printf("长度为 %d 的路径！\n", k);
+	printf("长度为 %d 的路径!\n", k);
 	printf("\n");
 
 	printf("███ 题 7.28 验证... ███\n");

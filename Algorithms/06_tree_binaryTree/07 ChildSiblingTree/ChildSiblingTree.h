@@ -48,7 +48,7 @@ void DestroyTree_CS(CSTree *T);
 
 Status TreeEmpty_CS(CSTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 Status CreateTree_CS(FILE *fp, CSTree *T); 

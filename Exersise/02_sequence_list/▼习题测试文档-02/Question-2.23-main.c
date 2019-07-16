@@ -56,14 +56,14 @@ int main(int argc, char *argv[])
 }
 
 /*━━━━━━━━━━━┓
-┃题2.23：归并两个单链表┃
+┃题2.23：归并两个 SingleLinkedList ┃
 ┗━━━━━━━━━━━*/
 /* 方法一：顺序链接 */
 Status Algo_2_23_1(LinkList La, LinkList *Lb, LinkList *Lc)
 {
 	LinkList prea, pa, pb;
 
-	if(!La || !(*Lb) || (!La->next && !(*Lb)->next))//La或Lb有一个不存在或两个均为空表时，合并错误
+	if(!La || !(*Lb) || (!La->next && !(*Lb)->next))//La或Lb有一个不存在或两个均 is empty表时，合并错误
 		return ERROR;
 	
 	*Lc = La;									 	//利用A的头结点作C的头结点
@@ -92,7 +92,7 @@ Status Algo_2_23_1(LinkList La, LinkList *Lb, LinkList *Lc)
 }
 
 /*━━━━━━━━━━━┓
-┃题2.23：归并两个单链表┃
+┃题2.23：归并两个 SingleLinkedList ┃
 ┗━━━━━━━━━━━*/
 /* 方法二：交替链接 */
 Status Algo_2_23_2(LinkList La, LinkList *Lb, LinkList *Lc)
@@ -100,7 +100,7 @@ Status Algo_2_23_2(LinkList La, LinkList *Lb, LinkList *Lc)
 	LinkList cur, pa, pb;
 	int i = 0;
 
-	if(!La || !(*Lb) || (!La->next && !(*Lb)->next))//La或Lb有一个不存在或两个均为空表时，合并错误
+	if(!La || !(*Lb) || (!La->next && !(*Lb)->next))//La或Lb有一个不存在或两个均 is empty表时，合并错误
 		return ERROR;
 	
 	*Lc = La;			//利用A的头结点作C的头结点 

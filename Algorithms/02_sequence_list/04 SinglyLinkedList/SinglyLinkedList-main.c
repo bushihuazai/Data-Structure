@@ -2,7 +2,7 @@
  *                                         *
  * 文件夹: 02 线性表\04 SinglyLinkedList *
  *                                         *
- * 内  容: 单链表相关Functest              *
+ * 内  容:  SingleLinkedList 相关Functest              *
  *                                         *
  *******************************************/
 
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 
 	printf("1\nFunc InitList_L test...\n");			//1.FuncInitList_Ltest
 	{
-		printf("Initial单链表 L ...\n");
+		printf("Initial SingleLinkedList  L ...\n");
 		InitList_L(&L);
 		printf("\n");
 	}
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 
 	printf("4\nFunc ListEmpty_L test...\n");		//4.FuncListEmpty_Ltest
 	{
-		ListEmpty_L(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_L(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -104,10 +104,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc ClearList_L test...\n");		//2.FuncClearList_Ltest
 	{
 		printf("清空 L 前：");
-		ListEmpty_L(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_L(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		ClearList_L(L);
 		printf("清空 L 后：");
-		ListEmpty_L(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_L(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -115,10 +115,10 @@ int main(int argc, char **argv)
 	printf("3\nFunc DestroyList_L test...\n");		//3.FuncDestroyList_Ltest
 	{
 		printf("销毁 L 前：");
-		L ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		DestroyList_L(&L);
 		printf("销毁 L 后：");
-		L ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 	{
 		FILE *fp;
 		LinkList L;
-		printf("头插法建立单链表 L = ");
+		printf("头插法建立 SingleLinkedList  L = ");
 		fp = fopen("TestData_HL.txt", "r");				//文件指针，指向数据源
 		CreateList_HL(fp, &L, 5);
 		fclose(fp);
@@ -140,7 +140,7 @@ int main(int argc, char **argv)
 	{
 		FILE *fp;
 		LinkList L;
-		printf("尾插法建立单链表 L = ");
+		printf("尾插法建立 SingleLinkedList  L = ");
 		fp = fopen("TestData_TL.txt", "r");				//文件指针，指向数据源
 		CreateList_TL(fp, &L, 5);
 		fclose(fp);

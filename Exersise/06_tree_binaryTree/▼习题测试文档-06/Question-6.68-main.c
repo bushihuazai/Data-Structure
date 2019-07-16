@@ -51,7 +51,7 @@ void Algo_6_68(CSTree *T, TreeNode node[])				//node中存储各结点及其度的信息
 	
 	*T = NULL;
 	
-	if(node[0].d)										//树不为空 
+	if(node[0].d)										//树 not empty 
 	{
 		i = j = 1;
 		

@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 }
 
 /*━━━━━━━━━━━━━━┓
-┃题10.33：单链表简单选择排序 ┃
+┃题10.33： SingleLinkedList 简单选择排序 ┃
 ┗━━━━━━━━━━━━━━*/
 void Algo_10_33(LinkList *L)
 {

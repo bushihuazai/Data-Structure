@@ -65,7 +65,7 @@ Status Algo_7_26(MGraph G)			//本质是将原图拓扑序列变为逆拓扑序列
 	
 	if(count<G.vexnum)
 	{
-		printf("该有向图有回路！！\n");
+		printf("该有向图有回路!!\n");
 		return ERROR;	
 	}
 	else

@@ -29,7 +29,7 @@ void* MallocMemory(int n)
 	
 	if(cur+n-1>end)									//压缩后空间依然不够用 
 	{
-		printf("内存已满，无法继续分配空间！\n");
+		printf("内存已满，无法继续分配空间!\n");
 		return NULL;
 	}
 	else

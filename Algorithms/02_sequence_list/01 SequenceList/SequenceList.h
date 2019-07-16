@@ -49,7 +49,7 @@ void DestroyList_Sq(SqList *L);
 
 Status ListEmpty_Sq(SqList L);
 /*━━━━━━━━━━━━━┓
-┃(04)判断顺序表L是否为空。 ┃
+┃(04)判断顺序表L是否 is empty。 ┃
 ┗━━━━━━━━━━━━━*/
 
 int ListLength_Sq(SqList L);

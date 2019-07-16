@@ -193,7 +193,7 @@ CSTree CreateCSTree_7_33(Edge E[])
 	InitTree_CS(&T);						//Initial孩子-兄弟树 
 	k = -1;
 	
-	if(E[0].u)								//边集不为空
+	if(E[0].u)								//边集 not empty
 	{
 		Stack[++k] = E[1].v;
 		Stack[++k] = E[1].u;

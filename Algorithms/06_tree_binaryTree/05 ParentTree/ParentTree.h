@@ -52,7 +52,7 @@ void DestroyTree_P(PTree *T);
 
 Status TreeEmpty_P(PTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 Status CreateTree_P(FILE *fp, PTree *T); 

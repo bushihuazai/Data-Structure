@@ -86,7 +86,7 @@ int GListDepth_GL_H_T(GList L);
 
 Status GListEmpty_GL_H_T(GList L);
 /*━━━━━━━━━━━━┓
-┃(08)判断广义表是否为空。┃
+┃(08)判断广义表是否 is empty。┃
 ┗━━━━━━━━━━━━*/
 
 GList GetHead_GL_H_T(GList L);

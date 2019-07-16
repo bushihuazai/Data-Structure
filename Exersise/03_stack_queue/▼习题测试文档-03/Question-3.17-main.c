@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 	
 	printf("判断序列 %s 是否合规...\n\n", s);
 	if(Algo_3_17(s))
-		printf("序列满足题意！\n");
+		printf("序列满足题意!\n");
 	else
-		printf("序列不满足题意！！\n");
+		printf("序列不满足题意!!\n");
 
 	printf("\n");
 	
@@ -50,7 +50,7 @@ Status Algo_3_17(char *s)
 		}
 	}
 	
-	if(StackEmpty_Sq(S) && s[i]=='@')			//栈为空，且序列访问完 
+	if(StackEmpty_Sq(S) && s[i]=='@')			//栈 is empty，且序列访问完 
 		return OK;
 	else
 		return ERROR;

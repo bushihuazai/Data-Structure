@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		
 		printf("查找关键字 %s ...\n", K.ch);
 		p = SearchTrie(TT, K);
-		p ? printf("查找成功！\n") : printf("查找失败!!\n");
+		p ? printf("查找成功!\n") : printf("查找失败!!\n");
 		printf("\n");	
 	}
 	PressEnter;

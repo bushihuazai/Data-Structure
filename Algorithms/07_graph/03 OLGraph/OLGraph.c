@@ -397,7 +397,7 @@ void OutputOLGraph(OLGraph G)
 	ArcBox *p;
 	
 	if(!G.vexnum && !G.arcnum)
-		printf("ø’Õº£®±Ì£©£°\n");
+		printf("ø’Õº£®±Ì£©!\n");
 	else
 	{
 		for(i=1; i<=G.vexnum; i++)

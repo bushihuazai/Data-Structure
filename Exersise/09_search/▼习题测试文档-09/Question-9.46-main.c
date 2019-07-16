@@ -11,7 +11,7 @@ typedef struct
 	int row;
 	int col;
 	int key;
-	int tag;					//tag=0:结点为空 
+	int tag;					//tag=0:结点 is empty 
 }HNode;
 typedef HNode HashTable[MAXSIZE];
 

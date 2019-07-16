@@ -62,7 +62,7 @@ int Calculate_7_40(ALGraph G, int w)		//从源点开始遍历
 	int x, y;
 	char oper;
 		
-	p = G.vertices[w].firstarc;				//p、q同时出现或同时为空 
+	p = G.vertices[w].firstarc;				//p、q同时出现或同时 is empty 
 
 	if(p)
 	{

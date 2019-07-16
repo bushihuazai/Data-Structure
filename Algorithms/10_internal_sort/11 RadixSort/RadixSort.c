@@ -72,7 +72,7 @@ void Distribute(SLCell r[], int i, ArrType f, ArrType e)
 {
 	int j, p;
 	
-	for(j=0; j<RADIX; j++)						//各子表Initial为空表
+	for(j=0; j<RADIX; j++)						//各子表Initial is empty表
 	{
 		f[j] = 0;
 		e[j] = 0;	

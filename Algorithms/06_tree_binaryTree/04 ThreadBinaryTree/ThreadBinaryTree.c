@@ -245,7 +245,7 @@ Status PosOrderTraverse_Thr(ThrBiTree Thrt, void(Visit)(TElemType_Thr))
 {
 	ThrBiTree p = Thrt->lchild;					//p指向二叉树根结点
 	
-	if(p!=Thrt)									//树不为空 
+	if(p!=Thrt)									//树 not empty 
 	{
 		while(1)								//寻找遍历起点 
 		{

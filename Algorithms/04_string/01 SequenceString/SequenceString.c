@@ -181,7 +181,7 @@ int Index_Sq_2(SString S, SString T, int pos)			//不依赖其他串操作的匹配算法
 		}
 	}
 
-	if(j>T[0] && T[0])									//T不为空串 
+	if(j>T[0] && T[0])									//T not empty串 
 		return i-T[0];									//匹配成功 
 	else
 		return 0;

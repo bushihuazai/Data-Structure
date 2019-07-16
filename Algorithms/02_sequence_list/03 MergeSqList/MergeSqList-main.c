@@ -33,12 +33,12 @@ int main(int argc, char **argv)
 	printf("\n\n");
 	
 	MergeSqList_1(La, Lb, &Lc1);		//合并A与B,算法2.6 
-	printf("合并La和Lb为Lc1 = "); 		//输出Lc1 
+	printf("Merge La and Lb into Lc1 = "); 		//输出Lc1 
 	ListTraverse_Sq(Lc1, PrintElem);
 	printf("\n\n");
 
 	MergeSqList_2(La, Lb, &Lc2);		//合并A与B,算法2.7  
-	printf("合并La和Lb为Lc2 = "); 		//输出Lc2 
+	printf("Merge La and Lb into Lc2 = "); 		//输出Lc2 
 	ListTraverse_Sq(Lc2, PrintElem);
 	printf("\n\n");
 	

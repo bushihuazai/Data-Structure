@@ -34,7 +34,7 @@ void StrCopy_Sq(SString T, SString S);
  
 Status StrEmpty_Sq(SString S);
 /*━━━━━━━━━━━━━━━━━━━━┓
-┃(03)若S为空串，返回TRUE,否则返回FALSE。 ┃
+┃(03)若S is empty串，返回TRUE,否则返回FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
 int StrCompare_Sq(SString S, SString T); 

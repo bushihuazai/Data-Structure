@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	
 	printf("4\nFunc TreeEmpty_P test...\n");				//4.FuncTreeEmpty_Ptest
 	{
-		TreeEmpty_P(T) ? printf(" T 为空！\n") : printf(" T 不为空！\n");
+		TreeEmpty_P(T) ? printf(" T  is empty!\n") : printf(" T  not empty!\n");
 		printf("\n");
 	}
 	PressEnter; 
@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 	printf("2\nFunc ClearTree_P test...\n");					//2.FuncClearTree_Ptest
 	{
 		ClearTree_P(&T);
-		TreeEmpty_P(T) ? printf(" T 为空！\n") : printf(" T 不为空！\n");
+		TreeEmpty_P(T) ? printf(" T  is empty!\n") : printf(" T  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;

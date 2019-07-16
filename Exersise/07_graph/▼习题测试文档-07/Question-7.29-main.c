@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	Algo_7_29(G, i, j, k);
 	printf("%c 到 %c 之间", v1, v2);
 	sum ? printf("存在 %d 条", sum) : printf("不存在");
-	printf("长度为 %d 的路径！\n", k);
+	printf("长度为 %d 的路径!\n", k);
 	printf("\n");
 	
 	return 0;

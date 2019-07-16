@@ -453,7 +453,7 @@ void OutputAMLGraph(AMLGraph G)
 	EBox *p;
 	
 	if(!G.vexnum && !G.edgenum)
-		printf("ø’Õº£®±Ì£©£°\n");
+		printf("ø’Õº£®±Ì£©!\n");
 	else
 	{
 		ClearMark(G);

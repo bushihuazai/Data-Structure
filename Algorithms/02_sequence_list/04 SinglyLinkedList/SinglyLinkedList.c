@@ -94,7 +94,7 @@ Status GetElem_L(LinkList L, int i, LElemType_L *e)
 	j = 1;
 	p = L->next;
 	
-	while(p && j<i)						//p不为空且还未到达i处
+	while(p && j<i)						//p not empty且还未到达i处
 	{
 		j++;
 		p = p->next;

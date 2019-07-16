@@ -92,7 +92,7 @@ void CreateGList_GL_H_T_1(GList *L, SString S)
 				sever_GL_H_T_1(hsub, sub);				//分离出表头串hsub	
 				CreateGList_GL_H_T_1(&(p->Union.ptr.hp), hsub);
 				q = p;
-				if(!StrEmpty_Sq(sub))					//表尾不为空，处理表尾 
+				if(!StrEmpty_Sq(sub))					//表尾 not empty，处理表尾 
 				{									
 					p = (GList)malloc(sizeof(GLNode));
 					if(!p)
@@ -279,7 +279,7 @@ GList GetHead_GL_H_T(GList L)
 	
 	if(!L)
 	{
-		printf("广义表为空表，无法获取表头！\n");
+		printf("广义表 is empty表，无法获取表头!\n");
 		exit(ERROR);
 	}
 	
@@ -294,7 +294,7 @@ GList GetTail_GL_H_T(GList L)
 	
 	if(!L)
 	{
-		printf("广义表为空表，无法获取表尾！\n");
+		printf("广义表 is empty表，无法获取表尾!\n");
 		exit(ERROR);
 	}
 	
@@ -323,7 +323,7 @@ void DeleteFirst_GL_H_T(GList *L, GList *e)
 	
 	if(!(*L))
 	{
-		printf("广义表为空表，删除表头失败！\n");
+		printf("广义表 is empty表，删除表头失败!\n");
 		exit(ERROR);
 	}
 	
@@ -352,14 +352,14 @@ void Traverse_GL_H_T(GList L, void(Visit)(AtomType))
 
 void Output_GL_H_T(GList L, Mark mark)
 {
-	if(!L)												//L为空 
+	if(!L)												//L is empty 
 	{
 		if(mark==Head)									//mark=0代表广义表指针来自表头 
 			printf("()");
 		else											//mark=1代表广义表指针来自表尾 
 			printf(")");
 	}
-	else												//L不为空时 
+	else												//L not empty时 
 	{
 		if(L->tag==Atom)								//对于原子结点，输出原子 
 			printf("%c",L->Union.atom);

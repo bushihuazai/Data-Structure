@@ -20,7 +20,7 @@ void InitBiTree(BiTree *T)
 
 void ClearBiTree(BiTree *T)
 {
-	if(*T)												 		//二叉树不为空
+	if(*T)												 		//二叉树 not empty
 	{
 		if((*T)->lchild)										//清空左树 
 			ClearBiTree(&((*T)->lchild));							
@@ -114,7 +114,7 @@ int BiTreeLength(BiTree T)
 					len = node[i].n;
 			}
 			
-			if(node[i].right)									//左子树为空时访问右子树 
+			if(node[i].right)									//左子树 is empty时访问右子树 
 			{
 				node[i+1].left = node[i].right->lchild;
 				node[i+1].right = node[i].right->rchild;
@@ -540,7 +540,7 @@ Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType))
 	
 	while(!StackEmpty_Sq(S))
 	{
-		while(GetTop_Sq(S, &p) && p)				//栈顶元素不为空
+		while(GetTop_Sq(S, &p) && p)				//栈顶元素 not empty
 			Push_Sq(&S, p->lchild);					//向左走到尽头
 			
 		Pop_Sq(&S, &p);								//空指针退栈

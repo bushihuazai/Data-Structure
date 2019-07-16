@@ -91,7 +91,7 @@ int Locate(IdxListType idxlist, HString wd, Bool *b);
 
 void InsertNewKey(IdxListType *idxlist, int i, HString wd);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(09)算法4.13：在索引表第i项上插入关键词wd，并Initial书号索引的链表为空表。 ┃
+┃(09)算法4.13：在索引表第i项上插入关键词wd，并Initial书号索引的链表 is empty表。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 Status InsertBook(IdxListType *idxlist, int i, int bno);

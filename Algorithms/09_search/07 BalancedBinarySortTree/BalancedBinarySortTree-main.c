@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 	{
 		printf("关键字 %2d ", T.elem[1].key);
 		SearchAVL(BBST, T.elem[1].key)==NULL ? printf("不在") : printf("在");
-		printf("平衡二叉树中！\n");
+		printf("平衡二叉树中!\n");
 		printf("\n");
 	}	
 	PressEnter;

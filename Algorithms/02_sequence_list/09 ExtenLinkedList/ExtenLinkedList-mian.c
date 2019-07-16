@@ -2,7 +2,7 @@
  *						            *
  * 文件夹: 02 线性表              *
  * 						            *
- * 内  容: 扩展的单链表相关Functest *
+ * 内  容: 扩展的 SingleLinkedList 相关Functest *
  *                                  *
  ************************************/
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		
 	printf("3\nFunc InitList_E test...\n");			//3.FuncInitList_Etest
 	{
-		printf("Initial扩展的单链表 L ...\n");	
+		printf("Initial扩展的 SingleLinkedList  L ...\n");	
 		InitList_E(&L);
 		printf("\n");
 	} 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	
 	printf("14\nFunc ListEmpty_E test...\n");		//14.FuncListEmpty_Etest
 	{
-		ListEmpty_E(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_E(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -137,10 +137,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc FreeNode_E test...\n");			//2.FuncFreeNode_Etest
 	{
 		printf("销毁结点 p 前：");
-		p ? printf(" p 存在！\n") : printf(" p 不存在！！\n");
+		p ? printf(" p 存在!\n") : printf(" p 不存在!!\n");
 		FreeNode_E(&p);
 		printf("销毁结点 p 后：");
-		p ? printf(" p 存在！\n") : printf(" p 不存在！！\n");
+		p ? printf(" p 存在!\n") : printf(" p 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -232,10 +232,10 @@ int main(int argc, char **argv)
 	printf("4\nFunc ClearList_E test...\n");		//4.FuncClearList_Etest
 	{
 		printf("清空 L 前：");
-		ListEmpty_E(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_E(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		ClearList_E(&L);
 		printf("清空 L 后：");
-		ListEmpty_E(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_E(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -243,10 +243,10 @@ int main(int argc, char **argv)
 	printf("5\nFunc DestroyList_E test...\n");		//5.FuncDestroyList_Etest
 	{
 		printf("销毁 L 前：");
-		L.head!=NULL && L.tail!=NULL ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L.head!=NULL && L.tail!=NULL ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		DestroyList_E(&L);
 		printf("销毁 L 后：");
-		L.head!=NULL && L.tail!=NULL ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L.head!=NULL && L.tail!=NULL ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;

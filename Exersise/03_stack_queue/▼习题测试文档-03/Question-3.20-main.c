@@ -78,7 +78,7 @@ void Coloring_3_20(int g[][Col], SElemType start)
 				}
 			}
 		}		
-	}while(top!=-1);							//栈不为空 
+	}while(top!=-1);							//栈 not empty 
 }
 
 /* Initial图像区域和染色起点 */
@@ -118,7 +118,7 @@ void PaintGrap(int g[][Col])
 		{
 			if(g[i][j]==Color_1)						//颜色0用"^"显示 
 				printf("^");
-		 	if(g[i][j]==Color_2)						//颜色1显示为空白 
+		 	if(g[i][j]==Color_2)						//颜色1显示 is empty白 
 				printf(" ");
 			if(g[i][j]==Color_3)						//颜色2用"*"显示 
 				printf("*");

@@ -64,7 +64,7 @@ Status Algo_4_31(SString S, SString T, StringSet *Set_s, StringSet *Set_t)
 	int k, flag;
 	int len[MAXSTRLEN+1][MAXSTRLEN+1];
 	
-	if(!S[0] || !T[0])			//有字符串为空 
+	if(!S[0] || !T[0])			//有字符串 is empty 
 		return ERROR;
 		
 	for(m=0; m<=T[0]; m++)		//Initial首列为0 

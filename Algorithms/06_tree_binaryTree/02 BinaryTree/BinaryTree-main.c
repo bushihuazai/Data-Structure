@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	
 	printf("4\nFunc BiTreeEmpty test...\n");				//4.FuncBiTreeEmptytest
 	{
-		BiTreeEmpty(T) ? printf(" T Îª¿Õ£¡\n") : printf(" T ²»Îª¿Õ£¡\n");
+		BiTreeEmpty(T) ? printf(" T  is empty!\n") : printf(" T  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if(Algo_7_35(G, &root)) 
 		printf("此有向无环图的根为：%c\n", root);
 	else
-		printf("找不到此有向图的根！\n");
+		printf("找不到此有向图的根!\n");
 	printf("\n");
 	
 	return 0;

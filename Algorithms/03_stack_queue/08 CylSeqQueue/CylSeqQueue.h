@@ -45,7 +45,7 @@ void DestroyQueue_CSq(CSqQueue *Q);
 
 Status QueueEmpty_CSq(CSqQueue Q);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏQÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏQÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 int QueueLength_CSq(CSqQueue Q);

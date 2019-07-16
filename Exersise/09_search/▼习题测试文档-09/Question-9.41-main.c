@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
 	printf("查找关键字 %d ...\n", Key);	
 	R = Algo_9_41(B_T, Key);
 	if(R.tag)
-		printf("已找到关键字 %d！", R.pt->key[R.i]); 
+		printf("已找到关键字 %d!", R.pt->key[R.i]); 
 	else
-		printf("未找到关键字！！");
+		printf("未找到关键字!!");
 	printf("\n\n");
 		
 	return 0;

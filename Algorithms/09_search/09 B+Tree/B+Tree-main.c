@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		if(r.tag==1)
 			printf("查找成功，%d 在所属结点的第 %d 个位置。\n", key, Search(r.pt,key));
 		else
-			printf("查找失败！\n");
+			printf("查找失败!\n");
 		printf("\n");
 	}
 	PressEnter; 

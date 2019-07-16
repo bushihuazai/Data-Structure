@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	printf("\n");
 	
 	InitStack_Sq(&path);
-	Algo_7_25(G) ? printf("图中有回路！") : printf("图中无回路！！");
+	Algo_7_25(G) ? printf("图中有回路!") : printf("图中无回路!!");
 	printf("\n\n");
 		
 	return 0;
@@ -114,7 +114,7 @@ void OutputGraph_7_25(Graph G)					//输出有向图
 	int i, j;
 	
 	if(!G.vexnum && !G.arcnum)
-		printf("有向图为空！\n");
+		printf("有向图 is empty!\n");
 	else
 	{
 		for(i=1; i<=G.vexnum; i++)

@@ -50,7 +50,7 @@ void DestroyBiTree_Tri(TBiTree *T);
 
 Status BiTreeEmpty_Tri(TBiTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 void Create_Tri(TBiTree *T, FILE *fp);

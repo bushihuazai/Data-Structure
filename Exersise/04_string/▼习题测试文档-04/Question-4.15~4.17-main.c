@@ -108,7 +108,7 @@ Status Algo_4_17(SString S, SString T, SString V)
 			j = 1;
 		}
 	}
-	if(j>T[0] && T[0]!=0)							//T不为空串 
+	if(j>T[0] && T[0]!=0)							//T not empty串 
 		count = i-T[0];								//匹配成功 
 	else
 		count = 0;
@@ -143,7 +143,7 @@ Status Algo_4_17(SString S, SString T, SString V)
 				j = 1;
 			}
 		}
-		if(j>T[0] && T[0]!=0)						//T不为空串 
+		if(j>T[0] && T[0]!=0)						//T not empty串 
 			count = i-T[0];							//匹配成功 
 		else
 			count = 0;

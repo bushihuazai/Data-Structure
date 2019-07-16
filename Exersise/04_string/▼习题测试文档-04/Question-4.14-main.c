@@ -82,7 +82,7 @@ Status Algo_4_14(SqList P, SString Str)
 	Pop_4_14(&S, &tmp);					//弹出转换完成后的字符串 
 	StrCopy_Sq(Str, tmp);	
 	
-	if(S.base==S.top)					//最后栈应该为空 
+	if(S.base==S.top)					//最后栈应该 is empty 
 		return OK;
 	else
 		return ERROR;

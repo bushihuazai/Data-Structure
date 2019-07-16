@@ -27,7 +27,7 @@ typedef struct
 //0号单元弃用 
 typedef struct
 {
-	ElemType_Search *elem;		//数据元素存储空间基址，0号单元为空
+	ElemType_Search *elem;		//数据元素存储空间基址，0号单元 is empty
 	int length;					//表长度 
 }Table;							//查找表
 

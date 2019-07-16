@@ -67,7 +67,7 @@ Status CreatList_2_31(LinkList *L, int n, LElemType_L Data[])
 	LinkList s, r;
 	int i;
 	
-	if(*L)									//创建之前保证链表为空
+	if(*L)									//创建之前保证链表 is empty
 		return ERROR;
 	
 	for(i=1; i<=n; i++)

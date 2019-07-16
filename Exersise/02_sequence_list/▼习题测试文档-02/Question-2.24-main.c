@@ -39,13 +39,13 @@ int main(int argc, char *argv[])
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━┓
-┃题2.24：归并两个递增单链表为一个递减单链表┃
+┃题2.24：归并两个递增 SingleLinkedList 为一个递减 SingleLinkedList ┃
 ┗━━━━━━━━━━━━━━━━━━━━━*/
 Status Algo_2_24(LinkList La, LinkList *Lb, LinkList *Lc)
 {
 	LinkList pa, pb, s;
 
-	if(!La || !Lb || (!La->next && !(*Lb)->next))	//La或Lb有一个不存在或两个均为空表时，合并错误
+	if(!La || !Lb || (!La->next && !(*Lb)->next))	//La或Lb有一个不存在或两个均 is empty表时，合并错误
 		return ERROR;
 	
 	*Lc = La;										//利用A的头结点作C的头结点

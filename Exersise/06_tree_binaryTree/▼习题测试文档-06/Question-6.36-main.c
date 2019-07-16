@@ -38,14 +38,14 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 	if(Algo_6_36(B1, B2))
-		printf("B1与B2相似！\n");
+		printf("B1与B2相似!\n");
 	else
-		printf("B1与B2不相似！！\n"); 
+		printf("B1与B2不相似!!\n"); 
 
 	if(Algo_6_36(B2, B3))
-		printf("B2与B3相似！\n");
+		printf("B2与B3相似!\n");
 	else
-		printf("B1与B3不相似！！\n");  
+		printf("B1与B3不相似!!\n");  
 	
 	printf("\n");
 	
@@ -57,11 +57,11 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━*/
 Status Algo_6_36(BiTree B1, BiTree B2)
 {
-	if(BiTreeEmpty(B1) && BiTreeEmpty(B2))			//都为空树 
+	if(BiTreeEmpty(B1) && BiTreeEmpty(B2))			//都 is empty树 
 		return TRUE;
 	else
 	{
-		if(!BiTreeEmpty(B1) && !BiTreeEmpty(B2))	//都不为空树 
+		if(!BiTreeEmpty(B1) && !BiTreeEmpty(B2))	//都 not empty树 
 		{
 			if(Algo_6_36(B1->lchild, B2->lchild) && Algo_6_36(B1->rchild, B2->rchild))	//判断左右子树 
 				return TRUE;	

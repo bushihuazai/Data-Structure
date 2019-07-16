@@ -109,7 +109,7 @@ void Append_E(ELinkList *L, Link s)
 	
 	(*L).tail->next = s;
 	
-	while(s)							//考虑s为空的情况 
+	while(s)							//考虑s is empty的情况 
 	{
 		(*L).tail = s;
 		s = s->next;

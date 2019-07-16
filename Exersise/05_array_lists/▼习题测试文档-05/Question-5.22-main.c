@@ -37,7 +37,7 @@ Status Algo_5_22(TSMatrix *A, TSMatrix B)
 	
 	if((*A).mu!=B.mu || (*A).nu!=B.nu)
 	{
-		printf("两矩阵不能相加！！\n");
+		printf("两矩阵不能相加!!\n");
 		return ERROR;	
 	}
 	

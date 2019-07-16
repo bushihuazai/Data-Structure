@@ -55,12 +55,12 @@ Status EnQueue_3_33(CSqQueue *Q, QElemType_CSq e)
 	if(((*Q).rear+1)%MAXQSIZE==(*Q).front)			//队列满
 		return ERROR;
 
-	if(QueueEmpty_CSq(*Q) || e>=(a+b)/2)				//队列为空或者e不小于平均值，插在队尾
+	if(QueueEmpty_CSq(*Q) || e>=(a+b)/2)				//队列 is empty或者e不小于平均值，插在队尾
 	{					
 		(*Q).base[(*Q).rear] = e;
 		(*Q).rear = ((*Q).rear+1)%MAXQSIZE;
 	}
-	else											//队列不为空且e小于平均值，插在队头 
+	else											//队列 not empty且e小于平均值，插在队头 
 	{						
 		(*Q).front = ((*Q).front-1+MAXQSIZE)%MAXQSIZE; 
 		(*Q).base[(*Q).front] = e;

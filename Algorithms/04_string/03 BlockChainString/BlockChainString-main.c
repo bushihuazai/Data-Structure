@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	
 	printf("4\nFunc StrEmpty_L test...\n");			//4.FuncStrEmpty_Ltest
 	{
-		StrEmpty_L(Tmp) ? printf(" Tmp 为空！！\n") : printf(" Tmp 不为空！\n");
+		StrEmpty_L(Tmp) ? printf(" Tmp  is empty!!\n") : printf(" Tmp  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	{
 		printf("比较字符串 Tmp 、 S ...\n");
 		i = StrCompare_L(Tmp, S);
-		i==0 ? printf("Tmp==S！！\n") : (i<0 ? printf("Tmp<S！！\n") : printf("Tmp>S！！\n"));
+		i==0 ? printf("Tmp==S!!\n") : (i<0 ? printf("Tmp<S!!\n") : printf("Tmp>S!!\n"));
 		printf("\n");
 	}
 	PressEnter;
@@ -131,10 +131,10 @@ int main(int argc, char **argv)
 	printf("7\nFunc ClearString_L test...\n");		//7.FuncClearString_Ltest
 	{
 		printf("清空 S 前：");
-		StrEmpty_L(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StrEmpty_L(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		ClearString_L(&S);
 		printf("清空 S 后：");
-		StrEmpty_L(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StrEmpty_L(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;

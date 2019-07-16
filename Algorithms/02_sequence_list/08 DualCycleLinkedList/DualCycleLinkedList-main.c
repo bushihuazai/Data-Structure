@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	
 	printf("4\nFunc ListEmpty_DuL test...\n");		//4.FuncListEmpty_DuLtest
 	{
-		ListEmpty_DuL(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_DuL(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -113,10 +113,10 @@ int main(int argc, char **argv)
 	printf("3\nFunc ClearList_DuL test...\n");		//3.FuncClearList_DuLtest
 	{
 		printf("清空 L 前：");
-		ListEmpty_DuL(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_DuL(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		ClearList_DuL(L);
 		printf("清空 L 后：");
-		ListEmpty_DuL(L) ? printf(" L 为空！！\n") : printf(" L 不为空！\n");
+		ListEmpty_DuL(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -124,10 +124,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc DestroyList_DuL test...\n");	//2.FuncDestroyList_DuLtest
 	{
 		printf("销毁 L 前：");
-		L ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		DestroyList_DuL(&L);
 		printf("销毁 L 后：");
-		L ? printf(" L 存在！\n") : printf(" L 不存在！！\n");
+		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;

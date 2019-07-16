@@ -491,7 +491,7 @@ void OutputMGraph(MGraph G)
 	int i, j;
 	
 	if(!G.vexnum && !G.arcnum)
-		printf("ø’Õº£®±Ì£©£°\n");
+		printf("ø’Õº£®±Ì£©!\n");
 	else
 	{
 		printf("  ");

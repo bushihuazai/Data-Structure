@@ -113,7 +113,7 @@ Status InsertAVL(BBSTree *BBST, ElemType_Search e, Boolean *taller)
 }
 
 Status DeleteAVL(BBSTree *BBST, ElemType_Search e, BBSTree f, BBSTree p, Boolean *taller, int mark)
-{//p指向当前结点，f指向p的父结点，Initial为空，*tallerInitial为FALSE，mark代表f与p的关系，Initial为0 
+{//p指向当前结点，f指向p的父结点，Initial is empty，*tallerInitial为FALSE，mark代表f与p的关系，Initial为0 
 	BBSTree r;
 	ElemType_Search tmp;
 	 
@@ -211,7 +211,7 @@ Status DeleteAVL(BBSTree *BBST, ElemType_Search e, BBSTree f, BBSTree p, Boolean
 				
 				*taller = TRUE;			
 			}
-			else if(p->lchild==NULL && p->rchild==NULL)		//左右子树均为空
+			else if(p->lchild==NULL && p->rchild==NULL)		//左右子树均 is empty
 			{
 				if(!f)										//根结点 
 					*BBST = NULL;			

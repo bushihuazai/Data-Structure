@@ -306,7 +306,7 @@ Status InsertChild_P(PTree *T, TElemType_P p, int i, TElemType_P e)
 {
 	int k0, start, end;
 	
-	if(TreeEmpty_P((*T)) || !e)				//空树或e为空字符 
+	if(TreeEmpty_P((*T)) || !e)				//空树或e is empty字符 
 		return ERROR;
 
 	k0 = 0;									//k0标记p的位置 
@@ -536,7 +536,7 @@ void Print_P(PTree T)
 		}
 	}
 	else
-		printf("空树无法打印！！\n");
+		printf("空树无法打印!!\n");
 }
 
 #endif

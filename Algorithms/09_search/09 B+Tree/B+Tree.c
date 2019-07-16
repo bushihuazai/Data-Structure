@@ -195,7 +195,7 @@ void split(B_TNode *q, int s, B_TNode **ap)		//s初值为┌M/2┐
 	}
 }
 
-void NewRoot(B_Tree *B_T, B_TNode *q, int x, B_TNode *ap)	//q初始值为空
+void NewRoot(B_Tree *B_T, B_TNode *q, int x, B_TNode *ap)	//q初始值 is empty
 { 
 	B_TNode *p;
 

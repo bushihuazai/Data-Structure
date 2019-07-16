@@ -106,10 +106,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc DestroySMatrix_RL test...\n");			//2.FuncDestroySMatrix_RLtest
 	{
 		printf("销毁 M 前：");
-		!M.mu && !M.nu && !M.tu ? printf(" M 不存在！！\n") : printf(" M 存在！\n");
+		!M.mu && !M.nu && !M.tu ? printf(" M 不存在!!\n") : printf(" M 存在!\n");
 		DestroySMatrix_RL(&M);
 		printf("销毁 M 后：");
-		!M.mu && !M.nu && !M.tu ? printf(" M 不存在！！\n") : printf(" M 存在！\n");
+		!M.mu && !M.nu && !M.tu ? printf(" M 不存在!!\n") : printf(" M 存在!\n");
 		printf("\n");
 	}
 	PressEnter;

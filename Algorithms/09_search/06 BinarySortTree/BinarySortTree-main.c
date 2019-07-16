@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	{
 		printf("关键字 24 ");
 		SearchBST_1(BST, 24)==NULL ? printf("不在") : printf("在");
-		printf("二叉排序树中！"); 
+		printf("二叉排序树中!"); 
 		printf("\n\n");	
 	}
 	PressEnter; 	

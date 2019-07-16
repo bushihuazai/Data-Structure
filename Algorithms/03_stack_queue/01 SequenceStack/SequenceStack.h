@@ -53,7 +53,7 @@ Status ClearStack_Sq(SqStack *S);
 
 Status StackEmpty_Sq(SqStack S);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏSÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏSÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 int StackLength_Sq(SqStack S);

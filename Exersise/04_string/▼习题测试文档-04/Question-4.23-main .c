@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	StrPrint_L(T);
 	printf("\n\n");
 
-	Algo_4_23(T) ? printf("T是对称串！") : printf("T是非对称串！！");
+	Algo_4_23(T) ? printf("T是对称串!") : printf("T是非对称串!!");
 	printf("\n\n");	
 
 	return 0;

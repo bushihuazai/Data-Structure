@@ -48,7 +48,7 @@ void DestroyBiTree_Sq(SqBiTree T);
 
 Status BiTreeEmpty_Sq(SqBiTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 Status CreateBiTree_Le_Sq(FILE *fp, SqBiTree T);

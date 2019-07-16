@@ -189,7 +189,7 @@ void split(BTree q, int s, BTree *ap)				//s初值为┌M/2┐
 	}
 }
 
-void NewRoot(BTree *BT, BTree q, int x, BTree ap)	//q初始值为空
+void NewRoot(BTree *BT, BTree q, int x, BTree ap)	//q初始值 is empty
 { 
 	BTree p;
 
@@ -365,7 +365,7 @@ Status SearchMinKey(BTree BT, Result *R)
 		return ERROR;	
 }
 
-Status FoundParent(BTree q, BTree *p, int *order)	//B树不为空 
+Status FoundParent(BTree q, BTree *p, int *order)	//B树 not empty 
 {
 	*p = q->parent;
 	

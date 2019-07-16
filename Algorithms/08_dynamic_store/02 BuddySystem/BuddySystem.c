@@ -158,7 +158,7 @@ void PrintLayout_b(FreeList avail)
 	}
 	
 	if(!mark)
-		printf("内存已被占满！");
+		printf("内存已被占满!");
 	else
 	{
 		printf("空闲块起止范围：");

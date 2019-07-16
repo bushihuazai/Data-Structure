@@ -42,7 +42,7 @@ void DestroyList_DuL(DuLinkList *L);
 
 Status ListEmpty_DuL(DuLinkList L);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏLÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏLÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/ 
 
 int ListLength_DuL(DuLinkList L);

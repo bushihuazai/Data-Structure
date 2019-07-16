@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 	printf("███ 题 6.33 验证... ███\n");
 	{
 		if(Algo_6_33(L, R, v, u))
-			printf("u=%d 是 v=%d 的子孙！\n", u, v);
+			printf("u=%d 是 v=%d 的子孙!\n", u, v);
 		else
-			printf("u=%d 不是 v=%d 的子孙！！\n", u, v);	
+			printf("u=%d 不是 v=%d 的子孙!!\n", u, v);	
 		
 		printf("\n");
 	}
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 	printf("███ 题 6.34 验证... ███\n");
 	{
 		if(Algo_6_34(T, v, u))
-			printf("u=%d 是 v=%d 的子孙！\n", u, v);
+			printf("u=%d 是 v=%d 的子孙!\n", u, v);
 		else
-			printf("u=%d 不是 v=%d 的子孙！！\n", u, v);
+			printf("u=%d 不是 v=%d 的子孙!!\n", u, v);
 	
 		printf("\n");
 	}

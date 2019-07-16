@@ -151,7 +151,7 @@ void CopyGList_GL_E(GList *T, GList L)
 	}
 	else
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 }
@@ -163,7 +163,7 @@ int GListLength_GL_E(GList L)
 	
 	if(!L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	
@@ -186,7 +186,7 @@ int GListDepth_GL_E_1(GList L)
    	
    	if(!L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
    	
@@ -217,7 +217,7 @@ int GListDepth_GL_E_2(GList L)
 	
 	if(!L)
 	{
-		printf("广义表L不存在！！\n");
+		printf("广义表L不存在!!\n");
 		exit(OVERFLOW);
 	}
 	else
@@ -258,7 +258,7 @@ Status GListEmpty_GL_E(GList L)
 {
 	if(!L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	
@@ -274,12 +274,12 @@ GList GetHead_GL_E(GList L)
 	
 	if(!L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	if(!L->Union.hp)
 	{
-		printf("广义表为空表，无法获取表头！\n");
+		printf("广义表 is empty表，无法获取表头!\n");
 		exit(OVERFLOW);
 	}
 	
@@ -297,12 +297,12 @@ GList GetTail_GL_E(GList L)
 	
 	if(!L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	if(!L->Union.hp)
 	{
-		printf("广义表为空表，无法获取表尾！\n");
+		printf("广义表 is empty表，无法获取表尾!\n");
 		exit(OVERFLOW);
 	}
 	
@@ -324,7 +324,7 @@ void InsertFirst_GL_E(GList *L, GList e)
 	
 	if(!*L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	
@@ -340,12 +340,12 @@ void DeleteFirst_GL_E(GList *L, GList *e)
 	
 	if(!*L)
 	{
-		printf("广义表不存在！！\n");
+		printf("广义表不存在!!\n");
 		exit(OVERFLOW);
 	}
 	if(!(*L)->Union.hp)
 	{
-		printf("广义表为空表，删除表头失败！\n");
+		printf("广义表 is empty表，删除表头失败!\n");
 		exit(OVERFLOW);
 	}
 	

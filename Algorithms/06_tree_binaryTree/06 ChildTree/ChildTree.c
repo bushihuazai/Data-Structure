@@ -22,7 +22,7 @@ void InitTree_C(FILE *fp, CTree *T)
 
 	if(i<0 || i>MAX_TREE_SIZE-1)
 	{
-		printf(" i 值错误！\n");
+		printf(" i 值错误!\n");
 		exit(ERROR);
 	}
 	
@@ -657,7 +657,7 @@ ChildPtr SiblingSeat_C(CTree T, TElemType_C p)
 	ChildPtr q;
 	int k;
 	
-	if(T.n && p!=T.nodes[T.r].data)				//不为空树且p不为根结点
+	if(T.n && p!=T.nodes[T.r].data)				// not empty树且p不为根结点
 	{
 		k = T.nodes[Order_C(T, p)].parent;		//p结点双亲结点的位置
 		q = T.nodes[k].firstchild;
@@ -1041,7 +1041,7 @@ void Print_C_1(CTree T)
 		}				
 	}
 	else
-		printf("空树无法打印！！\n");	
+		printf("空树无法打印!!\n");	
 }
 
 void Print_C_2(CTree T, int start, int step)	//打印入口为根结点 

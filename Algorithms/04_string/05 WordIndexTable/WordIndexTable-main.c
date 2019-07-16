@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	Main(bookinfo, bookidx);			//创建索引表 
 
 	if(fp = fopen(bookidx, "r"))		//显示索引表到屏幕 
-		printf("---------索引表生成功！---------\n\n");
+		printf("---------索引表生成功!---------\n\n");
 	while(!feof(fp))
 	{
 		fgets(line, MaxLineLen, fp);

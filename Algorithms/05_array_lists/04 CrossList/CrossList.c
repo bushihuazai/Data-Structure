@@ -41,7 +41,7 @@ Status CreateSMatrix_OL(FILE *fp, int n, ...)
 		if(!(*M).chead)
 			exit(OVERFLOW);
 
-		for(k=0; k<=(*M).mu; ++k)					//Initial行列头指针向量为空 
+		for(k=0; k<=(*M).mu; ++k)					//Initial行列头指针向量 is empty 
 			(*M).rhead[k] = NULL;
 		for(k=0; k<=(*M).nu; ++k)
 			(*M).chead[k] = NULL;		
@@ -67,7 +67,7 @@ Status CreateSMatrix_OL(FILE *fp, int n, ...)
 				
 				if(q->j==p->j || ((q->right)&&q->right->j==p->j))
 				{
-					printf("此位置已被占用！！\n");
+					printf("此位置已被占用!!\n");
 					exit(ERROR);
 				}
 				
@@ -87,7 +87,7 @@ Status CreateSMatrix_OL(FILE *fp, int n, ...)
 				
 				if(q->i==p->i || ((q->down)&&q->down->i==p->i))
 				{
-					printf("此位置已被占用！！\n");
+					printf("此位置已被占用!!\n");
 					exit(ERROR);
 				}
 				
@@ -164,7 +164,7 @@ void CopySMatrix_OL(CrossList M, CrossList *T)
 	if(!T->chead)
 		exit(OVERFLOW);
 		
-	for(i=0; i<=T->mu; ++i)								//Initial行列头指针向量为空 
+	for(i=0; i<=T->mu; ++i)								//Initial行列头指针向量 is empty 
 		T->rhead[i] = NULL;
 	for(i=0; i<=T->nu; ++i)
 		T->chead[i] = NULL;
@@ -216,7 +216,7 @@ Status AddSMatri_OL(CrossList M, CrossList N, CrossList *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相加！！\n");
+		printf("两矩阵不能相加!!\n");
 		return ERROR;	
 	}
 	
@@ -232,7 +232,7 @@ Status AddSMatri_OL(CrossList M, CrossList N, CrossList *Q)
 	if(!Q->chead)
 		exit(OVERFLOW);
 		
-	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量为空 
+	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量 is empty 
 		Q->rhead[i] = NULL;
 	for(i=0; i<=Q->nu; ++i)
 		Q->chead[i] = NULL;
@@ -379,7 +379,7 @@ Status SubSMatrix_OL(CrossList M, CrossList N, CrossList *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相减！！\n");
+		printf("两矩阵不能相减!!\n");
 		return ERROR;	
 	}
 	
@@ -393,7 +393,7 @@ Status SubSMatrix_OL(CrossList M, CrossList N, CrossList *Q)
 	Q->chead = (OLink *) malloc ((Q->nu+1) * sizeof(OLink));
 	if(!Q->chead)
 		exit(OVERFLOW);
-	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量为空 
+	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量 is empty 
 		Q->rhead[i] = NULL;
 	for(i=0; i<=Q->nu; ++i)
 		Q->chead[i] = NULL;
@@ -541,7 +541,7 @@ Status MultSMatrix_OL(CrossList M, CrossList N, CrossList *Q)
 	
 	if(M.nu!=N.mu)										//M列数等于N行数 
 	{
-		printf("两矩阵不能相乘！！\n");
+		printf("两矩阵不能相乘!!\n");
 		return ERROR;	
 	}
 	
@@ -557,7 +557,7 @@ Status MultSMatrix_OL(CrossList M, CrossList N, CrossList *Q)
 	if(!Q->chead)
 		exit(OVERFLOW);
 		
-	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量为空 
+	for(i=0; i<=Q->mu; ++i)								//Initial行列头指针向量 is empty 
 		Q->rhead[i] = NULL;
 	for(i=0; i<=Q->nu; ++i)
 		Q->chead[i] = NULL;
@@ -643,7 +643,7 @@ void TransposeSMatrix_OL(CrossList M, CrossList *T)
 	if(!T->chead)
 		exit(OVERFLOW);
 		
-	for(i=0; i<=T->mu; ++i)								//Initial行列头指针向量为空 
+	for(i=0; i<=T->mu; ++i)								//Initial行列头指针向量 is empty 
 		T->rhead[i] = NULL;
 	for(i=0; i<=T->nu; ++i)
 		T->chead[i] = NULL;

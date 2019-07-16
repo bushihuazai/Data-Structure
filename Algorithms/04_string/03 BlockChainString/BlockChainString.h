@@ -49,7 +49,7 @@ Status StrCopy_L(LString *T, LString S);
  
 Status StrEmpty_L(LString S);
 /*━━━━━━━━━━━━━━━━━━━━┓
-┃(04)若S为空串，返回TRUE,否则返回FALSE。 ┃
+┃(04)若S is empty串，返回TRUE,否则返回FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
 int StrCompare_L(LString S, LString T); 

@@ -504,7 +504,7 @@ void OutputALGraph(ALGraph G)
 	ArcNode *p;
 	
 	if(!G.vexnum && !G.arcnum)
-		printf("ø’Õº£®±Ì£©£°\n");
+		printf("ø’Õº£®±Ì£©!\n");
 	else
 	{
 		for(i=1; i<=G.vexnum; i++)

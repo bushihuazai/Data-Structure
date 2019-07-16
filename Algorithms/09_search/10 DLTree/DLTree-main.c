@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		
 		printf("查找：关键字 %s ", K.ch);
 		SearchDLTree(DLT, K) ? printf("在") : printf("不在");
-		printf("双链树中！\n");
+		printf("双链树中!\n");
 		printf("\n");
 	}	
 	PressEnter; 

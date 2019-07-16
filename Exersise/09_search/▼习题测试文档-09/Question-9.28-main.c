@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	
 	i = Algo_9_28(ST, key);
 	if(!i)
-		printf("关键字 %d 未找到！！\n", key);
+		printf("关键字 %d 未找到!!\n", key);
 	else
 		printf("关键字 %d 在顺序表第 %d 个位置。\n", key, i);
 	printf("\n");

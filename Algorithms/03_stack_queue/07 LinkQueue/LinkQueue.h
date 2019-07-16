@@ -51,7 +51,7 @@ void DestroyQueue_L(LinkQueue *Q);
 
 Status QueueEmpty_L(LinkQueue Q);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶ÏQÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶ÏQÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 int QueueLength_L(LinkQueue Q);

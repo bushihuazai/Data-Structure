@@ -123,7 +123,7 @@ Status Algo_9_36(ThrBSTree Thrt, BSTElemType e)
 		s->lchild = NULL;
 		s->RTag = Thread;
 		
-		if(!p)									//原树为空
+		if(!p)									//原树 is empty
 		{
 			Thrt->lchild = s;			
 			s->rchild = Thrt;		
@@ -156,7 +156,7 @@ Status Algo_9_37(ThrBSTree Thrt, KeyType key)
 	{
 		parent = Thrt;								//parent指向当前访问结点的双亲结点 
 		tag = DeleteThr_9_37(&Thrt->lchild, key);
-		if(Thrt->lchild==NULL)						//线索二叉树已为空 
+		if(Thrt->lchild==NULL)						//线索二叉树已 is empty 
 			Thrt->lchild = Thrt;
 		return tag;
 	}
@@ -232,7 +232,7 @@ void DeleteNode_9_37(ThrBSTree *p)
 {
 	ThrBSTree q, s;
 	
-	if((*p)->lchild&&(*p)->RTag==Thread)		//右子树为空(没有子树) 
+	if((*p)->lchild&&(*p)->RTag==Thread)		//右子树 is empty(没有子树) 
 	{
 		q = *p;
 		*p = (*p)->lchild;
@@ -245,13 +245,13 @@ void DeleteNode_9_37(ThrBSTree *p)
 		}
 		free(q);
 	}
-	else if(!(*p)->lchild && (*p)->RTag==Link)	//左子树为空(没有子树) 
+	else if(!(*p)->lchild && (*p)->RTag==Link)	//左子树 is empty(没有子树) 
 	{
 		q = *p;
 		*p = (*p)->rchild;
 		free(q);		
 	}
-	else if(!(*p)->lchild && (*p)->RTag==Thread)//左右子树均为空(没有子树) 
+	else if(!(*p)->lchild && (*p)->RTag==Thread)//左右子树均 is empty(没有子树) 
 	{
 		q = *p;
 		
@@ -265,7 +265,7 @@ void DeleteNode_9_37(ThrBSTree *p)
 		
 		free(q);
 	} 
-	else							//左右子树均不为空(前驱替换)
+	else							//左右子树均 not empty(前驱替换)
 	{
 		q = *p;
 		s = (*p)->lchild;

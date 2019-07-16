@@ -26,7 +26,7 @@ Status StrAssign_L(LString *T, char *chars)
 	InitString_L(T);
 	
 	len = strlen(chars);
-	if(!len)								//chars为空字符时错误 
+	if(!len)								//chars is empty字符时错误 
 		return ERROR;
 
 	i = len / CHUNKSIZE;					//i为整块数 
@@ -111,7 +111,7 @@ int StrCompare_L(LString S, LString T)
 	Chunk *p = S.head;
 	Chunk *q = T.head;
 	
-	while(p && q)					//p、q均不为空
+	while(p && q)					//p、q均 not empty
 	{
 		for(i=0; i<CHUNKSIZE; i++)
 		{
@@ -525,7 +525,7 @@ void StrPrint_L(LString S)
 	Chunk *p = S.head;
 	
 	if(S.head==NULL && S.tail==NULL && S.curlen==0)
-		printf("S为空串，无法输出！");
+		printf("S is empty串，无法输出!");
 	
 	while(p)
 	{

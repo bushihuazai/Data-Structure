@@ -62,10 +62,10 @@ int main(int argc, char **argv)
 	printf("2\nFuncDestroyPolyn_Ptest...\n");		//2.FuncDestroyPolyn_Ptest
 	{
 		printf("销毁 Pa 前：");
-		(Pa.head && Pa.tail && Pa.len) ? printf(" Pa 存在！\n") : printf(" Pa 不存在！！\n");
+		(Pa.head && Pa.tail && Pa.len) ? printf(" Pa 存在!\n") : printf(" Pa 不存在!!\n");
 		DestroyPolyn_P(&Pa);
 		printf("销毁 Pa 后：");
-		(Pa.head && Pa.tail && Pa.len) ? printf(" Pa 存在！\n") : printf(" Pa 不存在！！\n");
+		(Pa.head && Pa.tail && Pa.len) ? printf(" Pa 存在!\n") : printf(" Pa 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;

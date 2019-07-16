@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		if(r==DUPLICATE)
 			printf("查找成功，%d 在哈希表下标为 %d 的位置。\n", key, p);
 		else
-			printf("查找失败！\n");
+			printf("查找失败!\n");
 		printf("\n");
 	}	
 	PressEnter; 

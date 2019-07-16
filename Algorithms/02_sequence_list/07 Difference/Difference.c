@@ -34,7 +34,7 @@ void difference(SLinkList *S, LElemType_S A[], int len_A, LElemType_S B[], int l
 		SPACE[r].cur = i;					//插入到表尾 
 		r = i;
 	}
-	SPACE[r].cur =0;						//尾结点指针为空
+	SPACE[r].cur =0;						//尾结点指针 is empty
 	
 	for(j=0; j<len_B; j++)					//录入B的元素值
 	{

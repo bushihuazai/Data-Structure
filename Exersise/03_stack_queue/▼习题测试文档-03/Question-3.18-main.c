@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 		
 	printf("判断表达式 %s 开闭括号数量是否匹配...\n", s);
 	if(Algo_3_18(s))
-		printf("表达式开闭括号数量匹配！\n");
+		printf("表达式开闭括号数量匹配!\n");
 	else
-		printf("表达式开闭括号数量不匹配！！\n");
+		printf("表达式开闭括号数量不匹配!!\n");
 
 	printf("\n");
 	

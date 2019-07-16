@@ -51,7 +51,7 @@ void Algo_4_20(SString S, SString T)
 			j = 1;
 		}
 	}
-	if(j>T[0] && T[0])						//T不为空串 
+	if(j>T[0] && T[0])						//T not empty串 
 		i = i-T[0];							//匹配成功 
 	else
 		i = 0;
@@ -77,7 +77,7 @@ void Algo_4_20(SString S, SString T)
 			}
 		}
 		
-		if(j>T[0] && T[0]!=0)				//T不为空串 
+		if(j>T[0] && T[0]!=0)				//T not empty串 
 			i = i-T[0];						//匹配成功 
 		else
 			i = 0;

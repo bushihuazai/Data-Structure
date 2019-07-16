@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	Destory(&T);
 	printf("有序表");
 	T.elem==NULL&&T.length==0 ? printf("已被") : printf("未被");
-	printf("销毁！\n");		
+	printf("销毁!\n");		
 	printf("\n");	
 	PressEnter;
 

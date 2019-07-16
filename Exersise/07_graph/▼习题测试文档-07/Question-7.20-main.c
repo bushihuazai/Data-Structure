@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	OutputMGraph(G);
 	printf("\n");
 	
-	Algo_7_20(G) ? printf("图G可传递！\n") : printf("图G不可传递！\n"); 
+	Algo_7_20(G) ? printf("图G可传递!\n") : printf("图G不可传递!\n"); 
 	printf("\n");
 			
 	return 0;

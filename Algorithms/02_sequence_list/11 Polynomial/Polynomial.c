@@ -23,7 +23,7 @@ void CreatPolyn_P(FILE *fp, Polynomial *P, int m)
 	int i;
 	Link p;
 
-	InitList_E(P);						//Initial一个扩展的单链表存放多项式 
+	InitList_E(P);						//Initial一个扩展的 SingleLinkedList 存放多项式 
 	h = GetHead_E(*P);					//获取多项式头指针 
 
 	e.coef = 0.0;

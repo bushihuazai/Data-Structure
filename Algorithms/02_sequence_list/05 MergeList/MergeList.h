@@ -4,7 +4,7 @@
  * 							        *
  * 文件名: MergeList.h              *
  * 							        *
- * 内  容: 单链表归并相关操作列表   *
+ * 内  容:  SingleLinkedList 归并相关操作列表   *
  *                                  *
  ************************************/
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>										//提供malloc、realloc、free、exit原型
 #include "../04 SinglyLinkedList/SinglyLinkedList.c"	//**02 线性表**//
 
-/* 单链表归并Func列表 */
+/*  SingleLinkedList 归并Func列表 */
 void MergeList_L(LinkList La, LinkList *Lb, LinkList *Lc);
 /*━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(01)算法2.12：C=A+B，且保持元素相对位置不变。   ┃

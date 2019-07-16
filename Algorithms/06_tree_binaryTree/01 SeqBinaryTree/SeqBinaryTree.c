@@ -117,7 +117,7 @@ Status Assign_Sq(SqBiTree T, Position s, TElemType_Sq value)
 	
 	if(value=='\0' && (T[2*i+1]!='\0' || T[2*i+2]!='\0')) 	//元素value是空值但s位序的结点有子树
 		return ERROR;
-	else if(value!='\0' && T[(i+1)/2-1]=='\0') 				//元素value不为空但s位序的结点无双亲结点
+	else if(value!='\0' && T[(i+1)/2-1]=='\0') 				//元素value not empty但s位序的结点无双亲结点
 		return ERROR;
 	else
 		T[i] = value;

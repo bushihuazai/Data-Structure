@@ -61,10 +61,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc DestroyArray test...\n");				//2.FuncDestroyArraytest
 	{
 		printf("销毁 A 前：");
-		A.dim!=0 ? printf(" A 存在！\n") : printf(" A 不存在！！\n"); 					 
+		A.dim!=0 ? printf(" A 存在!\n") : printf(" A 不存在!!\n"); 					 
 		DestroyArray(&A); 
 		printf("销毁 A 后：");
-		A.dim!=0 ? printf(" A 存在！\n") : printf(" A 不存在！！\n");
+		A.dim!=0 ? printf(" A 存在!\n") : printf(" A 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;

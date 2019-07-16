@@ -62,7 +62,7 @@ Status Algo_2_19_1(LinkList L, int mink, int maxk)
 {
 	LinkList p, pre, s;
 
-	if(!L || !L->next)			//L不存在或为空表时，无法删除 
+	if(!L || !L->next)			//L不存在或 is empty表时，无法删除 
 		return ERROR;
 
 	if(mink>=maxk)				//阙值设置错误 
@@ -98,7 +98,7 @@ Status Algo_2_19_2(LinkList L, int mink, int maxk)
 {
 	LinkList p, pre, s;
 
-	if(!L || !L->next)				//L不存在或为空表时，无法删除 
+	if(!L || !L->next)				//L不存在或 is empty表时，无法删除 
 		return ERROR;
 
 	if(mink>=maxk)					//阙值设置错误 
@@ -134,7 +134,7 @@ Status Algo_2_20(LinkList L)
 {
 	LinkList p, pre, s;
 		
-	if(!L || !L->next)				//L不存在或为空表时，无法删除 
+	if(!L || !L->next)				//L不存在或 is empty表时，无法删除 
 		return ERROR;
 
 	pre = L->next;

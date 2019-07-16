@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	OutputALGraph(G);
 	printf("\n");
 	
-	Algo_7_21(G) ? printf("图G可传递！\n") : printf("图G不可传递！\n"); 
+	Algo_7_21(G) ? printf("图G可传递!\n") : printf("图G不可传递!\n"); 
 	printf("\n");
 			
 	return 0;

@@ -69,7 +69,7 @@ void OpenForDay();
 
 Status MoreEvent();
 /*━━━━━━━━━━━━┓
-┃(03)判断事件表是否为空。┃
+┃(03)判断事件表是否 is empty。┃
 ┗━━━━━━━━━━━━*/
 
 void EventDrived(char *event);

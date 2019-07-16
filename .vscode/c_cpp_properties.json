@@ -12,7 +12,9 @@
                 "_UNICODE"
             ],
             "cStandard": "c11",
-            "intelliSenseMode": "msvc-x64"
+            "intelliSenseMode": "${default}",
+            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "cppStandard": "c++17"
         }
     ],
     "version": 4

@@ -39,7 +39,7 @@ Status MazePath(MazeType maze[][N], PosType start, PosType end)
 
 			if(EqualPosType(curPos, end))	//到达终点
 			{
-				printf("\n寻路成功！！\n\n");
+				printf("\n寻路成功!!\n\n");
 				return TRUE;	
 			}
 			
@@ -73,7 +73,7 @@ Status MazePath(MazeType maze[][N], PosType start, PosType end)
 		}		
 	}while(!StackEmpty_Sq(S));	
 	
-	printf("\n寻路失败！！\n\n");
+	printf("\n寻路失败!!\n\n");
 	
 	return FALSE;	
 }

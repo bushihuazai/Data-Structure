@@ -58,7 +58,7 @@ void DestroyBiTree(BiTree *T);
 
 Status BiTreeEmpty(BiTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(04)ÅÐ¶Ï¶þ²æÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 Status CreateBiTree(FILE *fp, BiTree *T);

@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	
 	printf("4\nFunc StackEmpty test...\n");			//4.FuncStackEmptytest
 	{
-		StackEmpty_Sq(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StackEmpty_Sq(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -82,10 +82,10 @@ int main(int argc, char **argv)
 	printf("3\nFunc ClearStack test...\n");			//3.FuncClearStacktest
 	{
 		printf("清空 S 前：");
-		StackEmpty_Sq(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StackEmpty_Sq(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		ClearStack_Sq(&S);
 		printf("清空 S 后：");
-		StackEmpty_Sq(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StackEmpty_Sq(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -93,10 +93,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc DestroyStack test...\n");			//2.FuncDestroyStacktest
 	{
 		printf("销毁 S 前：");
-		S.base!=NULL && S.top!=NULL ? printf(" S 存在！\n") : printf(" S 不存在！！\n");
+		S.base!=NULL && S.top!=NULL ? printf(" S 存在!\n") : printf(" S 不存在!!\n");
 		DestroyStack_Sq(&S);
 		printf("销毁 S 后：");
-		S.base!=NULL && S.top!=NULL ? printf(" S 存在！\n") : printf(" S 不存在！！\n");
+		S.base!=NULL && S.top!=NULL ? printf(" S 存在!\n") : printf(" S 不存在!!\n");
 		printf("\n");
 	}
 	PressEnter;

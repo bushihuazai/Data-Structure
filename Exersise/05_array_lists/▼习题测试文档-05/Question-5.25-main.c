@@ -57,7 +57,7 @@ Status Algo_5_25(Matrix P, Matrix Q, Matrix *R)		//舍弃0号单元
 	
 	if(P.mu!=Q.mu || P.nu!=Q.nu)
 	{
-		printf("两矩阵不能相加！");
+		printf("两矩阵不能相加!");
 		return ERROR;
 	}
 	

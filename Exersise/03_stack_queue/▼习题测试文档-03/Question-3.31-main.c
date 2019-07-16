@@ -12,15 +12,15 @@ int main(int argc, char *argv[])
 	char *b = "ababab@";
 	
 	if(Algo_3_31(a))
-		printf("%s（不包括@）是回文序列！\n", a);
+		printf("%s（不包括@）是回文序列!\n", a);
 	else
-		printf("%s（不包括@）不是回文序列！！\n", a);
+		printf("%s（不包括@）不是回文序列!!\n", a);
 	printf("\n");
 	
 	if(Algo_3_31(b))
-		printf("%s（不包括@）是回文序列！\n", b);
+		printf("%s（不包括@）是回文序列!\n", b);
 	else
-		printf("%s（不包括@）不是回文序列！！\n", b);
+		printf("%s（不包括@）不是回文序列!!\n", b);
 	printf("\n");
 
 	return 0;

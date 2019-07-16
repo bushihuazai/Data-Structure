@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 				if(Algo_6_41(T, &e, &order, k))
 					printf("先序序列中第 %d 个元素为 %c \n", k, e);		
 				else
-					printf("此处元素不存在！\n");
+					printf("此处元素不存在!\n");
 				printf("\n");		
 			}
 		}
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 		printf("███ 题 6.49 验证... ███\n");
 		printf("此二叉树");
 		Algo_6_49(T) ? printf("是") : printf("不是");
-		printf("完全二叉树！\n");	
+		printf("完全二叉树!\n");	
 	}
 			
 	printf("\n");

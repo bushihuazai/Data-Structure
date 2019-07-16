@@ -590,7 +590,7 @@ void Print_CS(CSTree T)
 		}			
 	}
 	else
-		printf("空树无法打印！！\n");
+		printf("空树无法打印!!\n");
 }
 
 #endif

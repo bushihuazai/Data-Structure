@@ -26,7 +26,7 @@ typedef struct
 /* 堆串Func列表 */
 void InitString_H(HString *S);
 /*━━━━━━━━━━┓
-┃(01)InitialS为空串。 ┃
+┃(01)InitialS is empty串。 ┃
 ┗━━━━━━━━━━*/
 
 Status StrAssign_H(HString *T, char *chars);
@@ -41,7 +41,7 @@ Status StrCopy_H(HString *T, HString S);
  
 Status StrEmpty_H(HString S);
 /*━━━━━━━━━━━━━━━━━━━━┓
-┃(04)若S为空串，返回TRUE,否则返回FALSE。 ┃
+┃(04)若S is empty串，返回TRUE,否则返回FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
 Status StrCompare_H(HString S, HString T); 

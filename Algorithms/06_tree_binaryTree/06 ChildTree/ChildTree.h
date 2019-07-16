@@ -65,7 +65,7 @@ void DestroyTree_C(CTree *T);
 
 Status TreeEmpty_C(CTree T);
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§(05)ÅÐ¶ÏÊ÷TÊÇ·ñÎª¿Õ¡£ ©§
+©§(05)ÅÐ¶ÏÊ÷TÊÇ·ñ is empty¡£ ©§
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 
 Status CreateTree_C(FILE *fp, CTree *T); 

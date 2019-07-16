@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 
 	p = Algo_9_29(&CL, key);
 	if(p)
-		printf("关键字 %d 查找成功！\n", p->elem);
+		printf("关键字 %d 查找成功!\n", p->elem);
 	else
-		printf("查找失败！！\n");
+		printf("查找失败!!\n");
 	printf("\n");
 	
 	return 0;

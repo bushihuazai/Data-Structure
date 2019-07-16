@@ -45,7 +45,7 @@ Status Algo_7_22(ALGraph G, int i, int j)
 	
 	if(i==j)
 	{
-		printf("参数错误！\n");
+		printf("参数错误!\n");
 		return ERROR;
 	}
 	
@@ -59,12 +59,12 @@ Status Algo_7_22(ALGraph G, int i, int j)
 	
 	if(tag)
 	{
-		printf("%c 到 %c 之间有通路！\n", G.vertices[i].data, G.vertices[j].data);
+		printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
 		return TRUE;
 	}
 	else
 	{
-		printf("%c 到 %c 之间无通路！！\n", G.vertices[i].data, G.vertices[j].data);
+		printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
 		return ERROR;
 	}
 } 
@@ -79,7 +79,7 @@ Status Algo_7_23(ALGraph G, int i, int j)
 	
 	if(i==j)
 	{
-		printf("参数错误！\n");
+		printf("参数错误!\n");
 		return ERROR;
 	}
 	
@@ -93,12 +93,12 @@ Status Algo_7_23(ALGraph G, int i, int j)
 	
 	if(tag)
 	{
-		printf("%c 到 %c 之间有通路！\n", G.vertices[i].data, G.vertices[j].data);
+		printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
 		return TRUE;
 	}
 	else
 	{
-		printf("%c 到 %c 之间无通路！！\n", G.vertices[i].data, G.vertices[j].data);
+		printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
 		return ERROR;
 	}
 }

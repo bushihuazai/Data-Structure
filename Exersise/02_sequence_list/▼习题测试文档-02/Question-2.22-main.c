@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	ListTraverse_L(L, PrintElem); 		//输出L
 	printf("\n\n");	
 	
-	printf("逆置单链表...\n"); 
+	printf("逆置 SingleLinkedList ...\n"); 
 	Algo_2_22(L);
 	printf("此时L = ");
 	ListTraverse_L(L, PrintElem); 		//输出L
@@ -33,13 +33,13 @@ int main(int argc, char *argv[])
 }
 
 /*━━━━━━━━━┓
-┃题2.22：单链表逆置┃
+┃题2.22： SingleLinkedList 逆置┃
 ┗━━━━━━━━━*/
 Status Algo_2_22(LinkList L)
 {
 	LinkList pre, p; 
 	
-	if(!L || !L->next)				//链表不存在或链表为空 
+	if(!L || !L->next)				//链表不存在或链表 is empty 
 		return ERROR;
 
 	p = L->next;

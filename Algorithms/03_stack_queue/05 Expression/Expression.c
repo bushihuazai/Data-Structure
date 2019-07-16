@@ -115,7 +115,7 @@ OperatorType Precede(OperatorType o1, OperatorType o2)
 		case '(': 
 			if(o1==')')
 			{
-				printf("À¨ºÅÆ¥Åä´íÎó£¡\n");
+				printf("À¨ºÅÆ¥Åä´íÎó!\n");
 				exit(ERROR);
 			}
 			else
@@ -129,7 +129,7 @@ OperatorType Precede(OperatorType o1, OperatorType o2)
 					f = '=';
 					break;
 				case '#':
-					printf("ÊäÈëÁË´íÎóµÄÀ¨ºÅ£¡\n");
+					printf("ÊäÈëÁË´íÎóµÄÀ¨ºÅ!\n");
 					exit(ERROR);
 				default:
 					f = '>';
@@ -143,7 +143,7 @@ OperatorType Precede(OperatorType o1, OperatorType o2)
 					f = '=';
 					break;
 				case '(': 
-					printf("±í´ïÊ½ÖÐÓÐ¶àÓàÀ¨ºÅ£¡\n");
+					printf("±í´ïÊ½ÖÐÓÐ¶àÓàÀ¨ºÅ!\n");
      				exit(ERROR);
 				default:
 					f = '>';

@@ -20,7 +20,7 @@ typedef struct
 /* Func原型 */
 char* Algo_3_23(char *c);
 Status InitStack(SqStack *S);			//Initial栈
-Status StackEmpty(SqStack S);			//判断栈是否为空 
+Status StackEmpty(SqStack S);			//判断栈是否 is empty 
 Status Push(SqStack *S, SElemType_Sq e);//入栈
 Status Pop(SqStack *S, SElemType_Sq *e);//出栈 
 char* CharToStr(char c);				//字符转换为字符串 

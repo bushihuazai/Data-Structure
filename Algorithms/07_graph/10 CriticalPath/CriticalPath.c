@@ -55,7 +55,7 @@ Status TopologicalOrder(ALGraph G, SqStack *T)
 	
 	if(count<G.vexnum)
 	{
-		printf("该有向图有回路！！\n");
+		printf("该有向图有回路!!\n");
 		return ERROR;	
 	}
 	else

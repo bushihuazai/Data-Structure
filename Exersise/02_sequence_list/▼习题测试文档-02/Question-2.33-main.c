@@ -15,12 +15,12 @@ typedef LNode* LinkList;				//指向结构的指针
 /* Func原型 */
 Status Algo_2_33(LinkList L, LinkList L_char, LinkList L_num, LinkList L_other);
 Status InitList_2_33(LinkList *L);
-	//单链表Initial 
+	// SingleLinkedList Initial 
 Status CreatList_2_33(LinkList L, int n, LElemType_L Data[]);
 Status InitList_CL_2_33(LinkList *L);
 	//单循环链表Initial
 void Output_2_33(LinkList L);
-	//输出单链表
+	//输出 SingleLinkedList 
 void Output_CL_2_33(LinkList L);
 	//输出单循环链表
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	Output_2_33(L);
 	printf("\n\n");	
 	
-	printf("拆分单链表之后...\n");
+	printf("拆分 SingleLinkedList 之后...\n");
 	InitList_CL_2_33(&L_char);
 	InitList_CL_2_33(&L_num);
 	InitList_CL_2_33(&L_other);
@@ -101,7 +101,7 @@ Status Algo_2_33(LinkList L, LinkList L_char, LinkList L_num, LinkList L_other)
 	return OK;
 }
 
-Status InitList_2_33(LinkList *L)				//单链表Initial 
+Status InitList_2_33(LinkList *L)				// SingleLinkedList Initial 
 {
 	*L = (LinkList)malloc(sizeof(LNode));		
 	if(!(*L))
@@ -146,7 +146,7 @@ Status InitList_CL_2_33(LinkList *L)			//单循环链表Initial
 	return OK;
 }
 
-void Output_2_33(LinkList L)					//输出单链表 
+void Output_2_33(LinkList L)					//输出 SingleLinkedList  
 {
 	LinkList p;
 	

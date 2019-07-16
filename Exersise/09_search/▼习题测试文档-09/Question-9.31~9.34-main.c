@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		Algo_9_31(BST, &pre, &flag);
 		printf("此树"); 
 		flag ? printf("是") : printf("不是");
-		printf("二叉排序树！\n");
+		printf("二叉排序树!\n");
 		printf("\n"); 
 	}
 		

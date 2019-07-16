@@ -75,7 +75,7 @@ Status InsertBST(BSTree *BST, BSTElemType e)
 		s->data = e;
 		s->lchild = s->rchild = NULL;
 		
-		if(!p)									//Ô­Ê÷Îª¿Õ 
+		if(!p)									//Ô­Ê÷ is empty 
 			*BST = s;
 		else if(LT(e.key, p->data.key))
 			p->lchild = s;

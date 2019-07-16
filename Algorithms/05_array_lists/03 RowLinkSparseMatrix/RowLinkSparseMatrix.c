@@ -108,7 +108,7 @@ Status AddSMatri_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相加！！\n");
+		printf("两矩阵不能相加!!\n");
 		return ERROR;	
 	}
 	
@@ -211,7 +211,7 @@ Status SubSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相减！！\n");
+		printf("两矩阵不能相减!!\n");
 		return ERROR;	
 	}
 	
@@ -324,7 +324,7 @@ Status MultSMatrix_RL(RLSMatrix M, RLSMatrix N, RLSMatrix *Q)
 	
 	if(M.nu!=N.mu)										//M列数等于N行数 
 	{
-		printf("两矩阵不能相乘！！\n");
+		printf("两矩阵不能相乘!!\n");
 		return ERROR;	
 	}
 	

@@ -59,7 +59,7 @@ Status Algo_6_53(BiTree T, int way[100])
 			i++;
 		}
 		
-		if(node[i].rchild)						//左子树为空时，遍历右子树 
+		if(node[i].rchild)						//左子树 is empty时，遍历右子树 
 		{
 			node[i+1] = *(node[i].rchild);
 			node[i].rchild = NULL;

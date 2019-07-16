@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	
 	printf("3\nFunc StrEmpty_Sq test...\n");		//3.FuncStrEmpty_Sqtest
 	{
-		StrEmpty_Sq(Tmp) ? printf(" Tmp 为空！！\n") : printf(" Tmp 不为空！\n");
+		StrEmpty_Sq(Tmp) ? printf(" Tmp  is empty!!\n") : printf(" Tmp  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 	{
 		printf("比较字符串 Tmp 、 S ...\n");
 		i = StrCompare_Sq(Tmp, S);
-		i==0 ? printf("Tmp==S！！\n") : (i<0 ? printf("Tmp<S！！\n") : printf("Tmp>S！！\n"));
+		i==0 ? printf("Tmp==S!!\n") : (i<0 ? printf("Tmp<S!!\n") : printf("Tmp>S!!\n"));
 		printf("\n");
 	}
 	PressEnter;
@@ -123,10 +123,10 @@ int main(int argc, char **argv)
 	printf("6\nFunc ClearString_Sq test...\n");		//6.FuncClearString_Sqtest
 	{
 		printf("清空 S 前：");
-		StrEmpty_Sq(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StrEmpty_Sq(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		ClearString_Sq(S);
 		printf("清空 S 后：");
-		StrEmpty_Sq(S) ? printf(" S 为空！！\n") : printf(" S 不为空！\n");
+		StrEmpty_Sq(S) ? printf(" S  is empty!!\n") : printf(" S  not empty!\n");
 		printf("\n");
 	}
 	PressEnter;

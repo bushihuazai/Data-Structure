@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	
 	printf("4\nFunc QueueEmpty_L test...\n");	//4.FuncQueueEmpty_Ltest
 	{
-		QueueEmpty_L(Q) ? printf(" Q 为空！！\n") : printf(" Q 不为空！\n");
+		QueueEmpty_L(Q) ? printf(" Q  is empty!!\n") : printf(" Q  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -81,10 +81,10 @@ int main(int argc, char **argv)
 	printf("3\nFunc ClearQueue_L test...\n");	//3.FuncClearQueue_Ltest
 	{
 		printf("清空 Q 前：");
-		QueueEmpty_L(Q) ? printf(" Q 为空！！\n") : printf(" Q 不为空！\n");
+		QueueEmpty_L(Q) ? printf(" Q  is empty!!\n") : printf(" Q  not empty!\n");
 		ClearQueue_L(&Q);
 		printf("清空 Q 后：");
-		QueueEmpty_L(Q) ? printf(" Q 为空！！\n") : printf(" Q 不为空！\n");
+		QueueEmpty_L(Q) ? printf(" Q  is empty!!\n") : printf(" Q  not empty!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -92,10 +92,10 @@ int main(int argc, char **argv)
 	printf("2\nFunc DestroyQueue_L test...\n");	//2.FuncDestroyQueue_Ltest
 	{
 		printf("销毁 Q 前：");
-		Q.front!=NULL && Q.rear!=NULL ? printf(" Q 存在！\n") : printf(" Q 不存在！！\n");
+		Q.front!=NULL && Q.rear!=NULL ? printf(" Q 存在!\n") : printf(" Q 不存在!!\n");
 		DestroyQueue_L(&Q);
 		printf("销毁 Q 后：");
-		Q.front!=NULL && Q.rear!=NULL ? printf(" Q 存在！\n") : printf(" Q 不存在！！\n");
+		Q.front!=NULL && Q.rear!=NULL ? printf(" Q 存在!\n") : printf(" Q 不存在!!\n");
 		printf("\n");
 	} 
 	PressEnter;

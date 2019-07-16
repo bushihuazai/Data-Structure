@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		int tag;
 		
 		tag = GListEmpty_GL_H_T(Tmp);
-		tag ? printf(" Tmp 为空！\n") : printf(" Tmp 不为空！！\n");
+		tag ? printf(" Tmp  is empty!\n") : printf(" Tmp  not empty!!\n");
 		printf("\n");
 	} 
 	PressEnter;
@@ -140,10 +140,10 @@ int main(int argc, char **argv)
 	printf("4\nFunc ClearGList_GL_H_T test...\n");			//4.FuncClearGList_GL_H_Ttest
 	{
 		printf("销毁 G 前：");
-		G ? printf(" G 存在！\n") : printf(" G 不存在！！\n");
+		G ? printf(" G 存在!\n") : printf(" G 不存在!!\n");
 		ClearGList_GL_H_T(&G);
 		printf("销毁 G 后：");
-		G ? printf(" G 存在！\n") : printf(" G 不存在！！\n");
+		G ? printf(" G 存在!\n") : printf(" G 不存在!!\n");
 		printf("\n");
 	}
 	PressEnter;

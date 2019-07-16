@@ -50,7 +50,7 @@ Space AllocBoundTag(Space *pav, int n)	//请求分配n个字
 		if(p->size-n<=E)				//整块分配，忽略<=E的剩余量
 		{
 			if(*pav==p)					//只有一个块 
-				*pav = NULL;			//被占用后可利用表变为空表 
+				*pav = NULL;			//被占用后可利用表变 is empty表 
 			else						//在表中删除分配的结点 
 			{
 				(*pav)->Ptr.llink = p->Ptr.llink; 
@@ -85,15 +85,15 @@ void Reclaim_a(Space *pav, Space *p)
 	l = (*p - 1)->tag;								//l，r为指示释放块的左右邻块是否空闲 
 	r = (*p + (*p)->size)->tag;
 		
-	if(!(*pav))										//可利用空间表为空 
+	if(!(*pav))										//可利用空间表 is empty 
 	{
 		*pav = (*p)->Ptr.llink = (*p)->rlink = *p;	//修改空闲表指针 
 		(*p)->tag = (FootLoc(*p))->tag = 0;			//修改头尾标志 
 		(FootLoc(*p))->Ptr.uplink = *p;				//修改尾部域 
 	}
-	else											//可利用空间表不为空 
+	else											//可利用空间表 not empty 
 	{
-		if(l && r)									//左右邻区均不为空 
+		if(l && r)									//左右邻区均 not empty 
 		{
 			(*p)->tag = 0;
 			(FootLoc(*p))->Ptr.uplink = *p;
@@ -105,14 +105,14 @@ void Reclaim_a(Space *pav, Space *p)
 			q->rlink = (*pav)->Ptr.llink = *p;
 			*pav = *p;								//令刚释放的结点为下次分配时的最先查询的结点 
 		}
-		else if(!l && r)							//左邻区为空，右邻区不为空 
+		else if(!l && r)							//左邻区 is empty，右邻区 not empty 
 		{
 			s = (*p - 1)->Ptr.uplink;				//s指向左邻区（空闲时）的首地址
 			s->size += (*p)->size;					//设置新空闲块大小 
 			(FootLoc(*p))->Ptr.uplink = s;			//设置新的空闲块底部 
 			(FootLoc(*p))->tag = 0;			
 		}
-		else if(l && !r)							//左邻区不为空，右邻区为空 
+		else if(l && !r)							//左邻区 not empty，右邻区 is empty 
 		{
 			t = *p + (*p)->size;					//t指向右邻区（空闲时）的首地址
 			(*p)->tag = 0;							//p为合并后的结点头部地址 
@@ -131,7 +131,7 @@ void Reclaim_a(Space *pav, Space *p)
 			if(*pav==t)
 				*pav = s;
 		}
-		else										//左右邻区均为空 
+		else										//左右邻区均 is empty 
 		{
 			s = (*p - 1)->Ptr.uplink;				//s指向左邻区（空闲时）的首地址
 			t = *p + (*p)->size;					//t指向右邻区（空闲时）的首地址

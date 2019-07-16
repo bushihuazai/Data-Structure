@@ -31,7 +31,7 @@ void Trial_CB(int i, ChessBoard c[N][N])
 	
 	if(N<=3)
 	{
-		printf("此N值下无解！！\n");
+		printf("此N值下无解!!\n");
 		return;	
 	} 
 

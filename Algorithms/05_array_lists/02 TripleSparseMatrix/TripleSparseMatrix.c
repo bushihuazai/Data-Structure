@@ -78,7 +78,7 @@ Status AddSMatri_T(TSMatrix M, TSMatrix N, TSMatrix *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相加！！\n");
+		printf("两矩阵不能相加!!\n");
 		return ERROR;	
 	}
 	
@@ -159,7 +159,7 @@ Status SubSMatrix_T(TSMatrix M, TSMatrix N, TSMatrix *Q)
 	
 	if(M.mu!=N.mu || M.nu!=N.nu)
 	{
-		printf("两矩阵不能相减！！\n");
+		printf("两矩阵不能相减!!\n");
 		return ERROR;	
 	}
 	
@@ -247,7 +247,7 @@ Status MultSMatrix_T(TSMatrix M, TSMatrix N, TSMatrix *Q)
 	
 	if(M.nu!=N.mu)							//M列数等于N行数 
 	{
-		printf("两矩阵不能相乘！！\n");
+		printf("两矩阵不能相乘!!\n");
 		return ERROR;	
 	}
 	

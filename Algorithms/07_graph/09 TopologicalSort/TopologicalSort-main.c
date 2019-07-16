@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	
 		printf("对有向图进行拓扑排序...\n");
 		if(!TopologicalSort(G, Topo))
-			printf("该有向图有回路！！\n");	
+			printf("该有向图有回路!!\n");	
 		else
 		{
 			printf("该有向图的拓扑序列为：");

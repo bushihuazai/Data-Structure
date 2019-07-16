@@ -100,7 +100,7 @@ void Algo_6_38(BiTree T)
 			p = p->lchild;
 		}
 			
-		while(!p && !StackEmpty_Sq(S))			//p为空但栈不为空 
+		while(!p && !StackEmpty_Sq(S))			//p is empty但栈 not empty 
 		{
 			GetTop_Sq(S, &p);
 			

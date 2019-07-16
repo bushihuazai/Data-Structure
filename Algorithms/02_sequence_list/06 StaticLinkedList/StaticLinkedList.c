@@ -291,7 +291,7 @@ Status ListTraverse_SL(SLinkList H, void(Visit)(LElemType_S))
 	int p;
 	
 	if(!H)
-		return ERROR;					//静态链表不存在或为空
+		return ERROR;					//静态链表不存在或 is empty
 		
 	p = SPACE[H].cur;
 	

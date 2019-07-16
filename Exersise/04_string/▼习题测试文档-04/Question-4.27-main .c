@@ -53,7 +53,7 @@ int Algo_4_27(SString S, SString T, int pos)
 		}
 	}
 	
-	if(j>T[0] && T[0])											//T不为空串 
+	if(j>T[0] && T[0])											//T not empty串 
 		return i-T[0];											//匹配成功 
 	else
 		return 0;	 

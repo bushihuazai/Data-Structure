@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	Output_GL_H_T(B, Head);	
 	printf("\n\n");	
 	
-	Algo_5_32_1(A, B) ? printf("两广义表相等！\n") : printf("两广义表不相等！！\n");
+	Algo_5_32_1(A, B) ? printf("两广义表相等!\n") : printf("两广义表不相等!!\n");
 	printf("\n");
 		
 	return 0;
@@ -38,7 +38,7 @@ Status Algo_5_32_1(GList A, GList B)
 	if(!A && !B)							//两个空表相等 
 		return OK;
 	
-	if(A && B)								//两个表均不为空
+	if(A && B)								//两个表均 not empty
 	{
 		if(A->tag==B->tag)					//元素类型相同
 		{

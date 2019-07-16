@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	printf("███ 题 9.26 验证... ███\n");	
 	i = Algo_9_26(T, key, 1, T.length);
 	if(!i)
-		printf("关键字 %d 未找到！！\n", key);
+		printf("关键字 %d 未找到!!\n", key);
 	else
 		printf("关键字 %d 在第 %d 个位置。\n", key, i);
 	printf("\n");

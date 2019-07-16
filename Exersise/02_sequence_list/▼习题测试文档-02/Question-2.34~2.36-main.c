@@ -113,7 +113,7 @@ Status Create_XorL(Xor L, int n, XElemType Data[])
 		if(i==1)					//左指针（创建首结点时设立） 
 			L->Left = pre_r;
  			
-		if(pre_m)					//pre_m不为空时执行,从创立第二个结点时执行 
+		if(pre_m)					//pre_m not empty时执行,从创立第二个结点时执行 
 			pre_m->LRPtr = XorP_XorL(pre_l, pre_r);				
 
 		L->Right = pre_r;			//右指针					
@@ -135,7 +135,7 @@ XorPointer Prior_Next_Ptr_XorL(Xor L, XorPointer cur, int mark)
 	if(mark!=1 && mark!=0)
 		return NULL;
 	
-	if(!L || !L->Left || !cur)					//链表不存在或链表为空或cur为空则无法求地址
+	if(!L || !L->Left || !cur)					//链表不存在或链表 is empty或cur is empty则无法求地址
 		return NULL;
 
 	if(mark==1)									//求后继，从左向右 
@@ -206,7 +206,7 @@ XorPointer GetElemPtr_XorL(Xor L, int i)	//i为元素位序
 	int count;
 	XorPointer p, pre, psuc;
 
-	if(!L || !L->Left)						//链表不存在或链表为空无法求地址 
+	if(!L || !L->Left)						//链表不存在或链表 is empty无法求地址 
 		return ERROR;
 
 	if(i<1)
@@ -238,7 +238,7 @@ Status Algo_2_34_1(Xor L, int mark)
 	if(mark!=1 && mark!=0)
 		return ERROR;
 		
-	if(!L || !L->Left)				//链表不存在或链表为空则无法输出 
+	if(!L || !L->Left)				//链表不存在或链表 is empty则无法输出 
 		return ERROR;
 		
 	if(mark==0)
@@ -275,7 +275,7 @@ Status Algo_2_34_2(Xor L, int mark)		//i等于0代表从左向右输出，1代表从右向左输出
 	if(mark!=1 && mark!=0)
 		return ERROR;
 		
-	if(!L && !L->Left)					//链表不存在或链表为空则无法输出 
+	if(!L && !L->Left)					//链表不存在或链表 is empty则无法输出 
 		return ERROR;
 
 	if(mark==0)							//从左向右
@@ -283,7 +283,7 @@ Status Algo_2_34_2(Xor L, int mark)		//i等于0代表从左向右输出，1代表从右向左输出
 		p_l = NULL;
 		p_m = L->Left;
 		
-		while(p_m)						//p_m为空时说明已输出完毕 
+		while(p_m)						//p_m is empty时说明已输出完毕 
 		{
 			printf("%c ",p_m->data);
 			p_r = XorP_XorL(p_l, p_m->LRPtr);//计算右侧第一个结点地址
@@ -333,7 +333,7 @@ Status Algo_2_35(Xor L, int i, XElemType e)
 	
 	if(!i_cur)									//第i个结点不存在 
 	{
-		if(!i_pre)								//链表为空，插入为首结点						
+		if(!i_pre)								//链表 is empty，插入为首结点						
 		{
 			s->LRPtr = NULL;
 			L->Left =s;

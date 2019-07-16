@@ -2,7 +2,7 @@
  *						            *
  * 文件夹: 02 线性表\05 MergeList *
  * 						            *
- * 内  容: 单链表归并相关Functest   *
+ * 内  容:  SingleLinkedList 归并相关Functest   *
  *                                  *
  ************************************/
 

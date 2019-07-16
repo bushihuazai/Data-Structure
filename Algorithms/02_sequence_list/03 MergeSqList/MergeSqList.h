@@ -1,6 +1,6 @@
 /**************************************
  *                                    *
- * 文件夹: 02 线性表\03 MergeSqList *
+ * 文件夹: 02_sequence_list\03 MergeSqList *
  *                                    *
  * 文件名: MergeSqList.h              *
  *                                    *
@@ -12,7 +12,7 @@
 #define MERGESQLIST_H
 
 #include <stdlib.h>
-#include "../01 SequenceList/SequenceList.c"		//**02 线性表**//
+#include "../01 SequenceList/SequenceList.c"		//**02_sequence_list**//
 
 /* 顺序表归并Func列表 */
 void MergeSqList_1(SqList La, SqList Lb, SqList *Lc);

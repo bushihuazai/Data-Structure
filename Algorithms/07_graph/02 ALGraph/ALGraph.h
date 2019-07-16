@@ -1,6 +1,6 @@
 /************************************
  *					                *
- * 文件夹: 07 图\02 ALGraph       *
+ * 文件夹: 07_graph\02 ALGraph       *
  * 					                *
  * 文件名: ALGraph.h                *
  *    	    		                *
@@ -16,51 +16,47 @@
 #include <stdarg.h>											//提供宏va_list、va_start、va_arg、va_end
 #include "../../01_abstract/Status.h"							//**01_abstract**//
 #include "../../01_abstract/Scanf.c"							//**01_abstract**//
-#include "../../03 栈和队列/07 LinkQueue/LinkQueue.c" 	//**03 栈和队列**//
+#include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" 	//**03_stack_queue**//
 
 /* 宏定义 */
 #define MAX_VERTEX_NUM 20						//最大顶点个数 
 
 /* 图的类型定义 */
-typedef enum{ DG, UDG }GraphKind;				//0-有向图，1-无向图
-typedef struct
-{
+typedef enum { DG, UDG } GraphKind;				//0-有向图，1-无向图
+typedef struct {
 	int in;
-}InfoType;
+} InfoType;
 
 /* 表结点 */
-typedef struct ArcNode
-{
-	int adjvex;							//顶点序号 
-	struct ArcNode *nextarc;			//指向下一条弧的指针 
+typedef struct ArcNode {
+	int adjvex;							//顶点序号
+	struct ArcNode *nextarc;			//指向下一条弧的指针
 	InfoType info;						//该弧相关信息
-}ArcNode;
+} ArcNode;
 
 /* 头结点 */
-typedef char VertexType_AL;				//图顶点类型 
-typedef struct VNode
-{
+typedef char VertexType_AL;				//图顶点类型
+typedef struct VNode {
 	VertexType_AL data;					//顶点信息
 	ArcNode *firstarc;
-}VNode;
-typedef VNode AdjList[MAX_VERTEX_NUM+1];
+} VNode;
+typedef VNode AdjList[MAX_VERTEX_NUM + 1];
 
 /* 图（邻接表）的存储表示 */
-typedef struct
-{
+typedef struct {
 	AdjList vertices;					//邻接表
 	int vexnum,	arcnum;					//图的当前顶点数和弧数
-	int IncInfo;						//IncInfo为0则各弧不含其它信息 
-	GraphKind kind;						//图的种类标志 
-}ALGraph;
+	int IncInfo;						//IncInfo为0则各弧不含其它信息
+	GraphKind kind;						//图的种类标志
+} ALGraph;
 
 /* 全局变量 */
-Status visited[MAX_VERTEX_NUM+1];		//标志数组
-void (*VisitFunc)(VertexType_AL e);		//Func指针变量 
+Status visited[MAX_VERTEX_NUM + 1];		//标志数组
+void (*VisitFunc)(VertexType_AL e);		//Func指针变量
 
 /* 图（邻接表）Func列表 */
 Status CreateGraph_AL(FILE *fp, ALGraph *G);
-/*━━━━━━┓ 
+/*━━━━━━┓
 ┃(01)创建图。┃
 ┗━━━━━━*/
 

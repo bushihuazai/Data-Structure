@@ -1,6 +1,6 @@
 /************************************
  *                                  *
- * 文件夹: 09 查找                *
+ * 文件夹: 09_search                *
  *                                  *
  * 文件名: FibonacciSearch.h        *
  *                                  *
@@ -11,15 +11,15 @@
 #ifndef FIBONACCISEARCH_H
 #define FIBONACCISEARCH_H
 
-#include "../00 Base/Base.c" 		//**09 查找**//
+#include "../00 Base/Base.c" 		//**09_search**//
 
 /* 宏定义 */
 #define MaxSize 12					//根据Max的值定出来的斐波那契数列项数			
- 
+
 /* 斐波那契查找Func列表 */
 int Search_Fib(Table T, KeyType key);
 /*━━━━━━━━━━━━━━━━━━┓
 ┃(01)斐波那契法查找关键字key的位置。 ┃
 ┗━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

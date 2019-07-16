@@ -1,6 +1,6 @@
 /****************************************************
  *						                            *
- * 文件夹: 05 数组和广义表\05 GeneralizedList-H&T *
+ * 文件夹: 05_array_lists\05 GeneralizedList-H&T *
  * 						                            *
  * 文件名: GeneralizedList-H-T.h                    *
  * 						                            *
@@ -17,25 +17,24 @@
 #include "../../04 串/01 SequenceString/SequenceString.c"	//**04 串**//
 
 /* 广义表（头尾链表存储表示）类型定义 */
-typedef enum{ Head, Tail }Mark;
-typedef enum{ Atom, List }ElemTag;			//Atom==0：原子结点，List==1：表结点
+typedef enum { Head, Tail } Mark;
+typedef enum { Atom, List } ElemTag;			//Atom==0：原子结点，List==1：表结点
 typedef char AtomType;						//原子类型
-typedef struct GLNode
-{
-	union{ int mark; };						//匿名联合，仅在第8章广义表遍历算法中使用 
-	
-	ElemTag tag;							//公共部分，用于区分原子结点和表结点 
-	union									//原子结点和表结点的联合部分 
-	{
-		AtomType atom;						//atom是原子结点的值域，AtomType由用户定义 
-		struct
-		{
+typedef struct GLNode {
+	union {
+		int mark;
+	};						//匿名联合，仅在第8章广义表遍历算法中使用
+
+	ElemTag tag;							//公共部分，用于区分原子结点和表结点
+	union {								//原子结点和表结点的联合部分
+		AtomType atom;						//atom是原子结点的值域，AtomType由用户定义
+		struct {
 			struct GLNode *hp;				//指向表头
-			struct GLNode *tp;				//指向表尾 
-		}ptr;								//表结点的指针域 
-	}Union;
-}GLNode;
-typedef GLNode* GList;						//广义表类型 
+			struct GLNode *tp;				//指向表尾
+		} ptr;								//表结点的指针域
+	} Union;
+} GLNode;
+typedef GLNode *GList;						//广义表类型
 
 /* 广义表（头尾链表存储）Func列表 */
 /* ★每一层去掉括号考察★ */

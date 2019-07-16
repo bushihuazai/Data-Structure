@@ -1,6 +1,6 @@
 /**************************************
  *                                    *
- * 文件夹: 10 内部排序              *
+ * 文件夹: 10_internal_sort              *
  *                                    *
  * 文件名: AddressSort.h              *
  *                                    *
@@ -12,7 +12,7 @@
 #define ADDRESSSORT_H
 
 #include <limits.h>
-#include "../00 SequenceListType/SequenceListType.c"	//**10 内部排序**//
+#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
 
 /* 顺序表地址排序Func列表 */
 void AddressSort(SqList_sort *L);
@@ -25,4 +25,4 @@ void Rearrange(SqList_sort *L, int adr[]);
 ┃(02)算法10.18：根据各记录地址，对L中的记录重新排序。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

@@ -1,6 +1,6 @@
 /****************************************
  *                                      *
- * 文件夹: 03 栈和队列\08 CylSeqQueue *
+ * 文件夹: 03_stack_queue\08 CylSeqQueue *
  *                                      *
  * 文件名: CylSeqQueue.h                *
  *                                      *
@@ -20,12 +20,11 @@
 
 /* 循环队列类型定义 */
 typedef int QElemType_CSq;
-typedef struct							//队列的顺序存储结构
-{
-	QElemType_CSq *base;				//Initial的动态分配存储空间 
-	int front;							//头指针，若队列不空，指向队头元素 
-	int rear;							//尾指针，若队列不空，指向队列尾元素的下一个位置 
-}CSqQueue;
+typedef struct {						//队列的顺序存储结构
+	QElemType_CSq *base;				//Initial的动态分配存储空间
+	int front;							//头指针，若队列不空，指向队头元素
+	int rear;							//尾指针，若队列不空，指向队列尾元素的下一个位置
+} CSqQueue;
 
 /* 循环队列Func列表 */
 Status InitQueue_CSq(CSqQueue *Q);

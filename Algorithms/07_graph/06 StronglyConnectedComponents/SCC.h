@@ -1,6 +1,6 @@
 /**************************************************
  *                                                *
- * 文件夹: 07 图\06 StronglyConnectedComponents *
+ * 文件夹: 07_graph\06 StronglyConnectedComponents *
  *                                                *
  * 文件名: SCC.h                                  *
  *                                                *
@@ -12,12 +12,12 @@
 #define SCC_H
 
 #include <stdio.h>
-#include "../03 OLGraph/OLGraph.c"			//**07 图**//
+#include "../03 OLGraph/OLGraph.c"			//**07_graph**//
 
 /* 全局变量 */
 int count;
-int finished[MAX_VERTEX_NUM+1];
- 
+int finished[MAX_VERTEX_NUM + 1];
+
 /* 强连通分量Func列表 */
 void InverseGraph(OLGraph *G);
 /*━━━━━━━━━━━━━━━━━━┓
@@ -44,4 +44,4 @@ void Kosaraju(OLGraph G);
 ┃(05)求有向图强连通分量的Kosaraju算法。┃
 ┗━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

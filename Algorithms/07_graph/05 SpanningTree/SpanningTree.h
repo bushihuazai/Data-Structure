@@ -1,19 +1,19 @@
 /************************************
  *                                  *
- * 文件夹: 07 图\05 SpanningTree  *
+ * 文件夹: 07_graph\05 SpanningTree  *
  *                                  *
  * 文件名: SpanningTree.h           *
  *                                  *
  * 内  容: 无向图生成树相关操作列表 *
  *                                  *
  ************************************/
- 
+
 #ifndef SPANNINGTREE_H
 #define SPANNINGTREE_H
 
 #include <stdlib.h>											//提供malloc、realloc、free、exit原型
-#include "../01 MGraph/MGraph.c"										//**07 图**//
-#include "../../06 树和二叉树/07 ChildSiblingTree/ChildSiblingTree.c"	//**06 树和二叉树**//
+#include "../01 MGraph/MGraph.c"										//**07_graph**//
+#include "../../06_tree_binaryTree/07 ChildSiblingTree/ChildSiblingTree.c"	//**06_tree_binaryTree**//
 
 /* 无向图生成树Func列表 */
 void DFSForest(MGraph G, CSTree *T);

@@ -1,6 +1,6 @@
 /***************************************
  *				                       *
- * 文件夹: 07 图\07 MiniSpanningTree *
+ * 文件夹: 07_graph\07 MiniSpanningTree *
  * 				                       *
  * 文件名: SCC.h                       *
  *                                     *
@@ -12,20 +12,18 @@
 #define MST_H
 
 #include <stdio.h>
-#include "../../06 树和二叉树/08 MFSet/MFSet.c"	//**06 树和二叉树**//
-#include "../01 MGraph/MGraph.c"					//**07 图**//
+#include "../../06_tree_binaryTree/08 MFSet/MFSet.c"	//**06_tree_binaryTree**//
+#include "../01 MGraph/MGraph.c"					//**07_graph**//
 
 /* 最小生成树类型定义 */
-typedef struct
-{
-	VertexType_M adjvex;		//较早加入当前边的端点 
-	VRType lowcost;				//当前边的权值 
-}Edge;							//辅助数组
-typedef	struct
-{
-	int a, b;					//端点 
-	int w;						//权值 
-}EdgeSetType;
+typedef struct {
+	VertexType_M adjvex;		//较早加入当前边的端点
+	VRType lowcost;				//当前边的权值
+} Edge;							//辅助数组
+typedef	struct {
+	int a, b;					//端点
+	int w;						//权值
+} EdgeSetType;
 
 /* 最小生成树Func列表 */
 void MinSpanTree_PRIM_1(MGraph G, VertexType_M u);
@@ -68,4 +66,4 @@ void BuildRelation(Relation *R, int a, int b);
 ┃(08)建立一个二元关系R。 ┃
 ┗━━━━━━━━━━━━*/
 
-#endif 
+#endif

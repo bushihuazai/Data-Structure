@@ -1,6 +1,6 @@
 /****************************************************
  *										            *
- * 文件夹: 06 树和二叉树\06 ChildTree             *
+ * 文件夹: 06_tree_binaryTree\06 ChildTree             *
  * 									                *
  * 文件名: ChildTree-main.c                         *
  * 										            *
@@ -9,7 +9,7 @@
  ****************************************************/
 
 #include <stdio.h>
-#include "ChildTree.c" 													//**06 树和二叉树**//															
+#include "ChildTree.c" 													//**06_tree_binaryTree**//															
 
 void PrintElem(TElemType_C e);
 
@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 		printf("\n");
 	}
 	PressEnter;
-		
+
 	printf("6\nFunc CreateTree_C test...\n");						//6.FuncCreateTree_Ctest
 	{
-		CreateTree_C(fp, &T); 
+		CreateTree_C(fp, &T);
 		fclose(fp);
 		printf("\n");
 	}
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	printf("22\nFunc LevelOrderTraverse_C test...\n");				//22.FuncLevelOrderTraverse_Ctest
 	{
 		printf("层序遍历树 T = ");
-		LevelOrderTraverse_C(T, PrintElem); 
+		LevelOrderTraverse_C(T, PrintElem);
 		printf("\n\n");
 	}
 	PressEnter;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 	printf("8-2、9、23-1\nFunc Print_C等 test...\n");				//8-2、9、23-1.FuncPrint_C_1、TreeDepth_C_2、Depth_Ctest
 	{
 		printf("打印树 T = \n");
-		Print_C_1(T); 
+		Print_C_1(T);
 		printf("\n");
 	}
 	PressEnter;
@@ -61,50 +61,50 @@ int main(int argc, char *argv[])
 	printf("24\nFunc ShowTree_T test...\n");						//24.FuncShowTree_Ttest
 	{
 		printf("展示树结构 T = \n");
-		ShowTree_C(T); 
+		ShowTree_C(T);
 		printf("\n");
 	}
 	PressEnter;
 
 	printf("7\nFunc TreeDegree_C test...\n");						//7.FuncTreeDegree_Ptest
 	{
-		printf(" T 的度为：%d \n", TreeDegree_C(T)); 
+		printf(" T 的度为：%d \n", TreeDegree_C(T));
 		printf("\n");
 	}
 	PressEnter;
 
 	printf("8-1\nFunc TreeDepth_C_1 test...\n");					//8-1.FuncTreeDepth_C_1test
 	{
-		printf(" T 共有 %d 层 \n", TreeDepth_C_1(T)); 
+		printf(" T 共有 %d 层 \n", TreeDepth_C_1(T));
 		printf("\n");
 	}
 	PressEnter;
-	
+
 	printf("10\nFunc Root_C test...\n");							//10.FuncRoot_Ctest
 	{
-		printf(" T 的根结点为：%c\n", Root_C(T)); 
+		printf(" T 的根结点为：%c\n", Root_C(T));
 		printf("\n");
 	}
-	PressEnter;	
-	
+	PressEnter;
+
 	printf("11\nFunc Value_C test...\n");							//11.FuncValue_Ctest
 	{
-		printf(" T 中第 %d 个结点的值为：%c \n", 2, Value_C(T, 2)); 
+		printf(" T 中第 %d 个结点的值为：%c \n", 2, Value_C(T, 2));
 		printf("\n");
 	}
 	PressEnter;
 
 	printf("12\nFunc Order_C test...\n");							//12.FuncOrder_Ctest
 	{
-		printf(" T 中元素 %c 的位置为：%d \n", 'A', Order_C(T, 'A')); 
+		printf(" T 中元素 %c 的位置为：%d \n", 'A', Order_C(T, 'A'));
 		printf("\n");
 	}
 	PressEnter;
-	
+
 	printf("13、23-2\nFunc Assign_C等 test...\n");					//13、23-2.FuncAssign_C、Print_C_2test
 	{
 		printf("将结点 'B' 赋值为 'X' 后，T = \n");
-		Assign_C(&T, 'B', 'X'); 
+		Assign_C(&T, 'B', 'X');
 		Print_C_2(T, T.r, 0);
 		printf("\n");
 	}
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 
 	printf("14\nFunc ChildValue_C test...\n");						//14.FuncChildValue_Ctest
 	{
-		printf("结点 %c 第 %d 个孩子为：%c \n", 'A', 2, ChildValue_C(T, 'A', 2)); 
+		printf("结点 %c 第 %d 个孩子为：%c \n", 'A', 2, ChildValue_C(T, 'A', 2));
 		printf("\n");
 	}
 	PressEnter;
@@ -132,20 +132,20 @@ int main(int argc, char *argv[])
 		CreateTree_C(fp, &T0);
 		fclose(fp);
 		Print_C_1(T0);
-		printf("\n"); 
+		printf("\n");
 		printf("将树 T0 嫁接为 %c 的第 %d 棵子树后，T = ...\n", 'X', 1);
 		InsertTree_C(&T, 'X', 1, T0);
-		Print_C_1(T); 
+		Print_C_1(T);
 		printf("\n");
 		ShowTree_C(T);
 		printf("\n");
 	}
 	PressEnter;
-	
+
 	printf("21\nFunc DeleteTree_C test...\n");						//21.FuncDeleteTree_Ctest
 	{
 		printf("删除 T 中结点 %c 的第 %d 棵子树后，T = \n", '0', 3);
-		DeleteTree_C(&T, '0', 3); 
+		DeleteTree_C(&T, '0', 3);
 		Print_C_1(T);
 		printf("\n");
 		ShowTree_C(T);
@@ -159,10 +159,10 @@ int main(int argc, char *argv[])
 		TreeEmpty_C(T) ? printf(" T  is empty!\n") : printf(" T  not empty!\n");
 		printf("\n");
 	}
-	PressEnter;	
+	PressEnter;
 }
 
 void PrintElem(TElemType_C e)
 {
-	printf("%c ",e);
+	printf("%c ", e);
 }

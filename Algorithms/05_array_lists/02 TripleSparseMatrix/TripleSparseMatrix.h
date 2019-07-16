@@ -1,6 +1,6 @@
 /***************************************************
  *                                                 *
- * 文件夹: 05 数组和广义表\02 TripleSparseMatrix *
+ * 文件夹: 05_array_lists\02 TripleSparseMatrix *
  *                                                 *
  * 文件名: TripleSparseMatrix.h                    *
  *                                                 *
@@ -21,16 +21,14 @@
 
 /* 三元组稀疏矩阵类型定义 */
 typedef int MElemType_TSq;
-typedef struct
-{
-	int i, j;								//该非零元的行下标和列下标 
+typedef struct {
+	int i, j;								//该非零元的行下标和列下标
 	MElemType_TSq e;
-}Triple;
-typedef struct
-{
-	Triple data[MAXSIZE+1];					//非零元三元组表，data[0]未用
+} Triple;
+typedef struct {
+	Triple data[MAXSIZE + 1];					//非零元三元组表，data[0]未用
 	int mu, nu, tu;							//矩阵的行数、列数和非零元个数
-}TSMatrix;
+} TSMatrix;
 
 /* 三元组顺序表（稀疏矩阵）Func列表 */
 Status CreateSMatrix_T(FILE *fp, int n, ...);

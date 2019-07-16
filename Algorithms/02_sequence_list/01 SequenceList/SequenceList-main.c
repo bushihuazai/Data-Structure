@@ -1,6 +1,6 @@
 /***************************************
  *                                     *
- * 文件夹: 02 线性表\01 SequenceList *
+ * 文件夹: 02_sequence_list\01 SequenceList *
  *                                     *
  * 内  容:  SingleLinkedList 顺序结构相关Functest  *
  *                                     *
@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <wchar.h>
-#include "SequenceList.c" 								//**02 线性表**//
+#include "SequenceList.c" 								//**02_sequence_list**//
 
 /* test调用的Func原型 */
 Status CmpGreater(LElemType_Sq e, LElemType_Sq data);

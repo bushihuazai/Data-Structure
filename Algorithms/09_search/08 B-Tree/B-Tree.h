@@ -1,6 +1,6 @@
 /***************************
  *                         *
- * 文件夹: 09 查找       *
+ * 文件夹: 09_search       *
  *                         *
  * 文件名: B-Tree.h        *
  *                         *
@@ -13,32 +13,30 @@
 
 #include <stdlib.h>
 #include <math.h>							//提供ceil原型 
-#include "../00 Base/Base.c" 				//**09 查找**//
+#include "../00 Base/Base.c" 				//**09_search**//
 
 /* 宏定义 */
 #define M 3									//B树的阶，暂设为3 
 #define EQ(a,b) ((a)==(b))
 #define LT(a,b) ((a) < (b))
 
-/* 类型定义 */ 
-typedef ElemType_Search BTElemType;			//B树元素类型 
-typedef struct BTNode						//B树存储表示
-{
-	int keynum;								//结点中关键字个数 
-	struct BTNode* parent;					//指向双亲结点 
+/* 类型定义 */
+typedef ElemType_Search BTElemType;			//B树元素类型
+typedef struct BTNode {					//B树存储表示
+	int keynum;								//结点中关键字个数
+	struct BTNode *parent;					//指向双亲结点
 
-	KeyType key[M+1];						//关键字向量，0号单元未用 
-	struct BTNode* ptr[M+1];				//子树指针向量 
-}BTNode;									//B树结点 
-typedef BTNode* BTree;						//指向B树结点的指针
+	KeyType key[M + 1];						//关键字向量，0号单元未用
+	struct BTNode *ptr[M + 1];				//子树指针向量
+} BTNode;									//B树结点
+typedef BTNode *BTree;						//指向B树结点的指针
 
-/* B树查找结果类型 */ 
-typedef struct
-{
-	BTree pt;								//指向找到的结点 
-	int i;									//1...n，关键字在结点中的序号（插入位置） 
-	int tag;								//1:查找成功，0:查找失败 
-}Result; 
+/* B树查找结果类型 */
+typedef struct {
+	BTree pt;								//指向找到的结点
+	int i;									//1...n，关键字在结点中的序号（插入位置）
+	int tag;								//1:查找成功，0:查找失败
+} Result;
 
 /* B树Func列表 */
 Status CreateBTree(BTree *BT, Table T);
@@ -53,7 +51,7 @@ Result SearchBTree(BTree BT, KeyType K);
 
 int Search(BTree p, KeyType K);
 /*━━━━━━━━━━━━━━━━━━━━━━┓
-┃(03)返回K在结点p中的次序，若不存在，返回0。 ┃
+┃(03)返回K在结点p中的次序，若 not exsist，返回0。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━*/
 
 Status InsertKey(BTree *BT, KeyType K);
@@ -126,4 +124,4 @@ void PrintBT_InOreder(BTree BT);
 ┃(17)中序输出B树。 ┃
 ┗━━━━━━━━━*/
 
-#endif 
+#endif

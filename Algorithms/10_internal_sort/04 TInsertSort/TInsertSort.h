@@ -1,6 +1,6 @@
 /**********************************
  *                                *
- * 文件夹: 10 内部排序          *
+ * 文件夹: 10_internal_sort          *
  *                                *
  * 文件名: TInsertSort.h          *
  *                                *
@@ -11,7 +11,7 @@
 #ifndef TINSERTSORT_H
 #define TINSERTSORT_H
 
-#include "../00 StaticLinkedListType/StaticLinkedListType.c"	//**10 内部排序**//
+#include "../00 StaticLinkedListType/StaticLinkedListType.c"	//**10_internal_sort**//
 
 /* 表插入排序Func列表 */
 void TInsertSort(SLinkList_sort *L);
@@ -24,4 +24,4 @@ void Arrange(SLinkList_sort *L);
 ┃(02)算法10.3：根据各记录指针，对L中的记录重新排序。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

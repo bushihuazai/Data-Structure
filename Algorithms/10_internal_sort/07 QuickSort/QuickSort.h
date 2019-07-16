@@ -1,6 +1,6 @@
 /********************************
  *                              *
- * 文件夹: 10 内部排序        *
+ * 文件夹: 10_internal_sort        *
  *                              *
  * 文件名: QuickSort.h          *
  *                              *
@@ -11,7 +11,7 @@
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10 内部排序**//
+#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
 
 /* 快速排序Func列表 */
 int Partition_1(SqList_sort *L, int low, int high);
@@ -34,4 +34,4 @@ void QuickSort(SqList_sort *L);
 ┃(04)算法10.7：对顺序表L作快速排序。 ┃
 ┗━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

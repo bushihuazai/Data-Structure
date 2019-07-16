@@ -19,7 +19,7 @@
 #define MAXSTRLEN 255							//顺序串的最大串长 
 
 /* 串的顺序存储类型定义 */
-typedef unsigned char SString[MAXSTRLEN+1];		//0号单元存放串的长度 								
+typedef unsigned char SString[MAXSTRLEN + 1];		//0号单元存放串的长度
 
 /* 顺序串Func列表 */
 Status StrAssign_Sq(SString T, const char *chars);
@@ -27,26 +27,26 @@ Status StrAssign_Sq(SString T, const char *chars);
 ┃(01)生成一个其值等于常量chars的串T（串赋值）。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━*/
 
-void StrCopy_Sq(SString T, SString S); 
+void StrCopy_Sq(SString T, SString S);
 /*━━━━━━━━━━━┓
 ┃(02)由串S复制得到串T。┃
-┗━━━━━━━━━━━*/ 
- 
+┗━━━━━━━━━━━*/
+
 Status StrEmpty_Sq(SString S);
 /*━━━━━━━━━━━━━━━━━━━━┓
 ┃(03)若S is empty串，返回TRUE,否则返回FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
-int StrCompare_Sq(SString S, SString T); 
+int StrCompare_Sq(SString S, SString T);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(04)若S>T，返回值>0；若S<T，返回值<0；否则，返回值=0。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-int StrLength_Sq(SString S); 
+int StrLength_Sq(SString S);
 /*━━━━━━┓
 ┃(05)求串长。┃
 ┗━━━━━━*/
- 
+
 void ClearString_Sq(SString S);
 /*━━━━━━┓
 ┃(06)清空S。 ┃
@@ -64,12 +64,12 @@ Status SubString_Sq(SString Sub, SString S, int pos, int len);
 
 int Index_Sq_1(SString S, SString T, int pos);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(09-1)算法4.1：返回T在S中第pos个字符后第一次出现的位置，不存在则返回0。 ┃
+┃(09-1)算法4.1：返回T在S中第pos个字符后第一次出现的位置， not exsist则返回0。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 int Index_Sq_2(SString S, SString T, int pos);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(09-2)算法4.5：返回T在S中第pos个字符后第一次出现的位置，不存在则返回0。 ┃
+┃(09-2)算法4.5：返回T在S中第pos个字符后第一次出现的位置， not exsist则返回0。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 Status Replace_Sq(SString S, SString T, SString V);

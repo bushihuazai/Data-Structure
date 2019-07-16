@@ -11,7 +11,7 @@
 #ifndef KMP_H
 #define KMP_H
 
-#include <stdio.h> 
+#include <stdio.h>
 #include "../01 SequenceString/SequenceString.c" 			//**04 ¥Æ**//
 
 /* KMPÀ„∑®Func¡–±Ì */

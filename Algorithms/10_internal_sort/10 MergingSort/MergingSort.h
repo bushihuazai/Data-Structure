@@ -1,6 +1,6 @@
 /********************************
  *                              *
- * 文件夹: 10 内部排序        *
+ * 文件夹: 10_internal_sort        *
  *                              *
  * 文件名: MergingSort.h        *
  *                              *
@@ -11,7 +11,7 @@
 #ifndef MERGINGSORT_H
 #define MERGINGSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10 内部排序**//
+#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
 
 /* 归并排序Func列表 */
 void Merge(RcdType SR[], RcdType TR[], int i, int m, int n);
@@ -29,4 +29,4 @@ void MergeSort(SqList_sort *L);
 ┃(03)算法10.14：对顺序表L作归并排序。┃
 ┗━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

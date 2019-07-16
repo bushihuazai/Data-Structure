@@ -15,10 +15,10 @@
 #include <stdlib.h> 					//提供exit、strtol原型
 #include <string.h>						//提供strlen、strcmpi、strlwr原型
 #include "../../01_abstract/Status.h"									//**01_abstract**//
-#include "../../02 线性表/09 ExtenLinkedList/ExtenLinkedList.c"	//**02 线性表**//
+#include "../../02_sequence_list/09 ExtenLinkedList/ExtenLinkedList.c"	//**02_sequence_list**//
 #include "../02 HeapString/HeapString.c" 							//**04 串**//
 
-/* 宏定义 */ 
+/* 宏定义 */
 #define MaxBookNum 1000					//允许的最大书目数 
 #define MaxKeyNum  2500					//关键词索引表最大容量 
 #define MaxLineLen 500					//书目串的最大长度 
@@ -26,25 +26,22 @@
 
 /* 类型定义 */
 typedef Status Bool;
-typedef struct							//词表类型(顺序表) 
-{
-	char *str[MaxWordNum];				//字符串数组 
-	int last;							//词表的长度 
-}WordListType;
-typedef struct							//索引项类型 
-{
-	HString key;						//索引关键词 
-	ELinkList bnolist;					//存放书号索引的链表 
-}IdxTermType;
-typedef struct							//索引表类型(有序表)
-{
-	IdxTermType item[MaxKeyNum+1];		//索引表 
-	int num;							//索引表中包含的索引项数目 
-}IdxListType;
+typedef struct {						//词表类型(顺序表)
+	char *str[MaxWordNum];				//字符串数组
+	int last;							//词表的长度
+} WordListType;
+typedef struct {						//索引项类型
+	HString key;						//索引关键词
+	ELinkList bnolist;					//存放书号索引的链表
+} IdxTermType;
+typedef struct {						//索引表类型(有序表)
+	IdxTermType item[MaxKeyNum + 1];		//索引表
+	int num;							//索引表中包含的索引项数目
+} IdxListType;
 
 /* 全局变量 */
-char gBuf[MaxLineLen]; 					//书目缓存区 
-WordListType gWordList = {{"a","an","the","of","and","is","to","as","in","for"},10};//常用词词表
+char gBuf[MaxLineLen]; 					//书目缓存区
+WordListType gWordList = {{"a", "an", "the", "of", "and", "is", "to", "as", "in", "for"}, 10}; //常用词词表
 WordListType gWdList;					//关键词词表(普通词表)
 
 /* 创建索引表Func列表 */
@@ -61,7 +58,7 @@ void InitIdxList(IdxListType *idxlist);
 void GetLine(FILE *f);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(03)从文件f中读取一条书目信息存入书目缓冲区gBuf。 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━*/ 
+┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 void ExtractKeyWord(int *bno);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -85,8 +82,8 @@ void GetWord(int i, HString *wd);
 
 int Locate(IdxListType idxlist, HString wd, Bool *b);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(08)算法4.12：查询在索引表idxlist中是否存在与wd相等的关键词。                       ┃
-┃	  若存在，则返回wd在词表中的位置并置b为TRUE，否则返回wd应插入的位置并置b为FALSE。 ┃
+┃(08)算法4.12：查询在索引表idxlist中是否exsists与wd相等的关键词。                       ┃
+┃	  若exsists，则返回wd在词表中的位置并置b为TRUE，否则返回wd应插入的位置并置b为FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 void InsertNewKey(IdxListType *idxlist, int i, HString wd);

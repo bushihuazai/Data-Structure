@@ -1,6 +1,6 @@
 /***************************************
  *							           *
- * 文件夹: 03 栈和队列\05 Expression *
+ * 文件夹: 03_stack_queue\05 Expression *
  * 							           *
  * 文件名: Expression.h                *
  * 							           *
@@ -11,26 +11,26 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
-#include <stdio.h> 
+#include <stdio.h>
 
-/* 类型定义 */ 
+/* 类型定义 */
 typedef char SElemType_Sq;
-#include "../01 SequenceStack/SequenceStack.c" 	//**03 栈和队列**//
+#include "../01 SequenceStack/SequenceStack.c" 	//**03_stack_queue**//
 
 typedef SElemType_Sq OperandType;				//操作数类型
-typedef SElemType_Sq OperatorType;				//运算符类型 
+typedef SElemType_Sq OperatorType;				//运算符类型
 
-OperandType EvaluateExpression(char exp[]);	
+OperandType EvaluateExpression(char exp[]);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(01)算法3.4：表达式求值，假设表达式中操作数均只有一位。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-OperatorType GetTop_OPTR(SqStack OPTR);	
+OperatorType GetTop_OPTR(SqStack OPTR);
 /*━━━━━━━━━━━━━━┓
 ┃(02)获取操作符栈的栈顶元素。┃
 ┗━━━━━━━━━━━━━━*/
 
-Status In(SElemType_Sq c); 
+Status In(SElemType_Sq c);
 /*━━━━━━━━━━━━━━┓
 ┃(03)判断c是否属于操作符集。 ┃
 ┗━━━━━━━━━━━━━━*/

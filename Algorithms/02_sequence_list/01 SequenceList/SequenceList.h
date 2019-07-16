@@ -1,6 +1,6 @@
 /***************************************
  *                                     *
- * 文件夹: 02 线性表\01 SequenceList *
+ * 文件夹: 02_sequence_list\01 SequenceList *
  *                                     *
  * 文件名: SequenceList.h              *
  *                                     *

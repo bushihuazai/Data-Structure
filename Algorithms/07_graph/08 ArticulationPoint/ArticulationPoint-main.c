@@ -1,6 +1,6 @@
 /****************************************
  *    	    		                    *
- * 文件夹: 07 图\08 ArticulationPoint *
+ * 文件夹: 07_graph\08 ArticulationPoint *
  * 					                    *
  * 文件名: ArticulationPoint-main.c     *
  * 							            *
@@ -9,25 +9,25 @@
  ****************************************/
 
 #include <stdio.h>
-#include "ArticulationPoint.c" 									//**07 图**//													
+#include "ArticulationPoint.c" 									//**07_graph**//													
 
 int main(int argc, char *argv[])
 {
-	ALGraph G;	
-	
+	ALGraph G;
+
 	printf("创建并输出无向图...\n");
 	{
 		FILE *fp;
-		
-		fp = fopen("TestData_UDG_AL.txt", "r");	
-		CreateGraph_AL(fp, &G); 
+
+		fp = fopen("TestData_UDG_AL.txt", "r");
+		CreateGraph_AL(fp, &G);
 		fclose(fp);
 		OutputALGraph(G);
 		printf("\n");
 	}
-	PressEnter;	
+	PressEnter;
 
-	printf("1、2、3、4\nFunc FindArticul等 test...\n");		//1、2、3、4.FuncFindArticul、OutputAPoint等test	
+	printf("1、2、3、4\nFunc FindArticul等 test...\n");		//1、2、3、4.FuncFindArticul、OutputAPoint等test
 	{
 		printf("寻找并输出关节点...\n");
 		FindArticul(G);
@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
 		printf("\n");
 	}
 	PressEnter;
-		
+
 	return 0;
 }

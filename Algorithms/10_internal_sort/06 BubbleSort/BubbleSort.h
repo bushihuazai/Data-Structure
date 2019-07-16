@@ -1,6 +1,6 @@
 /********************************
  *                              *
- * 文件夹: 10 内部排序        *
+ * 文件夹: 10_internal_sort        *
  *                              *
  * 文件名: BubbleSort.h         *
  *                              *
@@ -11,7 +11,7 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10 内部排序**//
+#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
 
 /* 起泡排序Func列表 */
 void BubbleSort(SqList_sort *L);
@@ -19,4 +19,4 @@ void BubbleSort(SqList_sort *L);
 ┃(01)对顺序表L作起泡排序。 ┃
 ┗━━━━━━━━━━━━━*/
 
-#endif 
+#endif

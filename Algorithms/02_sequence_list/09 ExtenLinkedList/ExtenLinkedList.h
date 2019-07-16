@@ -1,6 +1,6 @@
 /************************************
  *						            *
- * 文件夹: 02 线性表              *
+ * 文件夹: 02_sequence_list              *
  * 							        *
  * 文件名: ExtenLinkedList.h        *
  * 							        *
@@ -16,24 +16,22 @@
 #include "../../01_abstract/Scanf.c"		//**01_abstract**//
 
 /*	扩展的 SingleLinkedList 类型定义	*/
-#ifndef POLYNOMIAL_H					//在多项式操作中，此类型需重新定义 
-typedef int LElemType_E; 
+#ifndef POLYNOMIAL_H					//在多项式操作中，此类型需重新定义
+	typedef int LElemType_E;
 #endif
-typedef struct ELNode					//结点类型 
-{
+typedef struct ELNode {				//结点类型
 	LElemType_E data;
 	struct ELNode *next;
-}ELNode; 
-typedef ELNode* Link;			 		//指向结构的指针 
-typedef ELNode* PositionPtr;
-typedef struct							//链表类型 
-{
-	Link head, tail;					//分别指向线性链表中的头结点和尾结点 
-	int len;							//指示线性链表中数据元素的个数 
-}ELinkList;
+} ELNode;
+typedef ELNode *Link;			 		//指向结构的指针
+typedef ELNode *PositionPtr;
+typedef struct {						//链表类型
+	Link head, tail;					//分别指向线性链表中的头结点和尾结点
+	int len;							//指示线性链表中数据元素的个数
+} ELinkList;
 
-/*	扩展的 SingleLinkedList Func列表 */ 
-Status MakeNode_E(Link *p, LElemType_E e); 
+/*	扩展的 SingleLinkedList Func列表 */
+Status MakeNode_E(Link *p, LElemType_E e);
 /*━━━━━━━━━━━━┓
 ┃(01)分配由p指向e的结点。┃
 ┗━━━━━━━━━━━━*/
@@ -133,7 +131,7 @@ Status LocatePos_E(ELinkList L, int i, Link *p);
 ┃(20)将*p指向L中第i个结点,i=0时为头结点。┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
-PositionPtr LocateElem_E(ELinkList L, LElemType_E e, Status(Compare)(LElemType_E,LElemType_E));
+PositionPtr LocateElem_E(ELinkList L, LElemType_E e, Status(Compare)(LElemType_E, LElemType_E));
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(21)返回L中指向第一个与e满足Compare关系的元素指针。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━*/
@@ -151,6 +149,6 @@ Status ListInsert_L_E(ELinkList *L, int i, LElemType_E e);
 Status ListDelete_L_E(ELinkList *L, int i, LElemType_E *e);
 /*━━━━━━━━━━━━━━━━━━┓
 ┃(24)删除L第i个位置的值，并用e接收。 ┃
-┗━━━━━━━━━━━━━━━━━━*/ 
+┗━━━━━━━━━━━━━━━━━━*/
 
 #endif

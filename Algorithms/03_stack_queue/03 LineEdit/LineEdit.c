@@ -1,6 +1,6 @@
 /*************************************
  *					     			 *
- * 文件夹: 03 栈和队列\03 LineEdit *
+ * 文件夹: 03_stack_queue\03 LineEdit *
  * 					     			 *
  * 文件名: LineEdit.c    			 *
  * 				         			 *
@@ -11,10 +11,10 @@
 #ifndef LINEEDIT_C
 #define LINEEDIT_C
 
-#include "LineEdit.h"				//**03 栈和队列**//
+#include "LineEdit.h"				//**03_stack_queue**//
 
 /*════╗
-║ 算法3.2║ 
+║ 算法3.2║
 ╚════*/
 /* 与严蔚敏课本所述算法略有差别，但算法思想一致 */
 void LineEdit(char Buffer[])
@@ -23,37 +23,35 @@ void LineEdit(char Buffer[])
 	SElemType_Sq e;
 	int i;
 	char ch;
-	
+
 	InitStack_Sq(&S);
-	
+
 	i = 0;
 	ch = Buffer[i++];
-	while(ch!='\0')
-	{
-		while(ch!='\0' && ch!='\n')
-		{
-			switch(ch)
-			{
-				case '#': Pop_Sq(&S, &e);
+	while (ch != '\0') {
+		while (ch != '\0' && ch != '\n') {
+			switch (ch) {
+				case '#':
+					Pop_Sq(&S, &e);
 					break;
-				case '@': ClearStack_Sq(&S);
+				case '@':
+					ClearStack_Sq(&S);
 					break;
-				default : Push_Sq(&S, ch);
+				default :
+					Push_Sq(&S, ch);
 			}
 			ch = Buffer[i++];
 		}
-		
-		if(ch=='\n')
-		{
-			Push_Sq(&S, ch);			
+
+		if (ch == '\n') {
+			Push_Sq(&S, ch);
 			StackTraverse_Sq(S, Print);
 			ClearStack_Sq(&S);
 			ch = Buffer[i++];
 		}
 	}
-	
-	if(ch=='\0')
-	{
+
+	if (ch == '\0') {
 		StackTraverse_Sq(S, Print);
 		DestroyStack_Sq(&S);
 	}

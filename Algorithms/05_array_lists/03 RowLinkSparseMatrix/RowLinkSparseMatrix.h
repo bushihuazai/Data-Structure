@@ -1,6 +1,6 @@
 /******************************************************
  *							                          *
- * 文件夹: 05 数组和广义表\03 RowLinkSparseMatrix   *
+ * 文件夹: 05_array_lists\03 RowLinkSparseMatrix   *
  *							                          *
  * 文件名: RowLinkSparseMatrix.h                      *
  *							                          *
@@ -22,17 +22,15 @@
 
 /* 行逻辑链接的稀疏矩阵类型定义 */
 typedef int MElemType_RLSq;
-typedef struct
-{
-	int i, j;							//该非零元的行下标和列下标 
+typedef struct {
+	int i, j;							//该非零元的行下标和列下标
 	MElemType_RLSq e;
-}Triple;
-typedef struct
-{
-	Triple data[MAXSIZE+1];				//非零元三元组表data[0]未用
-	int rpos[MAXRC+1]; 					//各行第一个非零元在三元组表中的位置表 
-	int mu, nu, tu;						//矩阵的行数、列数和非零元个数 
-}RLSMatrix;
+} Triple;
+typedef struct {
+	Triple data[MAXSIZE + 1];				//非零元三元组表data[0]未用
+	int rpos[MAXRC + 1]; 					//各行第一个非零元在三元组表中的位置表
+	int mu, nu, tu;						//矩阵的行数、列数和非零元个数
+} RLSMatrix;
 
 /* 行逻辑链接的顺序表（稀疏矩阵）基础操作 */
 Status CreateSMatrix_RL(FILE *fp, int n, ...);

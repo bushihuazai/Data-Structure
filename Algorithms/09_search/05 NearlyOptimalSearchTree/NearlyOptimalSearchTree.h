@@ -1,6 +1,6 @@
 /*************************************
  *                                   *
- * 文件夹: 09 查找                 *
+ * 文件夹: 09_search                 *
  *                                   *
  * 文件名: NearlyOptimalSearchTree.h *
  *                                   *
@@ -13,8 +13,8 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include "../00 Base/Base.c" 				//**09 查找**//
-#include "../../06 树和二叉树/02 BinaryTree/BinaryTree.c"//**06 树和二叉树**//
+#include "../00 Base/Base.c" 				//**09_search**//
+#include "../../06_tree_binaryTree/02 BinaryTree/BinaryTree.c"//**06_tree_binaryTree**//
 
 /* 类型定义 */
 typedef BiTree SOSTree;

@@ -1,6 +1,6 @@
 /*****************************************************
  *										             *
- * 文件夹: 06 树和二叉树\07 ChildSiblingTree       *
+ * 文件夹: 06_tree_binaryTree\07 ChildSiblingTree       *
  * 									                 *
  * 文件名: ChildSiblingTree.h                        *
  * 										             *
@@ -18,17 +18,16 @@
 
 /* 树的二叉链表（孩子-兄弟）类型定义 */
 typedef char TElemType_CS;						//假设树中元素均为字符
-typedef struct CSNode
-{
+typedef struct CSNode {
 	TElemType_CS data;
-	struct CSNode* firstchild;					//指向孩子
-	struct CSNode* nextsibling;					//指向兄弟 
-}CSNode;
-typedef CSNode* CSTree;
+	struct CSNode *firstchild;					//指向孩子
+	struct CSNode *nextsibling;					//指向兄弟
+} CSNode;
+typedef CSNode *CSTree;
 
 /* 自定义栈元素类型 */
 typedef CSTree SElemType_Sq;
-#include "../../03 栈和队列/01 SequenceStack/SequenceStack.c"	//**03 栈和队列**// 
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
 
 /* 树的二叉链表存储结构Func列表 */
 void InitTree_CS(CSTree *T);
@@ -51,7 +50,7 @@ Status TreeEmpty_CS(CSTree T);
 ┃(04)判断树T是否 is empty。 ┃
 ┗━━━━━━━━━━━*/
 
-Status CreateTree_CS(FILE *fp, CSTree *T); 
+Status CreateTree_CS(FILE *fp, CSTree *T);
 /*━━━━━━━━━━━┓
 ┃(05)按先序序列构造树。┃
 ┗━━━━━━━━━━━*/
@@ -66,7 +65,7 @@ int TreeDepth_CS(CSTree T);
 ┃(07)返回树的深度。┃
 ┗━━━━━━━━━*/
 
-TElemType_CS Root_CS(CSTree T); 
+TElemType_CS Root_CS(CSTree T);
 /*━━━━━━━━━━━┓
 ┃(08)返回树的根结点值。┃
 ┗━━━━━━━━━━━*/
@@ -98,7 +97,7 @@ TElemType_CS Sibling_CS(CSTree T, TElemType_CS e, int mark);
 
 int ChildCount_CS(CSTree T, TElemType_CS p);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(14)返回结点p的孩子结点（子树）个数，返回负数代表结点p不存在。┃
+┃(14)返回结点p的孩子结点（子树）个数，返回负数代表结点p not exsist。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 CSTree ChildSeat_CS(CSTree T, TElemType_CS e, int i);

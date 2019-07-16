@@ -1,6 +1,6 @@
 /***************************************
  *							           *
- * 文件夹: 06 树和二叉树\10 PowerSet *
+ * 文件夹: 06_tree_binaryTree\10 PowerSet *
  * 						               *
  * 文件名: PowerSet.h                  *
  * 						               *
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "../../01_abstract/Status.h"					//**01_abstract**//
 #include "../../01_abstract/Scanf.c"					//**01_abstract**//
-#include "../../02 线性表/04 SinglyLinkedList/SinglyLinkedList.c"	//**02 线性表**// 
+#include "../../02_sequence_list/04 SinglyLinkedList/SinglyLinkedList.c"	//**02_sequence_list**// 
 
 /* 幂集类型定义 */
 typedef LElemType_L PElemType;

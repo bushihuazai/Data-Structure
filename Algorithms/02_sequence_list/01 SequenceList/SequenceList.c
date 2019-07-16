@@ -1,6 +1,6 @@
 /***************************************
  *                                     *
- * 文件夹: 02 线性表\01 SequenceList *
+ * 文件夹: 02_sequence_list\01 SequenceList *
  *                                     *
  * 文件名: SequenceList.c              *
  *                                     *
@@ -11,7 +11,7 @@
 #ifndef SEQUENCELIST_C
 #define SEQUENCELIST_C
 
-#include "SequenceList.h" 				//**02 线性表**//
+#include "SequenceList.h" 				//**02_sequence_list**//
 
 /*════╗
 ║算法2.3 ║

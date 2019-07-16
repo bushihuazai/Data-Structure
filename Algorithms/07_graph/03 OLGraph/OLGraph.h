@@ -1,6 +1,6 @@
 /******************************************
  *                                        *
- * 文件夹: 07 图\03 OLGraph             *
+ * 文件夹: 07_graph\03 OLGraph             *
  *                                        *
  * 文件名: OLGraph.h                      *
  *                                        *
@@ -16,38 +16,34 @@
 #include <stdarg.h>											//提供宏va_list、va_start、va_arg、va_end
 #include "../../01_abstract/Status.h"							//**01_abstract**//
 #include "../../01_abstract/Scanf.c"							//**01_abstract**//
-#include "../../03 栈和队列/07 LinkQueue/LinkQueue.c" 	//**03 栈和队列**//
+#include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" 	//**03_stack_queue**//
 
 /* 宏定义 */
 #define MAX_VERTEX_NUM 20						//最大顶点个数 
 
 /* 有向图（十字链表）类型定义 */
-typedef struct									//弧相关信息
-{
-	//本文档不设弧信息 
-}InfoType;
-typedef struct ArcBox							//弧结点
-{
+typedef struct {								//弧相关信息
+	//本文档不设弧信息
+} InfoType;
+typedef struct ArcBox {						//弧结点
 	int tailvex, headvex;						//该弧的尾和头顶点的位置
-	struct ArcBox *hlink, *tLink;				//分别为弧头相同和弧尾相同的弧的链域 
+	struct ArcBox *hlink, *tLink;				//分别为弧头相同和弧尾相同的弧的链域
 	InfoType info;								//该弧相关信息
-}ArcBox;
+} ArcBox;
 typedef char VertexType_OL;						//有向图顶点类型
-typedef struct VexNode
-{
+typedef struct VexNode {
 	VertexType_OL data;
-	ArcBox *firstin, *firstout;					//分别指向该顶点第一条入弧和出弧 
-}VexNode;
-typedef struct									//有向图（十字链表）存储结构 
-{
-	VexNode xlist[MAX_VERTEX_NUM+1];			//表头向量
-	int vexnum, arcnum;							//有向图当前顶点数和弧数 
-	int IncInfo;								//IncInfo为0则各弧不含其它信息  
-}OLGraph;
+	ArcBox *firstin, *firstout;					//分别指向该顶点第一条入弧和出弧
+} VexNode;
+typedef struct {								//有向图（十字链表）存储结构
+	VexNode xlist[MAX_VERTEX_NUM + 1];			//表头向量
+	int vexnum, arcnum;							//有向图当前顶点数和弧数
+	int IncInfo;								//IncInfo为0则各弧不含其它信息
+} OLGraph;
 
 /* 全局变量 */
-Status visited[MAX_VERTEX_NUM+1];		//标志数组
-void (*VisitFunc)(VertexType_OL e);		//Func指针变量 
+Status visited[MAX_VERTEX_NUM + 1];		//标志数组
+void (*VisitFunc)(VertexType_OL e);		//Func指针变量
 
 /* 有向图（十字链表）Func列表 */
 Status CreateDG_OL(FILE *fp, OLGraph *G);

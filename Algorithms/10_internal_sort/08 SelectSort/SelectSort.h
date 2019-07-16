@@ -1,6 +1,6 @@
 /************************************
  *                                  *
- * 文件夹: 10 内部排序            *
+ * 文件夹: 10_internal_sort            *
  *                                  *
  * 文件名: SelectSort.h             *
  *                                  *
@@ -11,7 +11,7 @@
 #ifndef SELECTSORT_H
 #define SELECTSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"//**10 内部排序**//
+#include "../00 SequenceListType/SequenceListType.c"//**10_internal_sort**//
 
 /* 简单选择排序Func列表 */
 void SelectSort(SqList_sort *L);
@@ -24,4 +24,4 @@ int SelectMinKey(SqList_sort L, int i);
 ┃(02)在L.r[i..L.length]中选择key最小的记录。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

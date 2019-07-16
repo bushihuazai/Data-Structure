@@ -1,23 +1,25 @@
 /**********************************************
  *							     			  *
- * 文件夹: 02 线性表\08 DualCycleLinkedList *
+ * 文件夹: 02_sequence_list\08 DualCycleLinkedList *
  * 							     			  *
  * 文件名: DualCycleLinkedList.c 			  *
  * 				     		     			  *
- * 算  法: 2.18、2.19            			  * 
+ * 算  法: 2.18、2.19            			  *
  *                               			  *
  **********************************************/
 
 #ifndef DUALCYCLELINKEDLIST_C
 #define DUALCYCLELINKEDLIST_C
 
-#include "DualCycleLinkedList.h" 		//**02 线性表**//
+#include "DualCycleLinkedList.h" 		//**02_sequence_list**//
 
 Status InitList_DuL(DuLinkList *L)
 {
 	*L = (DuLinkList)malloc(sizeof(DuLNode));
-	if(!(*L))
+	if (!(*L)) {
 		exit(OVERFLOW);
+
+	}
 
 	(*L)->next = (*L)->prior = *L;
 
@@ -28,16 +30,15 @@ Status ClearList_DuL(DuLinkList L)
 {
 	DuLinkList p, q;
 	
-	p = L->next;
+p = L->next;
 	
-	while(p!=L)
-	{
-		q = p->next;
+while(p!=L)
+	{    	q = p->next;
 		free(p);
 		p = q;
 	}
 	
-	L->next = L->prior = L;
+L->next = L->prior = L;
 
 	return OK;
 }
@@ -46,7 +47,7 @@ void DestroyList_DuL(DuLinkList *L)
 {
 	ClearList_DuL(*L);
 	
-	free(*L);
+free(*L);
 
 	*L = NULL;	
 }
@@ -54,10 +55,11 @@ void DestroyList_DuL(DuLinkList *L)
 Status ListEmpty_DuL(DuLinkList L)
 {
 	if(L && L->next==L && L->prior==L)
-		return TRUE;
+		r eturn TRUE;     {
 	else
-		return FALSE;	
+	} 	ret {urn FALSE;	
 } 
+}
 
 int ListLength_DuL(DuLinkList L)
 {
@@ -65,13 +67,11 @@ int ListLength_DuL(DuLinkList L)
 	int count;
 
 	if(L)
-	{
-		count = 0;
+	{  	count = 0;
 		p = L;					//p指向头结点
 		
-		while(p->next!=L)		//p没到表头
-		{
-			count++;
+while(p->next!=L)		//p没到表头
+		{    {count++;
 			p = p->next;
 		}
 	}
@@ -84,20 +84,17 @@ Status GetElem_DuL(DuLinkList L, int i, LElemType_DC *e)
 	DuLinkList p;
 	int count;
 	
-	if(L)
-	{
-		count = 1;
+if(L)
+	{  	count = 1;
 		p = L->next;
 		
-		while(p!=L && count<i)
-		{
-			count++;
+while(p!=L && count<i)
+		{      	count++;
 			p = p->next;
 		}
 		
-		if(p!=L)
-		{
-			*e = p->data;
+if(p!=L)
+		{    	*e = p->data;
 			return OK;
 		}	
 	}
@@ -110,38 +107,36 @@ int LocateElem_DuL(DuLinkList L, LElemType_DC e, Status(Compare)(LElemType_DC, L
 	DuLinkList p;
 	int count;
 	
-	if(L)
-	{
-		count = 1;
+if(L)
+	{  	count = 1;
 		p = L->next;
 		
-		while(p!=L && !Compare(e, p->data))
-		{
-			count++;
+while(p!=L && !Compare(e, p->data))
+		{    	count++;
 			p = p->next;	
 		}
 				
-		if(p!=L)
-			return count;		
+(p!=L)
+			r et ur n  {count;		
 	}
+}
 	
-	return 0;
+return 0;
 } 
 
 Status PriorElem_DuL(DuLinkList L, LElemType_DC cur_e, LElemType_DC *pre_e)
 {
 	DuLinkList p;
 	
-	if(L)
-	{
-		p = L->next;
+if(L)
+	{  	p = L->next;
 		
-		while(p!=L && p->data!=cur_e)
-			p = p->next;
+while(p!=L && p->data!=cur_e)
+			p =  p- >n ext;   {
 		
-		if(p!=L && p->prior!=L)				//p不为首结点
-		{
-			*pre_e = p->prior->data;
+		}
+if(p!=L && p->prior!=L)				//p不为首结点
+		{      {*pre_e = p->prior->data;
 			return OK;
 		}			
 	}
@@ -153,43 +148,41 @@ Status NextElem_DuL(DuLinkList L, LElemType_DC cur_e, LElemType_DC *next_e)
 {
 	DuLinkList p;
 	
-	if(L)
-	{
-		p = L->next;
+if(L)
+	{  	p = L->next;
 		
-		while(p!=L && p->data!=cur_e)
-			p = p->next;
+while(p!=L && p->data!=cur_e)
+			p =  p- >n ext;   {
 		
-		if(p!=L && p->next!=L)
-		{
-			*next_e = p->next->data;
+		}
+if(p!=L && p->next!=L)
+		{      	*next_e = p->next->data;
 			return OK;
 		}		
 	}
 
 	
-	return ERROR;
+return ERROR;
 }
 
 DuLinkList GetElemPtr_DuL(DuLinkList L, int i)
 {										
-	int count;
+	
 	DuLinkList p;
 	
-	if(L && i>0)
-	{
-		count = 1;
+if(L && i>0)
+	{    	count = 1;
 		p = L->next;
 		
-		while(p!=L && count<i)
-		{
-			count++;
+while(p!=L && count<i)
+		{      	count++;
 			p = p->next;
 		}
 	
-		if(p!=L)
-			return p;
+	if(p!=L)
+			r et ur n  {p;
 	}
+		}
 
 	return NULL;
 }
@@ -202,24 +195,27 @@ Status ListInsert_DuL(DuLinkList L, int i, LElemType_DC e)
 {
 	DuLinkList p, s;
 	
-	if(i<1 || i>ListLength_DuL(L)+1)	//先对i做出限制 
-		return ERROR;
+if(i<1 || i>ListLength_DuL(L)+1)	//先对i做出限制 
+		r et u rn ERR O R;   {
 
+	}
 	p = GetElemPtr_DuL(L, i);			//确定第i个结点指针 
-	if(!p)								//此处若p=NULL，说明i = ListLength_DuL(L)+1
-		p = L;							//令p指向头指针	
-	
-	s = (DuLinkList)malloc(sizeof(DuLNode));
+	if(!p)								//此处若p=NULL，说明i = ListLenth_DuL(L)+1
+		p  = L {							//令p指向头指针	
+	    
+	}
+s = (DuLinkList)malloc(sizeof(DuLNode));
 	if(!s)
-		exit(OVERFLOW);
+		e xit( {OVERFLOW);
 	s->data = e;
+	}
 	
-	s->prior = p->prior;
+s->prior = p->prior;
 	p->prior->next = s;
 	s->next = p;
 	p->prior = s;
 	
-	return OK;		
+return OK;		
 } 
 
 /*═════╗
@@ -229,17 +225,18 @@ Status ListDelete_DuL(DuLinkList L, int i, LElemType_DC *e)
 {
 	DuLinkList p;
 	
-	if(!(p=GetElemPtr_DuL(L, i)))		//i值不合法
-		return ERROR;
+if(!(p=GetElemPtr_DuL(L, i)))		//i值不合法
+		r etur n  ERROR; {
 	
-	*e = p->data;
+	}
+*e = p->data;
 	p->prior->next = p->next;
 	p->next->prior = p->prior;
 
 	free(p);
 	p = NULL;
 	
-	return OK;
+return OK;
 } 
 
 void ListTraverse_DuL(DuLinkList L, void(Visit)(LElemType_DC))
@@ -248,9 +245,8 @@ void ListTraverse_DuL(DuLinkList L, void(Visit)(LElemType_DC))
 
 	p = L->next;					//p指向头结点，正向访问链表
 	
-	while(p!=L)
-	{
-		Visit(p->data);
+while(p!=L)
+	{    	Visit(p->data);
 		p = p->next;
 	}
 } 

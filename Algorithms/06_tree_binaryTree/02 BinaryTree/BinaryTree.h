@@ -1,13 +1,13 @@
 /**********************************************
  *							                  *
- * 文件夹: 06 树和二叉树\02 BinaryTree      *
+ * 文件夹: 06_tree_binaryTree\02 BinaryTree      *
  * 							                  *
  * 文件名: BinaryTree.h                       *
  *    	    				                  *
  * 内  容: 二叉树（二叉链表存储）相关操作列表 *
  *                                            *
  **********************************************/
- 
+
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
 
@@ -19,26 +19,24 @@
 
 /* 二叉树（二叉链表存储）相关类型定义 */
 typedef char TElemType;							//假设二叉树元素均为字符
-typedef struct BiTNode
-{
-	TElemType data;								//结点元素 
-	struct BiTNode* lchild;						//左孩子指针 
-	struct BiTNode* rchild;						//右孩子指针 
-}BiTNode;										//二叉树结点 
-typedef BiTNode* BiTree;						//指向二叉树结点的指针
+typedef struct BiTNode {
+	TElemType data;								//结点元素
+	struct BiTNode *lchild;						//左孩子指针
+	struct BiTNode *rchild;						//右孩子指针
+} BiTNode;										//二叉树结点
+typedef BiTNode *BiTree;						//指向二叉树结点的指针
 
 /* 栈元素类型 */
-typedef BiTree SElemType_Sq;					//重定义栈元素类型 
-#include "../../03 栈和队列/01 SequenceStack/SequenceStack.c"	//**03 栈和队列**// 
+typedef BiTree SElemType_Sq;					//重定义栈元素类型
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
 
 /* 存储当前结点信息 */
-/* 在按树结构打印树的时候使用 */ 
-typedef struct									
-{ 
-	BiTree left;								//当前结点的左指针 
-	BiTree right;								//当前结点的右指针 
-	int n;										//当前结点的次序 
-}Node;
+/* 在按树结构打印树的时候使用 */
+typedef struct {
+	BiTree left;								//当前结点的左指针
+	BiTree right;								//当前结点的右指针
+	int n;										//当前结点的次序
+} Node;
 
 /* 二叉树（二叉链表存储）Func列 表 */
 void InitBiTree(BiTree *T);
@@ -89,7 +87,7 @@ TElemType Value(BiTree p);
 void Assign(BiTree p, TElemType value);
 /*━━━━━━━━━━━━━━━━┓
 ┃(10)为某结点赋值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━*/            
+┗━━━━━━━━━━━━━━━━*/
 
 TElemType Parent(BiTree T, TElemType e);
 /*━━━━━━━━━━━━━━┓
@@ -116,12 +114,12 @@ TElemType RightSibling(BiTree T, TElemType e);
 ┃(15)返回某结点的右兄弟结点值。┃
 ┗━━━━━━━━━━━━━━━*/
 
-BiTree LocationBiTree_1(BiTree T, TElemType e); 
+BiTree LocationBiTree_1(BiTree T, TElemType e);
 /*━━━━━━━━━━━━━━┓
 ┃(16-1)获取指向结点e的指针。 ┃
 ┗━━━━━━━━━━━━━━*/
 
-BiTree LocationBiTree_2(BiTree T, TElemType e); 
+BiTree LocationBiTree_2(BiTree T, TElemType e);
 /*━━━━━━━━━━━━━━┓
 ┃(16-2)获取指向结点e的指针。 ┃
 ┗━━━━━━━━━━━━━━*/
@@ -156,7 +154,7 @@ void InOrderTraverse_1(BiTree T, void(Visit)(TElemType));
 ┃(21-1)中序遍历二叉树。┃
 ┗━━━━━━━━━━━*/
 
-Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType)); 
+Status InOrderTraverse_2(BiTree T, Status(Visit)(TElemType));
 /*━━━━━━━━━━━━━━━━┓
 ┃(21-2)算法6.2：中序遍历二叉树。 ┃
 ┗━━━━━━━━━━━━━━━━*/

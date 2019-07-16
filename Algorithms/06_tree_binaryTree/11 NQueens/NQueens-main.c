@@ -1,6 +1,6 @@
 /**************************************
  *							          *
- * 文件夹: 06 树和二叉树\11 NQueens *
+ * 文件夹: 06_tree_binaryTree\11 NQueens *
  * 							          *
  * 文件名: NQueens-main.c             *
  * 							          *
@@ -9,27 +9,27 @@
  *************************************/
 
 #include <stdio.h>
-#include "NQueens.c" 										//**06 树和二叉树**//
+#include "NQueens.c" 										//**06_tree_binaryTree**//
 
 int main(int argc, char *argv[])
 {
 	ChessBoard c[N][N];
-	
+
 	printf("1\nFunc InitChessBoard_CB test...\n");		//1.FuncInitChessBoard_CBtest
 	{
 		printf("Initial一个 %2d * %-2d 的空棋盘...\n", N, N);
 		InitChessBoard_CB(c);
 		printf("\n");
 	}
-	PressEnter;	
+	PressEnter;
 
 	printf("4\nFunc Output_CB test...\n");				//4.FuncOutput_CBtest
-	{ 
+	{
 		printf("展示当前棋盘中的皇后布局...\n");
 		Output_CB(c);
 		printf("\n");
 	}
-	PressEnter;	
+	PressEnter;
 
 	printf("2、3\nFunc Trial_CB等 test...\n");			//2、3.FuncTrial_CB、Layout_CBtest
 	{

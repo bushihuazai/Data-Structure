@@ -1,6 +1,6 @@
 /**************************************
  *                                    *
- * 文件夹: 09 查找                  *
+ * 文件夹: 09_search                  *
  *                                    *
  * 文件名: BalancedBinarySortTree.h   *
  *                                    *
@@ -13,7 +13,7 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include "../00 Base/Base.c" 			//**09 查找**//
+#include "../00 Base/Base.c" 			//**09_search**//
 
 /* 宏定义 */
 #define EQ(a,b) ((a)==(b))
@@ -48,7 +48,7 @@ Status CreateAVL(BBSTree *BBST, Table T);
 
 BBSTree SearchAVL(BBSTree BBST, KeyType key);
 /*━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(02)查找，返回指向key的指针，若不存在返回MULL。 ┃
+┃(02)查找，返回指向key的指针，若 not exsist返回MULL。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 Status InsertAVL(BBSTree *BBST, ElemType_Search e, Boolean *taller);

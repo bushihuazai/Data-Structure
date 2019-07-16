@@ -1,6 +1,6 @@
 /********************************************
  *						                    *
- * 文件夹: 07 图\04 AMLGraph              *
+ * 文件夹: 07_graph\04 AMLGraph              *
  * 						                    *
  * 文件名: AMLGraph.h                       *
  *                                          *
@@ -16,42 +16,38 @@
 #include <stdarg.h>											//提供宏va_list、va_start、va_arg、va_end
 #include "../../01_abstract/Status.h"							//**01_abstract**//
 #include "../../01_abstract/Scanf.c"							//**01_abstract**//
-#include "../../03 栈和队列/07 LinkQueue/LinkQueue.c" 	//**03 栈和队列**//
+#include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" 	//**03_stack_queue**//
 
 /* 宏定义 */
 #define MAX_VERTEX_NUM 20						//最大顶点个数 
 #define MAX_EDGE_NUM 190						//无向图最大弧数量 
 
 /* 无向图（邻接多重表）类型定义 */
-typedef enum{ unvisit, visit }VisitIf;
-typedef struct
-{
+typedef enum { unvisit, visit } VisitIf;
+typedef struct {
 	//本文档不设弧信息
-}InfoType;
-typedef struct EBox								//表结点 
-{
-	VisitIf mark;								//访问标记 
+} InfoType;
+typedef struct EBox {							//表结点
+	VisitIf mark;								//访问标记
 	int ivex, jvex;								//该边依附的两个顶点的位置
 	struct EBox *ilink, *jlink;					//分别指向依附这两个顶点的下一条边
 	InfoType info;								//该弧相关信息
-}EBox;
-typedef char VertexType_AML;					//无向图顶点类型 
-typedef struct VexBox
-{
-	VertexType_AML data;						//顶点信息 
+} EBox;
+typedef char VertexType_AML;					//无向图顶点类型
+typedef struct VexBox {
+	VertexType_AML data;						//顶点信息
 	EBox *firstedge;
-}VexBox;
-typedef struct									//无向图（邻接多重表）存储结构
-{
-	VexBox adjmulist[MAX_VERTEX_NUM+1];			//表头向量
-	int vexnum, edgenum;						//无向图当前顶点数和弧数 
-	int IncInfo;								//IncInfo为0则各弧不含其它信息  
-}AMLGraph;
+} VexBox;
+typedef struct {								//无向图（邻接多重表）存储结构
+	VexBox adjmulist[MAX_VERTEX_NUM + 1];			//表头向量
+	int vexnum, edgenum;						//无向图当前顶点数和弧数
+	int IncInfo;								//IncInfo为0则各弧不含其它信息
+} AMLGraph;
 
 /* 全局变量 */
-Status visited[MAX_VERTEX_NUM+1];				//顶点标志数组
-EBox *edgePtr[MAX_EDGE_NUM+1];					//弧指针数组
-void (*VisitFunc)(VertexType_AML e);			//Func指针变量 
+Status visited[MAX_VERTEX_NUM + 1];				//顶点标志数组
+EBox *edgePtr[MAX_EDGE_NUM + 1];					//弧指针数组
+void (*VisitFunc)(VertexType_AML e);			//Func指针变量
 
 /* 无向图（邻接多重表）Func列表 */
 Status CreateUDG_AML(FILE *fp, AMLGraph *G);

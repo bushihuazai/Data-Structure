@@ -11,7 +11,7 @@
 #ifndef BLOCKCHAINSTRING_H
 #define BLOCKCHAINSTRING_H
 
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>						//提供malloc、realloc、free、exit原型
 #include <string.h>						//提供strlen原型
 #include "../../01_abstract/Status.h"		//**01_abstract**//
@@ -20,16 +20,14 @@
 #define CHUNKSIZE 3						//块大小（自定义） 
 
 /* 串的块链存储类型定义 */
-typedef struct Chunk 
-{
-	char ch[CHUNKSIZE];					
+typedef struct Chunk {
+	char ch[CHUNKSIZE];
 	struct Chunk *next;
-}Chunk;
-typedef struct
-{
-	Chunk *head, *tail;					//串的头和尾指针 
-	int curlen;							//串的当前长度 
-}LString;								
+} Chunk;
+typedef struct {
+	Chunk *head, *tail;					//串的头和尾指针
+	int curlen;							//串的当前长度
+} LString;
 
 /* 块链串Func列表 */
 void InitString_L(LString *T);
@@ -42,26 +40,26 @@ Status StrAssign_L(LString *T, char *chars);
 ┃(02)生成一个其值等于常量chars的串T。┃
 ┗━━━━━━━━━━━━━━━━━━*/
 
-Status StrCopy_L(LString *T, LString S); 
+Status StrCopy_L(LString *T, LString S);
 /*━━━━━━━━━━━┓
 ┃(03)由串S复制得到串T。┃
-┗━━━━━━━━━━━*/ 
- 
+┗━━━━━━━━━━━*/
+
 Status StrEmpty_L(LString S);
 /*━━━━━━━━━━━━━━━━━━━━┓
 ┃(04)若S is empty串，返回TRUE,否则返回FALSE。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━*/
 
-int StrCompare_L(LString S, LString T); 
+int StrCompare_L(LString S, LString T);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(05)若S>T，返回值>0；若S<T，返回值<0；否则，返回值=0。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-int StrLength_L(LString S); 
+int StrLength_L(LString S);
 /*━━━━━━┓
 ┃(06)求串长。┃
 ┗━━━━━━*/
- 
+
 void ClearString_L(LString *S);
 /*━━━━━━┓
 ┃(07)清空S。 ┃
@@ -79,7 +77,7 @@ Status SubString_L(LString *Sub, LString S, int pos, int len);
 
 int Index_L(LString S, LString T, int pos);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(10)返回T在S中第pos个字符后第一次出现的位置，不存在则返回0。┃
+┃(10)返回T在S中第pos个字符后第一次出现的位置， not exsist则返回0。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 Status Replace_L(LString *S, LString T, LString V);

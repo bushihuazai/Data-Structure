@@ -1,6 +1,6 @@
 /****************************************
  *                                      *
- * 文件夹: 06 树和二叉树\08 MFSet     *
+ * 文件夹: 06_tree_binaryTree\08 MFSet     *
  *                                      *
  * 文件名: MFSet.h                      *
  *                                      *
@@ -16,29 +16,27 @@
 #include "../../01_abstract/Scanf.c"				//**01_abstract**//
 
 /* 并查集（等价类）的树的双亲表类型定义 */
-typedef int TElemType_P;						//假设集合中元素均为整数 
-#include "../05 ParentTree/ParentTree.c" 		//**06 树和二叉树**//
+typedef int TElemType_P;						//假设集合中元素均为整数
+#include "../05 ParentTree/ParentTree.c" 		//**06_tree_binaryTree**//
 typedef PTree MFSet;
 
 /* 二元关系 */
-typedef struct
-{
+typedef struct {
 	int i;
 	int j;
-}Node;
+} Node;
 
 /* 等价关系 */
-typedef struct
-{
-	Node nodes[MAX_TREE_SIZE];					//足够大的集合空间 
-	int n; 
-}Relation; 
+typedef struct {
+	Node nodes[MAX_TREE_SIZE];					//足够大的集合空间
+	int n;
+} Relation;
 
-/* 并查集（等价类）Func列表 */ 
+/* 并查集（等价类）Func列表 */
 void Initial_mfset(FILE *fp, MFSet *S);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(01)构造一个由n个子集（每个子集只包含单个成员）构成的集合S。┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/ 
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 int find_mfset(MFSet S, int i);
 /*━━━━━━━━━━━━━━━━━━━━┓
@@ -65,12 +63,12 @@ Status BuildRelation_mfset(FILE *fp, Relation *R);
 ┃(06)建立二元等价关系。┃
 ┗━━━━━━━━━━━*/
 
-int EquivalenceClass_mfset_1(MFSet *S, Relation R); 
+int EquivalenceClass_mfset_1(MFSet *S, Relation R);
 /*━━━━━━━━━━━━━━━━━━┓
 ┃(07-1)求在等价关系R下集合S的等价类。┃
 ┗━━━━━━━━━━━━━━━━━━*/
 
-int EquivalenceClass_mfset_2(MFSet *S, Relation R); 
+int EquivalenceClass_mfset_2(MFSet *S, Relation R);
 /*━━━━━━━━━━━━━━━━━━┓
 ┃(07-2)求在等价关系R下集合S的等价类。┃
 ┗━━━━━━━━━━━━━━━━━━*/

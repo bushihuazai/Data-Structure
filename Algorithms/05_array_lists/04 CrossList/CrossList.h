@@ -1,6 +1,6 @@
 /********************************************
  * 							                *
- * 文件夹: 05 数组和广义表\04 CrossList   *
+ * 文件夹: 05_array_lists\04 CrossList   *
  * 							                *
  * 文件名: CrossList.h                      *
  * 							                *
@@ -19,20 +19,18 @@
 
 /* 十字链表类型定义 */
 typedef int CElemType;
-typedef struct OLNode 
-{
-	int i, j;				//该非零元的行下标和列下标 
+typedef struct OLNode {
+	int i, j;				//该非零元的行下标和列下标
 	CElemType e;
-	struct OLNode *right;	//该非零元所在的行表的后继链域 
+	struct OLNode *right;	//该非零元所在的行表的后继链域
 	struct OLNode *down;	//该非零元所在的列表的后继链域
-}OLNode;
-typedef OLNode *OLink;		//指向某一结点的指针 
-typedef struct
-{
-	OLink *rhead;			//行链表头指针 
-	OLink *chead;			//列链表头指针 
-	int mu, nu, tu;			//矩阵的行数、列数和非零元个数 
-}CrossList;
+} OLNode;
+typedef OLNode *OLink;		//指向某一结点的指针
+typedef struct {
+	OLink *rhead;			//行链表头指针
+	OLink *chead;			//列链表头指针
+	int mu, nu, tu;			//矩阵的行数、列数和非零元个数
+} CrossList;
 
 /* 十字链表（稀疏矩阵）Func列表 */
 Status CreateSMatrix_OL(FILE *fp, int n, ...);

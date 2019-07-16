@@ -1,6 +1,6 @@
 /***********************************
  *						           *
- * 文件夹: 10 内部排序           *
+ * 文件夹: 10_internal_sort           *
  * 						           *
  * 文件名: SequenceListType-main.c *
  * 							       *
@@ -9,26 +9,26 @@
  ***********************************/
 
 #include <stdio.h>
-#include "SequenceListType.c" 	//**10 内部排序**//
+#include "SequenceListType.c" 	//**10_internal_sort**//
 
 void PrintKey(KeyType e);
 
 int main(int argc, char *argv[])
-{		
+{
 	SqList_sort L;
-	
-	printf("1、2\nFunc CreateSortList等 test...\n");	//1、2.FuncCreateSortList等test		
+
+	printf("1、2\nFunc CreateSortList等 test...\n");	//1、2.FuncCreateSortList等test
 	{
 		FILE *fp;
-		
+
 		printf("创建并输出一个任意序列...\n");
 		fp = fopen("TestData.txt", "r");
 		CreateSortList(fp, &L);
 		Traverse(L, PrintKey);
 		printf("\n");
-	}	
+	}
 	PressEnter;
-	
+
 	return 0;
 }
 

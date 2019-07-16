@@ -1,13 +1,13 @@
 /*******************************************
  *                                         *
- * 文件夹: 02 线性表\04 SinglyLinkedList *
+ * 文件夹: 02_sequence_list\04 SinglyLinkedList *
  *                                         *
  * 内  容:  SingleLinkedList 相关Functest              *
  *                                         *
  *******************************************/
 
 #include <stdio.h>
-#include "SinglyLinkedList.c" 						//**02 线性表**//
+#include "SinglyLinkedList.c" 						//**02_sequence_list**//
 
 /* Func原型 */
 Status CmpGreater(LElemType_L e, LElemType_L data);	//判断data是否大于e //若data大于e，返回TRUE
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	printf("10\nFunc ListInsert_L test...\n");		//10.FuncListInsert_Ltest
 	{
 		for (i = 1; i <= 6; i++) {
-			printf("在 L 第 %d 个位置插入 \"%d\" ...\n", i, 2 * i);
+			printf("In L 's %d th position, inserting \"%d\" ...\n", i, 2 * i);
 			ListInsert_L(L, i, 2 * i);
 		}
 		printf("\n");
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
 	printf("12\nFunc ListTraverse_L test...\n");	//12.FuncListTraverse_Ltest
 	{
-		printf(" L 中的元素为：L = ");
+		printf(" L elements：L = ");
 		ListTraverse_L(L, PrintElem);
 		printf("\n\n");
 	}
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 
 	printf("5\nFunc ListLength_L test...\n");		//5.FuncListLength_Ltest
 	{
-		printf(" L 的长度为 %d \n", ListLength_L(L));
+		printf(" L 's length %d \n", ListLength_L(L));
 		printf("\n");
 	}
 	PressEnter;
@@ -62,8 +62,8 @@ int main(int argc, char **argv)
 	printf("11\nFunc ListDelete_L test...\n");		//11.FuncListDelete_Ltest
 	{
 		ListDelete_L(L, 6, &e);
-		printf("删除 L 中第 6 个元素 \"%d\" ...\n", e);
-		printf(" L 中的元素为：L = ");
+		printf("Deleting L 's 6 th element \"%d\" ...\n", e);
+		printf(" L elements：L = ");
 		ListTraverse_L(L, PrintElem);
 		printf("\n\n");
 	}
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 	printf("6\nFunc GetElem_L test...\n");			//6.FuncGetElem_Ltest
 	{
 		GetElem_L(L, 4, &e);
-		printf(" L 中第 4 个位置的元素为 \"%d\" \n", e);
+		printf(" L 's 4 th element \"%d\" \n", e);
 		printf("\n");
 	}
 	PressEnter;
@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 	printf("7\nFunc LocateElem_L test...\n");		//7.FuncLocateElem_Ltest
 	{
 		i = LocateElem_L(L, 13, CmpGreater);
-		printf(" L 中第一个元素值大于 \"7\" 的元素的位置为 %d \n", i);
+		printf(" L 's first element that Larger than \"7\" is at %d \n", i);
 		printf("\n");
 	}
 	PressEnter;
@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 	printf("8\nFunc PriorElem_L test...\n");		//8.FuncPriorElem_Ltest
 	{
 		PriorElem_L(L, 6, &e);
-		printf("元素 \"6\" 的前驱为 \"%d\" \n", e);
+		printf("Element \"6\" 's PriorElement: \"%d\" \n", e);
 		printf("\n");
 	}
 	PressEnter;
@@ -96,17 +96,17 @@ int main(int argc, char **argv)
 	printf("9\nFunc NextElem_L test...\n");			//9.FuncNextElem_Ltest
 	{
 		NextElem_L(L, 6, &e);
-		printf("元素 \"6\" 的后继为 \"%d\" \n", e);
+		printf("Element \"6\" 's NextElement: \"%d\" \n", e);
 		printf("\n");
 	}
 	PressEnter;
 
 	printf("2\nFunc ClearList_L test...\n");		//2.FuncClearList_Ltest
 	{
-		printf("清空 L 前：");
+		printf("Clear start:");
 		ListEmpty_L(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		ClearList_L(L);
-		printf("清空 L 后：");
+		printf("Clear End");
 		ListEmpty_L(L) ? printf(" L  is empty!!\n") : printf(" L  not empty!\n");
 		printf("\n");
 	}
@@ -114,11 +114,11 @@ int main(int argc, char **argv)
 
 	printf("3\nFunc DestroyList_L test...\n");		//3.FuncDestroyList_Ltest
 	{
-		printf("销毁 L 前：");
-		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
+		printf("Destroy start:");
+		L ? printf(" L exsists!\n") : printf(" L  not exsist!!\n");
 		DestroyList_L(&L);
-		printf("销毁 L 后：");
-		L ? printf(" L 存在!\n") : printf(" L 不存在!!\n");
+		printf("Destroy end");
+		L ? printf(" L exsists!\n") : printf(" L  not exsist!!\n");
 		printf("\n");
 	}
 	PressEnter;
@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 	{
 		FILE *fp;
 		LinkList L;
-		printf("头插法建立 SingleLinkedList  L = ");
+		printf("HeadInserting SingleLinkedList  L = ");
 		fp = fopen("TestData_HL.txt", "r");				//文件指针，指向数据源
 		CreateList_HL(fp, &L, 5);
 		fclose(fp);
@@ -140,7 +140,7 @@ int main(int argc, char **argv)
 	{
 		FILE *fp;
 		LinkList L;
-		printf("尾插法建立 SingleLinkedList  L = ");
+		printf("TailInserting SingleLinkedList  L = ");
 		fp = fopen("TestData_TL.txt", "r");				//文件指针，指向数据源
 		CreateList_TL(fp, &L, 5);
 		fclose(fp);

@@ -1,6 +1,6 @@
 /****************************
  *                          *
- * 文件夹: 09 查找        *
+ * 文件夹: 09_search        *
  *                          *
  * 文件名: B+Tree.h         *
  *                          *
@@ -13,7 +13,7 @@
 
 #include <stdlib.h>
 #include <math.h>							//提供ceil原型
-#include "../00 Base/Base.c" 				//**09 查找**//
+#include "../00 Base/Base.c" 				//**09_search**//
 
 /* 宏定义 */
 #define M 3									//B+树的阶，暂设为3 
@@ -21,34 +21,30 @@
 #define LT(a,b) ((a) < (b))
 
 /* 类型定义 */
-typedef ElemType_Search B_TElemType;		//B+树元素类型 
-typedef struct B_TNode						//B+树存储表示
-{
-	int keynum;								//结点中关键字个数 
-	struct B_TNode* parent;					//指向双亲结点 
-											//（与B树区别）  
-	KeyType key[M+1];						//关键字向量，占用0号单元 
-	struct B_TNode* ptr[M+1];				//子树指针向量，占用0号单元
-	
-	int leaf;								//leaf=0,非叶结点，leaf=1，叶结点 
-	union
-	{
-		struct B_TNode* next;
-	}lf;
-}B_TNode;									//B+树结点 
-typedef struct
-{
-	B_TNode* data;							//叶子结点头指针
-	B_TNode* root;							//指向B+树根结点
-}B_Tree;									//B+树
+typedef ElemType_Search B_TElemType;		//B+树元素类型
+typedef struct B_TNode {					//B+树存储表示
+	int keynum;								//结点中关键字个数
+	struct B_TNode *parent;					//指向双亲结点
+	//（与B树区别）
+	KeyType key[M + 1];						//关键字向量，占用0号单元
+	struct B_TNode *ptr[M + 1];				//子树指针向量，占用0号单元
 
-/* B+树查找结果类型 */ 
-typedef struct
-{
-	B_TNode* pt;							//指向找到的结点 
-	int i;									//1...n，关键字在结点中的序号（插入位置） 
-	int tag;								//1:查找成功，0:查找失败 
-}Result; 
+	int leaf;								//leaf=0,非叶结点，leaf=1，叶结点
+	union {
+		struct B_TNode *next;
+	} lf;
+} B_TNode;									//B+树结点
+typedef struct {
+	B_TNode *data;							//叶子结点头指针
+	B_TNode *root;							//指向B+树根结点
+} B_Tree;									//B+树
+
+/* B+树查找结果类型 */
+typedef struct {
+	B_TNode *pt;							//指向找到的结点
+	int i;									//1...n，关键字在结点中的序号（插入位置）
+	int tag;								//1:查找成功，0:查找失败
+} Result;
 
 /* B+树Func列表 */
 Status CreateB_Tree(B_Tree *B_T, Table T);
@@ -96,4 +92,4 @@ void PrintB_Tree(B_Tree B_T);
 ┃(09)输出B+树关键字。┃
 ┗━━━━━━━━━━*/
 
-#endif 
+#endif

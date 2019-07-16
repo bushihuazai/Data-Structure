@@ -1,6 +1,6 @@
 /********************************
  *						        *
- * 文件夹: 02 线性表          *
+ * 文件夹: 02_sequence_list          *
  * 							    *
  * 文件名: StaticLinkedList.h   *
  * 							    *
@@ -12,29 +12,28 @@
 ★备注：                                          ┃
 ★1.为操作方便，特为申请到的空间段设一“头结点”。┃
 ★2.模拟系统动态申请空间过程。                    ┃
-★3.个别操作会与严蔚敏数据结构课本有所差异。      ┃       
-┗━━━━━━━━━━━━━━━━━━━━━━━━*/ 
- 
+★3.个别操作会与严蔚敏数据结构课本有所差异。      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━*/
+
 #ifndef STATICLINKEDLIST_H
 #define STATICLINKEDLIST_H
 
 #include <stdlib.h>						////提供malloc、realloc、free、exit原型
 #include "../../01_abstract/Status.h"		//**01_abstract**//
 
-/* 宏定义 */ 
+/* 宏定义 */
 #define MAXSIZE 1000					//静态链表的最大长度
 
 /* 静态链表类型定义 */
 typedef int SLinkList;					//静态链表类型
 typedef int LElemType_S;
-typedef struct 
-{
+typedef struct {
 	LElemType_S data;
-	int cur;							//cur是游标，做指针用，区别于数组下标 
-}Component[MAXSIZE];					//链表空间类型 
+	int cur;							//cur是游标，做指针用，区别于数组下标
+} Component[MAXSIZE];					//链表空间类型
 
 /* 全局变量 */
-Component SPACE;						//静态链表空间 
+Component SPACE;						//静态链表空间
 
 /*	静态链表Func列表 */
 void InitSpace_SL();
@@ -60,7 +59,7 @@ int InitList_SL(SLinkList *H);
 Status ClearList_SL(SLinkList H);
 /*━━━━━┓
 ┃(05)置空。┃
-┗━━━━━*/ 
+┗━━━━━*/
 
 void DestroyList_SL(SLinkList *H);
 /*━━━━━┓
@@ -75,7 +74,7 @@ Status ListEmpty_SL(SLinkList H);
 int ListLength_SL(SLinkList H);
 /*━━━━━┓
 ┃(08)求长。┃
-┗━━━━━*/ 
+┗━━━━━*/
 
 Status GetElem_SL(SLinkList H, int i, LElemType_S *e);
 /*━━━━━┓
@@ -95,7 +94,7 @@ Status PriorElem_SL(SLinkList H, LElemType_S cur_e, LElemType_S *pre_e);
 Status NextElem_SL(SLinkList H, LElemType_S cur_e, LElemType_S *next_e);
 /*━━━━━┓
 ┃(12)后继。┃
-┗━━━━━*/ 
+┗━━━━━*/
 
 Status ListInsert_SL(SLinkList H, int i, LElemType_S e);
 /*━━━━━┓
@@ -110,6 +109,6 @@ Status ListDelete_SL(SLinkList H, int i, LElemType_S *e);
 Status ListTraverse_SL(SLinkList H, void(Visit)(LElemType_S));
 /*━━━━━┓
 ┃(15)访问。┃
-┗━━━━━*/ 
+┗━━━━━*/
 
 #endif

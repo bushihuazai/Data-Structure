@@ -1,6 +1,6 @@
 /**************************************
  *							          *
- * 文件夹: 06 树和二叉树\11 NQueens *
+ * 文件夹: 06_tree_binaryTree\11 NQueens *
  * 							          *
  * 文件名: NQueens.h                  *
  * 							          *
@@ -18,12 +18,12 @@
 #define N 8										//棋盘最大范围N*N
 
 /* N皇后问题类型定义 */
-typedef int ChessBoard;							//棋盘类型 
+typedef int ChessBoard;							//棋盘类型
 
 /* 全局变量 */
-int order;										//跟踪每一种解法 
+int order;										//跟踪每一种解法
 
-/* N皇后问题Func列表 */ 
+/* N皇后问题Func列表 */
 void InitChessBoard_CB(ChessBoard c[N][N]);
 /*━━━━━━━━━━━┓
 ┃(01)InitialN*N的棋盘c。┃

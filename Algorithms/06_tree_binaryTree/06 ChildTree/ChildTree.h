@@ -1,6 +1,6 @@
 /****************************************************
  *                                                  *
- * 文件夹: 06 树和二叉树\06 ChildTree             *
+ * 文件夹: 06_tree_binaryTree\06 ChildTree             *
  *                                                  *
  * 文件名: ChildTree.h                              *
  *    	    			                            *
@@ -15,32 +15,29 @@
 #include <stdlib.h>										//提供malloc、realloc、free、exit原型
 #include "../../01_abstract/Status.h"						//**01_abstract**//
 #include "../../01_abstract/Scanf.c"						//**01_abstract**//
-#include "../../03 栈和队列/07 LinkQueue/LinkQueue.c" //**03 栈和队列**//
-#include "../../03 栈和队列/01 SequenceStack/SequenceStack.c"	//**03 栈和队列**// 
+#include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" //**03_stack_queue**//
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
 
 /* 宏定义 */
 #define MAX_TREE_SIZE 100						//树的最大结点数
 
 /* 孩子树类型定义 */
 typedef char TElemType_C;						//假设树中元素均为字符
-typedef struct CTNode							//孩子结点 
-{
+typedef struct CTNode {						//孩子结点
 	int child;
-	struct CTNode* next;
-}CTNode;
-typedef CTNode* ChildPtr;						//孩子结点指针 
-typedef struct
-{
-	int parent;									//双亲结点位置 
+	struct CTNode *next;
+} CTNode;
+typedef CTNode *ChildPtr;						//孩子结点指针
+typedef struct {
+	int parent;									//双亲结点位置
 	TElemType_C data;
-	ChildPtr firstchild;						//孩子链表头指针 
-}CTBox;
-typedef struct
-{
+	ChildPtr firstchild;						//孩子链表头指针
+} CTBox;
+typedef struct {
 	CTBox nodes[MAX_TREE_SIZE];
-	int r;										//根的位置 
-	int n;										//树的结点数 
-}CTree; 
+	int r;										//根的位置
+	int n;										//树的结点数
+} CTree;
 
 /* 树的孩子链表存储结构Func列表 */
 void InitTree_C(FILE *fp, CTree *T);
@@ -68,7 +65,7 @@ Status TreeEmpty_C(CTree T);
 ┃(05)判断树T是否 is empty。 ┃
 ┗━━━━━━━━━━━*/
 
-Status CreateTree_C(FILE *fp, CTree *T); 
+Status CreateTree_C(FILE *fp, CTree *T);
 /*━━━━━━━━━━━┓
 ┃(06)按层序序列构造树。┃
 ┗━━━━━━━━━━━*/
@@ -93,7 +90,7 @@ int Depth_C(CTree T, int i);
 ┃(09)求T中第i个结点开始的子树深度。┃
 ┗━━━━━━━━━━━━━━━━━*/
 
-TElemType_C Root_C(CTree T); 
+TElemType_C Root_C(CTree T);
 /*━━━━━━━━━━━┓
 ┃(10)返回树的根结点值。┃
 ┗━━━━━━━━━━━*/
@@ -130,7 +127,7 @@ int Sibling_C_2(CTree T, int order, int mark);
 
 int ChildCount_C(CTree T, TElemType_C p);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃(16)返回结点p的孩子结点（子树）个数，返回负数代表结点p不存在。┃
+┃(16)返回结点p的孩子结点（子树）个数，返回负数代表结点p not exsist。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
 int ChildSeat_C(CTree T, TElemType_C p, int i);

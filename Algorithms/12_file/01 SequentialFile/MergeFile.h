@@ -1,6 +1,6 @@
 /********************************
  *                              *
- * 文件夹: 12 文件            *
+ * 文件夹: 12_file            *
  *                              *
  * 文件名: MergeFile.h          *
  *                              *
@@ -15,17 +15,15 @@
 #include "../../01_abstract/Status.h"			//**01_abstract**//
 
 /* 文件类型定义 */
-typedef struct				//主文件
-{
+typedef struct {			//主文件
 	int key;				//账号
-	int balance;			//余额 
-}MainFile;
-typedef struct				//事务文件
-{
+	int balance;			//余额
+} MainFile;
+typedef struct {			//事务文件
 	char code;				//操作：I-插入，D删去，U更改
 	int key;				//账号
-	int money;				//金额变动，存"+"，取"-" 
-}AffairFile;
+	int money;				//金额变动，存"+"，取"-"
+} AffairFile;
 
 /* 文件归并Func列表 */
 void InitFile(FILE *f, FILE *g);
@@ -53,7 +51,7 @@ void Error(AffairFile gr, FILE *log);
 ┃(05)将发生错误的事务记录写入日志文件。┃
 ┗━━━━━━━━━━━━━━━━━━━*/
 
-void MergeFile(FILE *f, FILE *g, FILE *h, FILE *log); 
+void MergeFile(FILE *f, FILE *g, FILE *h, FILE *log);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(06)算法12.1：归并主文件f和事务记录g到新的文件h。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
@@ -63,4 +61,4 @@ void Print(FILE *fp, int mark);
 ┃(07)输出记录，mark=0表示输出文件记录，mark=1表示输出事务记录。┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

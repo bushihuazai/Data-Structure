@@ -1,6 +1,6 @@
 /**********************************************
  *											  *
- * 文件夹: 06 树和二叉树\03 Tri_BinaryTree  *
+ * 文件夹: 06_tree_binaryTree\03 Tri_BinaryTree  *
  * 									    	  *
  * 文件名: Tri_BinaryTree.h                   *
  * 											  *
@@ -19,18 +19,17 @@
 
 /* 二叉树（三叉链表存储）相关类型定义 */
 typedef char TElemType_Tri;						//假设二叉树元素均为字符
-typedef struct TBiTNode
-{
+typedef struct TBiTNode {
 	TElemType_Tri data;							//结点元素
-	struct TBiTNode* parent;					//双亲结点指针 
-	struct TBiTNode* lchild;					//左孩子指针 
-	struct TBiTNode* rchild;					//右孩子指针 
-}TBiTNode;										//二叉树结点 
-typedef TBiTNode* TBiTree;						//指向二叉树结点的指针
+	struct TBiTNode *parent;					//双亲结点指针
+	struct TBiTNode *lchild;					//左孩子指针
+	struct TBiTNode *rchild;					//右孩子指针
+} TBiTNode;										//二叉树结点
+typedef TBiTNode *TBiTree;						//指向二叉树结点的指针
 
 /* 队列元素类型 */
-typedef TBiTree QElemType_L;						
-#include "../../03 栈和队列/07 LinkQueue/LinkQueue.c" //**03 栈和队列**//
+typedef TBiTree QElemType_L;
+#include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" //**03_stack_queue**//
 
 /* 二叉树三叉链表存储结构Func列表 */
 void InitBiTree_Tri(TBiTree *T);
@@ -86,7 +85,7 @@ TElemType_Tri Value_Tri(TBiTree p);
 void Assign_Tri(TBiTree p, TElemType_Tri value);
 /*━━━━━━━━━━━━━━━━┓
 ┃(11)为某结点赋值，p为结点指针。 ┃
-┗━━━━━━━━━━━━━━━━*/            
+┗━━━━━━━━━━━━━━━━*/
 
 TBiTree Point(TBiTree T, TElemType_Tri e);
 /*━━━━━━━━━━━━━┓

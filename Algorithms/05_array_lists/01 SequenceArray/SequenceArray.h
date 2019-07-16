@@ -1,6 +1,6 @@
 /**********************************************
  *                                            *
- * 文件夹: 05 数组和广义表\01 SequenceArray *
+ * 文件夹: 05_array_lists\01 SequenceArray *
  *                                            *
  * 文件名: SequenceArray.h                    *
  *                                            *
@@ -21,13 +21,12 @@
 
 /* 数组类型定义 */
 typedef int AElemType_Sq;
-typedef struct									//数组的顺序存储表示
-{
-	AElemType_Sq *base;							//数组元素基址（存放数组元素） 
-	int dim;									//数组维数 
+typedef struct {								//数组的顺序存储表示
+	AElemType_Sq *base;							//数组元素基址（存放数组元素）
+	int dim;									//数组维数
 	int *bounds;								//数组维界基址（存放数组行、列信息）
-	int *constants;								//数组映像Func常量基址（存储跨越某个维度时需要越过的元素个数） 
-}Array;							
+	int *constants;								//数组映像Func常量基址（存储跨越某个维度时需要越过的元素个数）
+} Array;
 
 /* 数组Func列表 */
 Status InitArray(Array *A, int dim, ...);
@@ -38,7 +37,7 @@ Status InitArray(Array *A, int dim, ...);
 Status DestroyArray(Array *A);
 /*━━━━━━━┓
 ┃(02)销毁数组。┃
-┗━━━━━━━*/ 
+┗━━━━━━━*/
 
 Status LocateArray(Array A, va_list ap, int *off);
 /*━━━━━━━━━━━━━━━━━━━━┓

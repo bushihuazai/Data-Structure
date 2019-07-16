@@ -1,6 +1,6 @@
 /**************************************
  *                                    *
- * 文件夹: 03 栈和队列\07 LinkQueue *
+ * 文件夹: 03_stack_queue\07 LinkQueue *
  *                                    *
  * 文件名: LinkQueue.h                *
  *                                    *
@@ -18,20 +18,18 @@
 /* 链队类型定义 */
 /* 在模拟银行排队、二叉树三叉链表存储的算法中，QElemType_L需重新定义*/
 #if !defined BANKQUEUING_H     &&  \
-    !defined TRI_BINARYTREE_H
-typedef int QElemType_L;
+	!defined TRI_BINARYTREE_H
+	typedef int QElemType_L;
 #endif
-typedef struct QNode				 
-{
+typedef struct QNode {
 	QElemType_L data;
 	struct QNode *next;
-}QNode;
-typedef QNode* QueuePtr;
-typedef struct
-{
-	QueuePtr front;					//头指针 
-	QueuePtr rear;					//尾指针 
-}LinkQueue;							//队列的链式存储表示 
+} QNode;
+typedef QNode *QueuePtr;
+typedef struct {
+	QueuePtr front;					//头指针
+	QueuePtr rear;					//尾指针
+} LinkQueue;							//队列的链式存储表示
 
 /* 链栈Func列表 */
 Status InitQueue_L(LinkQueue *Q);

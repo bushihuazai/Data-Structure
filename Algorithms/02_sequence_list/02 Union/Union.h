@@ -1,6 +1,6 @@
 /********************************
  *                              *
- * 文件夹: 02 线性表\02 Union *
+ * 文件夹: 02_sequence_list\02 Union *
  *                              *
  * 文件名: Union.h              *
  *                              *
@@ -11,9 +11,9 @@
 #ifndef UNION_H
 #define UNION_H
 
-#include "../01 SequenceList/SequenceList.c"	//**02 线性表**//
+#include "../01 SequenceList/SequenceList.c"	//**02_sequence_list**//
 
-/* 并集Func列表 */ 
+/* 并集Func列表 */
 void Union(SqList *La, SqList Lb);
 /*━━━━━━━━━━━┓
 ┃(01)算法2.1：A=A∪B。 ┃

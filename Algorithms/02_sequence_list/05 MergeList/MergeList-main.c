@@ -1,30 +1,30 @@
 /************************************
  *						            *
- * 文件夹: 02 线性表\05 MergeList *
+ * 文件夹: 02_sequence_list\05 MergeList *
  * 						            *
  * 内  容:  SingleLinkedList 归并相关Functest   *
  *                                  *
  ************************************/
 
 #include <stdio.h>
-#include "MergeList.c"					//**02 线性表**//
-	
+#include "MergeList.c"					//**02_sequence_list**//
+
 void PrintElem(LElemType_L e);			//testFunc，打印整型
-	
+
 int main(int argc, char **argv)
 {
 	FILE *fp;
 	LinkList La, Lb, Lc;
-	int m;									
+	int m;
 
 	m = 5;
-	
-	printf("作为示例，La长度设定为 %d ，Lb设定为 %d ，创建La和Lb...\n", m, m);
-	fp = fopen("TestData_HL.txt", "r");	//文件指针，指向数据源	
+
+	printf("La 's length: %d ，Lb 's: %d ，creatging La and Lb...\n", m, m);
+	fp = fopen("TestData_HL.txt", "r");	//文件指针，指向数据源
 	CreateList_HL(fp, &La, m);
 	fclose(fp);
 	fp = fopen("TestData_TL.txt", "r");	//文件指针，指向数据源
-	CreateList_TL(fp, &Lb, m);	
+	CreateList_TL(fp, &Lb, m);
 	fclose(fp);
 
 	printf("La = ");
@@ -34,9 +34,9 @@ int main(int argc, char **argv)
 	ListTraverse_L(Lb, PrintElem);
 	printf("\n\n");
 	PressEnter;
-		
+
 	MergeList_L(La, &Lb, &Lc);
-	printf("合并La和Lb为Lc = ");
+	printf("Merging La and Lb into Lc = ");
 	ListTraverse_L(Lc, PrintElem);
 	printf("\n\n");
 	PressEnter;

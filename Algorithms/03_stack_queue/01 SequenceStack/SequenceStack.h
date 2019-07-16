@@ -1,6 +1,6 @@
 /******************************************
  *						      			  *
- * 文件夹: 03 栈和队列\01 SequenceStack *
+ * 文件夹: 03_stack_queue\01 SequenceStack *
  * 							    		  *
  * 文件名: SequenceStack.h    			  *
  * 							  			  *
@@ -22,18 +22,17 @@
 /* 顺序栈类型定义 */
 /*在迷宫、表达式、二叉树二叉链表、孩子兄弟树等算法中，此类型需要重新定义*/
 #if !defined MAZE_H				&&  \
-    !defined EXPRESSION_H		&&  \
-    !defined BINARYTREE_H		&&  \
-    !defined CHILDSIBLINGTREE_H	&&  \
-    !defined Question_8
-typedef int SElemType_Sq;
+	!defined EXPRESSION_H		&&  \
+	!defined BINARYTREE_H		&&  \
+	!defined CHILDSIBLINGTREE_H	&&  \
+	!defined Question_8
+	typedef int SElemType_Sq;
 #endif
-typedef struct
-{
-	SElemType_Sq *base;				//在栈构造之前和销毁之后，base的值为NULL 
-	SElemType_Sq *top;				//栈顶指针 
-	int stacksize;					//当前已分配的存储空间，以元素为单位 
-}SqStack;
+typedef struct {
+	SElemType_Sq *base;				//在栈构造之前和销毁之后，base的值为NULL
+	SElemType_Sq *top;				//栈顶指针
+	int stacksize;					//当前已分配的存储空间，以元素为单位
+} SqStack;
 
 /* 顺序栈Func列表 */
 Status InitStack_Sq(SqStack *S);
@@ -44,8 +43,8 @@ Status InitStack_Sq(SqStack *S);
 Status DestroyStack_Sq(SqStack *S);
 /*━━━━━━┓
 ┃(02)销毁S。 ┃
-┗━━━━━━*/ 
- 
+┗━━━━━━*/
+
 Status ClearStack_Sq(SqStack *S);
 /*━━━━━━┓
 ┃(03)置空S。 ┃
@@ -60,7 +59,7 @@ int StackLength_Sq(SqStack S);
 /*━━━━━━━━━━┓
 ┃(05)返回S元素个数。 ┃
 ┗━━━━━━━━━━*/
- 
+
 Status GetTop_Sq(SqStack S, SElemType_Sq *e);
 /*━━━━━━━━━━━┓
 ┃(06)用e获取栈顶元素。 ┃

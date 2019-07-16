@@ -1,6 +1,6 @@
 /***************************************
  *							    	   *
- * 文件夹: 03 栈和队列\02 Conversion *
+ * 文件夹: 03_stack_queue\02 Conversion *
  * 							    	   *
  * 文件名: Conversion.h         	   *
  * 							    	   *
@@ -11,8 +11,8 @@
 #ifndef CONVERSION_H
 #define CONVERSION_H
 
-#include <stdio.h> 
-#include "../01 SequenceStack/SequenceStack.c" 		//**03 栈和队列**//
+#include <stdio.h>
+#include "../01 SequenceStack/SequenceStack.c" 		//**03_stack_queue**//
 
 /* 进制转换Func列表 */
 void conversion(int i);

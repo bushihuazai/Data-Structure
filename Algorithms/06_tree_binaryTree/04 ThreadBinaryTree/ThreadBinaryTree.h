@@ -1,6 +1,6 @@
 /***********************************************
  *							                   *
- * 文件夹: 06 树和二叉树\04 ThreadBinaryTree *
+ * 文件夹: 06_tree_binaryTree\04 ThreadBinaryTree *
  *							                   *
  * 文件名: ThreadBinaryTree.h                  *
  *							                   *
@@ -18,21 +18,20 @@
 
 /* 线索二叉树类型定义 */
 typedef char TElemType_Thr;						//假设二叉树元素均为字符
-typedef enum {Link, Thread} PointerTag;			//Link==0：孩子；Thread==1：线索 
-typedef struct ThrBiNode
-{
+typedef enum {Link, Thread} PointerTag;			//Link==0：孩子；Thread==1：线索
+typedef struct ThrBiNode {
 	TElemType_Thr data;
-	struct ThrBiNode *lchild;					//左右孩子指针 
-	struct ThrBiNode *rchild; 			
+	struct ThrBiNode *lchild;					//左右孩子指针
+	struct ThrBiNode *rchild;
 	PointerTag LTag;							//左右标志
 	PointerTag RTag;
-	
+
 	struct ThrBiNode *parent;					//双亲结点指针，仅在非递归后序遍历后继线索二叉树时使用
-}ThrBiNode;
-typedef ThrBiNode* ThrBiTree;
+} ThrBiNode;
+typedef ThrBiNode *ThrBiTree;
 
 /*全局变量*/
-ThrBiTree pre;									//指向当前访问结点的上一个结点 
+ThrBiTree pre;									//指向当前访问结点的上一个结点
 
 /* 线索二叉树Func列表 */
 Status CreateBiTree_Thr(FILE *fp, ThrBiTree *T);
@@ -95,4 +94,4 @@ ThrBiTree Pos_NextPtr_Thr(ThrBiTree Thrt, ThrBiTree p);
 ┃(12)在后序遍历后序后继线索二叉树时，寻找结点p的后继。 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-#endif 
+#endif

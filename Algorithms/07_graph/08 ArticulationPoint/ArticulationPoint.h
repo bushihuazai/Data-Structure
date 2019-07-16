@@ -1,6 +1,6 @@
 /****************************************
  *    	    		                    *
- * 文件夹: 07 图\08 ArticulationPoint *
+ * 文件夹: 07_graph\08 ArticulationPoint *
  * 					                    *
  * 文件名: ArticulationPoint.h          *
  *                                      *
@@ -13,12 +13,12 @@
 
 #include <stdio.h>
 #include "../../01_abstract/Status.h"					//**01_abstract**//
-#include "../02 ALGraph/ALGraph.c" 					//**07 图**//
+#include "../02 ALGraph/ALGraph.c" 					//**07_graph**//
 
 /* 全局变量 */
 int count;
-int low[MAX_VERTEX_NUM+1];							//以当前结点为根的树可以直接追溯的最早祖先位置 
-int node[MAX_VERTEX_NUM+1];							//存放关节点，0号单元统计关节点个数 
+int low[MAX_VERTEX_NUM + 1];							//以当前结点为根的树可以直接追溯的最早祖先位置
+int node[MAX_VERTEX_NUM + 1];							//存放关节点，0号单元统计关节点个数
 
 /* 无向图关节点Func列表 */
 void FindArticul(ALGraph G);

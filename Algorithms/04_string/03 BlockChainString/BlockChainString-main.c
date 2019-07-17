@@ -1,13 +1,13 @@
 /***************************************
  *                                     *
- * 文件夹: 04 串\03 BlockChainString *
+ * 文件夹: 04_string\03 BlockChainString *
  *                                     *
  * 内  容: 块链串相关Functest          *
  *                                     *
  ***************************************/
 
 #include <stdio.h>
-#include "BlockChainString.c" 							//**04 串**//
+#include "BlockChainString.c" 							//**04_string**//
 
 int main(int argc, char **argv)
 {

@@ -1,4 +1,4 @@
-#include <stdio.h>	
+#include <stdio.h>
 #include "../../../Algorithms/01_abstract/Status.h"  							//**01_abstract**//
 #include "../../../Algorithms/02_sequence_list/01 SequenceList/SequenceList.c"	//**02_sequence_list**//
 
@@ -13,12 +13,13 @@ int main(int argc, char *argv[])
 {
 	SqList L;
 	int i;
-	
+
 	InitList_Sq(&L);
-	
-	for(i=1; i<=5; i++)
+
+	for (i = 1; i <= 5; i++) {
 		ListInsert_Sq(&L, i, i);
-	
+	}
+
 	printf("顺序表中的最大值为： %d \n", Algo_5_17_1(L, L.length));
 	printf("顺序表中的最小值为： %d \n", Algo_5_17_2(L, L.length));
 	printf("顺序表中的和为： %d \n", Algo_5_17_3(L, L.length));
@@ -35,16 +36,16 @@ int main(int argc, char *argv[])
 int Algo_5_17_1(SqList L, int len)
 {
 	int max, tmp;
-	
-	max = L.elem[len-1];
-	
-	if(len>1)
-	{
+
+	max = L.elem[len - 1];
+
+	if (len > 1) {
 		tmp = Algo_5_17_1(L, --len);
-		if(tmp>max)
+		if (tmp > max) {
 			max = tmp;
+		}
 	}
-	
+
 	return max;
 }
 
@@ -54,16 +55,16 @@ int Algo_5_17_1(SqList L, int len)
 int Algo_5_17_2(SqList L, int len)
 {
 	int max, tmp;
-	
-	max = L.elem[len-1];
-	
-	if(len>1)
-	{
+
+	max = L.elem[len - 1];
+
+	if (len > 1) {
 		tmp = Algo_5_17_1(L, --len);
-		if(tmp<max)
+		if (tmp < max) {
 			max = tmp;
+		}
 	}
-	
+
 	return max;
 }
 
@@ -73,12 +74,13 @@ int Algo_5_17_2(SqList L, int len)
 int Algo_5_17_3(SqList L, int len)
 {
 	int sum;
-	
-	sum = L.elem[len-1];
-	
-	if(len>1)
-		sum += L.elem[--len-1];
-	
+
+	sum = L.elem[len - 1];
+
+	if (len > 1) {
+		sum += L.elem[--len - 1];
+	}
+
 	return sum;
 }
 
@@ -88,12 +90,13 @@ int Algo_5_17_3(SqList L, int len)
 int Algo_5_17_4(SqList L, int len)
 {
 	int pro;
-	
-	pro = L.elem[len-1];
-	
-	if(len>1)
-		pro *= L.elem[--len-1];
-	
+
+	pro = L.elem[len - 1];
+
+	if (len > 1) {
+		pro *= L.elem[--len - 1];
+	}
+
 	return pro;
 }
 
@@ -103,11 +106,12 @@ int Algo_5_17_4(SqList L, int len)
 float Algo_5_17_5(SqList L, int len)
 {
 	float ave;
-	
-	ave = L.elem[len-1];
-	
-	if(len>1)
-		ave = (ave+(len-1)*Algo_5_17_5(L, len-1))/len;
-	
+
+	ave = L.elem[len - 1];
+
+	if (len > 1) {
+		ave = (ave + (len - 1) * Algo_5_17_5(L, len - 1)) / len;
+	}
+
 	return ave;
 }

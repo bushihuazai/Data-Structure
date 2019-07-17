@@ -10,17 +10,17 @@ int main(int argc, char *argv[])
 {
 	BiTree T;
 	FILE *fp;
-	
+
 	printf("作为示例录入序列（大写字母）：A(B(#,D),C(E(#,F),#))...\n");
 	fp = fopen("Data/Algo_6_70.txt", "r");
 	Algo_6_70(fp, &T);
 	fclose(fp);
 	printf("\n");
-	
+
 	printf("展示创建的树：\n");
 	PrintTree(T);
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -30,31 +30,29 @@ int main(int argc, char *argv[])
 Status Algo_6_70(FILE *fp, BiTree *T)
 {
 	char c;
-	
-	while(1)
-	{
+
+	while (1) {
 		Scanf(fp, "%c", &c);
-		if(feof(fp))								//字符读取完毕 
+		if (feof(fp)) {							//字符读取完毕
 			break;
-		
-		if(c=='#')
-			*T = NULL;			
-		else if(c>='A' && c<='Z')
-		{
-			*T = (BiTree)malloc(sizeof(BiTNode));	//根结点 
-			if(!(*T))
+		}
+
+		if (c == '#') {
+			*T = NULL;
+		} else if (c >= 'A' && c <= 'Z') {
+			*T = (BiTree)malloc(sizeof(BiTNode));	//根结点
+			if (!(*T)) {
 				exit(OVERFLOW);
+			}
 			(*T)->data = c;
 			(*T)->lchild = (*T)->rchild = NULL;
-		}
-		else if(c=='(')
-		{
+		} else if (c == '(') {
 			Algo_6_70(fp, &(*T)->lchild);
 			Algo_6_70(fp, &(*T)->rchild);
+		} else {
+			break;
 		}
-		else
-			break;				
 	}
-	
+
 	return OK;
 }

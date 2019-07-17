@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>											//提供malloc、realloc、free、exit原型
 #include "../../01_abstract/Status.h"							//**01_abstract**//
-#include "../../04 串/01 SequenceString/SequenceString.c"	//**04 串**//
+#include "../../04_string/01 SequenceString/SequenceString.c"	//**04_string**//
 
 /* 广义表（头尾链表存储表示）类型定义 */
 typedef enum { Head, Tail } Mark;

@@ -1,13 +1,13 @@
 /*********************************
  *                               *
- * 文件夹: 04 串\02 HeapString *
+ * 文件夹: 04_string\02 HeapString *
  *                               *
  * 内  容: 堆串相关Functest      *
  *                               *
  *********************************/
 
 #include <stdio.h>
-#include "HeapString.c" 								//**04 串**//
+#include "HeapString.c" 								//**04_string**//
 
 int main(int argc, char **argv)
 {

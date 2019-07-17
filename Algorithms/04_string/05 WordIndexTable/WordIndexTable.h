@@ -1,6 +1,6 @@
 /*************************************
  *                                   *
- * 文件夹: 04 串\05 WordIndexTable *
+ * 文件夹: 04_string\05 WordIndexTable *
  * 							         *
  * 文件名: WordIndexTable.h          *
  * 							         *
@@ -16,7 +16,7 @@
 #include <string.h>						//提供strlen、strcmpi、strlwr原型
 #include "../../01_abstract/Status.h"									//**01_abstract**//
 #include "../../02_sequence_list/09 ExtenLinkedList/ExtenLinkedList.c"	//**02_sequence_list**//
-#include "../02 HeapString/HeapString.c" 							//**04 串**//
+#include "../02 HeapString/HeapString.c" 							//**04_string**//
 
 /* 宏定义 */
 #define MaxBookNum 1000					//允许的最大书目数 

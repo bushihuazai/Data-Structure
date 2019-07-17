@@ -9,7 +9,7 @@ void Algo_6_71_2(CSTree T, int i);
 int main(int argc, char *argv[])
 {
 	CSTree T;
-	FILE *fp; 
+	FILE *fp;
 
 	printf("输入先序序列：ABE^F^^CG^^D^^^...\n");
 	InitTree_CS(&T);
@@ -17,11 +17,11 @@ int main(int argc, char *argv[])
 	CreateTree_CS(fp, &T);
 	fclose(fp);
 	printf("\n");
-	
+
 	printf("树T为：\n");
 	Print_CS(T);
 	printf("\n");
-	
+
 	printf("方法 1：先序遍历按凹入表打印树：\n");
 	Algo_6_71_1(T, 0);
 	printf("\n");
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	printf("方法 2：先序遍历按凹入表打印树：\n");
 	Algo_6_71_2(T, 0);
 	printf("\n");
-		
+
 	return 0;
 }
 
@@ -37,18 +37,18 @@ int main(int argc, char *argv[])
 ┃题6.71：先序遍历按凹入表打印树┃
 ┗━━━━━━━━━━━━━━━*/
 /* 方法1：直接使用递归 */
-void Algo_6_71_1(CSTree T, int i)			//i初始设为0 
+void Algo_6_71_1(CSTree T, int i)			//i初始设为0
 {
 	int j;
-	
-	if(T)
-	{
-		for(j=1; j<=2*i; j++)
-			printf(" ");		
+
+	if (T) {
+		for (j = 1; j <= 2 * i; j++) {
+			printf(" ");
+		}
 		printf("%c\n", T->data);
-		
-		Algo_6_71_1(T->firstchild, i+1);
-		Algo_6_71_1(T->nextsibling, i);		//此处为i 
+
+		Algo_6_71_1(T->firstchild, i + 1);
+		Algo_6_71_1(T->nextsibling, i);		//此处为i
 	}
 }
 
@@ -57,14 +57,15 @@ void Algo_6_71_2(CSTree T, int i)
 {
 	int j;
 	CSTree p;
-	
-	if(T)
-	{
-		for(j=1; j<=2*i; j++)
-			printf(" ");		
+
+	if (T) {
+		for (j = 1; j <= 2 * i; j++) {
+			printf(" ");
+		}
 		printf("%c\n", T->data);
-		
-		for(p=T->firstchild; p; p=p->nextsibling)
-			Algo_6_71_2(p, i+1);	
+
+		for (p = T->firstchild; p; p = p->nextsibling) {
+			Algo_6_71_2(p, i + 1);
+		}
 	}
 }

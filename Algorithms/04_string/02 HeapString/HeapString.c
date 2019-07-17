@@ -1,6 +1,6 @@
 /*********************************
  *                               *
- * 文件夹: 04 串\02 HeapString *
+ * 文件夹: 04_string\02 HeapString *
  *                               *
  * 文件名: HeapString.c          *
  *                               *
@@ -11,7 +11,7 @@
 #ifndef HEAPSTRING_C
 #define HEAPSTRING_C
 
-#include "HeapString.h" 				//**04 串**//
+#include "HeapString.h" 				//**04_string**//
 
 void InitString_H(HString *S)
 {

@@ -1,12 +1,12 @@
 /*******************************
  *						       *
- * 文件夹: 04 串\04 KMP      *
+ * 文件夹: 04_string\04 KMP      *
  * 						       *
  * 内  容: KMP算法相关Functest *
  *                             *
  *******************************/
 
-#include "KMP.c"						//**04 串**//	
+#include "KMP.c"						//**04_string**//	
 
 int main(int argc, char **argv)
 {

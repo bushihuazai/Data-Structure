@@ -1,13 +1,13 @@
 /*************************************
  *                                   *
- * 文件夹: 04 串\01 SequenceString *
+ * 文件夹: 04_string\01 SequenceString *
  *                                   *
  * 内  容: 顺序串相关Functest        *
  *                                   *
  *************************************/
 
 #include <stdio.h>
-#include "SequenceString.c" 							//**04 串**//
+#include "SequenceString.c" 							//**04_string**//
 
 int main(int argc, char **argv)
 {

@@ -10,8 +10,8 @@ void Algo_6_74(CSTree T);
 int main(int argc, char *argv[])
 {
 	CSTree T;
-	FILE *fp; 
-		
+	FILE *fp;
+
 	printf("███ 题 6.73 验证... ███\n");
 	printf("作为示例，录入序列：A(B(E,F),C(G),D)...\n");
 	printf("创建孩子-兄弟链表...\n");
@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
 	Print_CS(T);
 	printf("\n");
 
-	printf("███ 题 6.74 验证... ███\n");	
+	printf("███ 题 6.74 验证... ███\n");
 	printf("按广义表打印孩子-兄弟链表...\n");
 	Algo_6_74(T);
-	printf("\n\n");	
-		
+	printf("\n\n");
+
 	return 0;
 }
 
@@ -33,34 +33,32 @@ int main(int argc, char *argv[])
 ┃题6.73：创建孩子-兄弟链表 ┃
 ┗━━━━━━━━━━━━━*/
 Status Algo_6_73(FILE *fp, CSTree *T)
-{	
+{
 	char c;
-	
-	while(1)
-	{
+
+	while (1) {
 		Scanf(fp, "%c", &c);
-		if(feof(fp))
+		if (feof(fp)) {
 			break;
-	
-		if(c>='A' && c<='Z')
-		{
-			*T = (CSTree)malloc(sizeof(CSNode));	//根结点 
-			if(!(*T))
+		}
+
+		if (c >= 'A' && c <= 'Z') {
+			*T = (CSTree)malloc(sizeof(CSNode));	//根结点
+			if (!(*T)) {
 				exit(OVERFLOW);
+			}
 			(*T)->data = c;
 			(*T)->firstchild = (*T)->nextsibling = NULL;
-		}
-		else if(c=='(')
+		} else if (c == '(') {
 			Algo_6_73(fp, &(*T)->firstchild);
-		else if(c==',')
-		{
-			Algo_6_73(fp, &(*T)->nextsibling);		
-			break;									//注意此处应该返回 
+		} else if (c == ',') {
+			Algo_6_73(fp, &(*T)->nextsibling);
+			break;									//注意此处应该返回
+		} else {
+			break;
 		}
-		else
-			break;				
 	}
-	
+
 	return OK;
 }
 
@@ -71,23 +69,21 @@ void Algo_6_74(CSTree T)
 {
 	int i;
 	CSTree p;
-	
-	if(T)
-	{
+
+	if (T) {
 		printf("%c", T->data);
-		
-		if(T->firstchild)
-		{
+
+		if (T->firstchild) {
 			printf("(");
-			
-			for(p=T->firstchild; p; p=p->nextsibling)
-			{
+
+			for (p = T->firstchild; p; p = p->nextsibling) {
 				Algo_6_74(p);
-				if(p->nextsibling)				//若不是最后一个兄弟，加"," 
+				if (p->nextsibling) {			//若不是最后一个兄弟，加","
 					printf(",");
+				}
 			}
-			
+
 			printf(")");
 		}
-	} 
+	}
 }

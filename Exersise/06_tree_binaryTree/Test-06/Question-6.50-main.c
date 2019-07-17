@@ -8,7 +8,7 @@ void Algo_6_50(FILE *fp, BiTree *T);
 int main(int argc, char *argv[])
 {
 	BiTree T;
-	FILE *fp; 
+	FILE *fp;
 
 	printf("创建二叉树（层序序列）...\n");
 	InitBiTree(&T);
@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
 	Algo_6_50(fp, &T);
 	fclose(fp);
 	printf("\n");
-	
+
 	printf("二叉树T为：\n");
-	PrintTree(T);	
+	PrintTree(T);
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -30,40 +30,40 @@ int main(int argc, char *argv[])
 void Algo_6_50(FILE *fp, BiTree *T)
 {
 	char input[4];
-	BiTree tmp[100];								//顺序存储遇到的每个结点 
+	BiTree tmp[100];								//顺序存储遇到的每个结点
 	int m, n;
 	BiTree p;
-	
+
 	m = n = 0;
 	printf("读到的序列→\n");
-	while(1)
-	{			
+	while (1) {
 		Scanf(fp, "%s", input);
 		printf("%s\n", input);
-		
-		if(input[1]=='^')							//退出标志 
+
+		if (input[1] == '^') {						//退出标志
 			break;
-		else
-		{
+		} else {
 			p = (BiTree)malloc(sizeof(BiTNode));
-			if(!p)
+			if (!p) {
 				exit(OVERFLOW);
+			}
 			p->data = input[1];
 			p->lchild = p->rchild = NULL;
-			
-			if(input[0]=='^')						//根结点   
+
+			if (input[0] == '^') {					//根结点
 				*T = p;
-			else
-			{
-				while(tmp[m]->data!=input[0])		//寻找子树结点 
+			} else {
+				while (tmp[m]->data != input[0]) {	//寻找子树结点
 					m++;
-					
-				if(input[2]=='L')
+				}
+
+				if (input[2] == 'L') {
 					tmp[m]->lchild = p;
-				else
-					tmp[m]->rchild = p;				
+				} else {
+					tmp[m]->rchild = p;
+				}
 			}
-			
+
 			tmp[n++] = p;
 		}
 	}

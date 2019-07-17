@@ -1,13 +1,13 @@
 /*************************************
  *						             *
- * 文件夹: 04 串\05 WordIndexTable *
+ * 文件夹: 04_string\05 WordIndexTable *
  * 						             *
  * 内  容: 创建索引表相关Functest    *
  *                                   *
  *************************************/
 
 #include <stdlib.h>						//提供system原型  
-#include "WordIndexTable.c"				//**04 串**//	
+#include "WordIndexTable.c"				//**04_string**//	
 
 int main(int argc, char **argv)
 {

@@ -1,6 +1,6 @@
 /*************************************
  *                                   *
- * 文件夹: 04 串\01 SequenceString *
+ * 文件夹: 04_string\01 SequenceString *
  *                                   *
  * 文件名: SequenceString.c          *
  *                                   *
@@ -11,7 +11,7 @@
 #ifndef SEQUENCESTRING_C
 #define SEQUENCESTRING_C
 
-#include "SequenceString.h" 						//**04 串**//
+#include "SequenceString.h" 						//**04_string**//
 
 Status StrAssign_Sq(SString T, const char *chars)	//属于最小操作子集
 {

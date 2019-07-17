@@ -1,6 +1,6 @@
 /**************************
  *						  *
- * 文件夹: 04 串\04 KMP *
+ * 文件夹: 04_string\04 KMP *
  * 						  *
  * 文件名: KMP.c          *
  * 				     	  *
@@ -11,7 +11,7 @@
 #ifndef KMP_C
 #define KMP_C
 
-#include "KMP.h"						//**04 串**//
+#include "KMP.h"						//**04_string**//
 
 /*════╗
 ║ 算法4.6║

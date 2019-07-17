@@ -1,6 +1,6 @@
 /*************************************
  *                                   *
- * 文件夹: 04 串\01 SequenceString *
+ * 文件夹: 04_string\01 SequenceString *
  *                                   *
  * 文件名: SequenceString.h          *
  *                                   *

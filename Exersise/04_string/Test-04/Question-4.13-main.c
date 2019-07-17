@@ -1,5 +1,5 @@
-#include <stdio.h>	
-#include "../../../Algorithms/04 串/01 SequenceString/SequenceString.c"//**04 串**//
+#include <stdio.h>
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"//**04_string**//
 
 /* Func原型 */
 void Algo_4_13(SString S, SString T);
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	char *t = "**";
 	SString T, S;
 
-	printf("删除前...\n");	
+	printf("删除前...\n");
 	StrAssign_Sq(S, s);
 	StrAssign_Sq(T, t);
 	printf("S = ");
@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
 void Algo_4_13(SString S, SString T)
 {
 	int i;
-	
-	for(i=1; i=Index_Sq_1(S, T, 1); i++)
-		StrDelete_Sq(S, i, T[0]);	
-} 
+
+	for (i = 1; i = Index_Sq_1(S, T, 1); i++) {
+		StrDelete_Sq(S, i, T[0]);
+	}
+}

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	CrossList M, N, Q;
 	FILE *fp;
-		
+
 	printf("创建十字链表 M、N...\n");
 	fp = fopen("Data/Algo_5_27.txt", "r");
 	CreateSMatrix_OL(fp, 2, &M, &N);
@@ -24,17 +24,18 @@ int main(int argc, char *argv[])
 	printf("Q = M + N = \n");
 	PrintSMatrix_OL(Q);
 	printf("\n");
-		
+
 	return 0;
 }
 
 /*━━━━━━━━━┓
 ┃题5.27：Q = M + N ┃
-┗━━━━━━━━━*/ 
+┗━━━━━━━━━*/
 Status Algo_5_27(CrossList M, CrossList N, CrossList *Q)
 {
-	if(AddSMatri_OL(M, N, Q))				//已定义 
+	if (AddSMatri_OL(M, N, Q)) {			//已定义
 		return OK;
-	else
+	} else {
 		return ERROR;
+	}
 }

@@ -8,25 +8,25 @@ Status Algo_6_36(BiTree B1, BiTree B2);
 int main(int argc, char *argv[])
 {
 	BiTree B1, B2, B3;
-	FILE *fp;												//输入源 
+	FILE *fp;												//输入源
 	char tmp;
-		
-	InitBiTree(&B1); 
+
+	InitBiTree(&B1);
 	InitBiTree(&B2);
 	InitBiTree(&B3);
-	
+
 	printf("创建二叉树（先序序列）B1→ ABD^^E^^C^^...\n");
 	printf("                      B2→ FGH^^I^^J^^...\n");
 	printf("                      B3→ KLM^^N^^OP^^^...\n");
 	fp = fopen("Data/Algo_6_36.txt", "r");
 	CreateBiTree(fp, &B1);
-	Scanf(fp, "%c", &tmp);			//跳过换行符 
+	Scanf(fp, "%c", &tmp);			//跳过换行符
 	CreateBiTree(fp, &B2);
-	Scanf(fp, "%c", &tmp);			//跳过换行符 
+	Scanf(fp, "%c", &tmp);			//跳过换行符
 	CreateBiTree(fp, &B3);
 	fclose(fp);
 	printf("\n");
-	
+
 	printf("二叉树B1为：\n");
 	PrintTree(B1);
 	printf("\n");
@@ -37,18 +37,20 @@ int main(int argc, char *argv[])
 	PrintTree(B3);
 	printf("\n");
 
-	if(Algo_6_36(B1, B2))
+	if (Algo_6_36(B1, B2)) {
 		printf("B1与B2相似!\n");
-	else
-		printf("B1与B2不相似!!\n"); 
+	} else {
+		printf("B1与B2不相似!!\n");
+	}
 
-	if(Algo_6_36(B2, B3))
+	if (Algo_6_36(B2, B3)) {
 		printf("B2与B3相似!\n");
-	else
-		printf("B1与B3不相似!!\n");  
-	
+	} else {
+		printf("B1与B3不相似!!\n");
+	}
+
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -57,16 +59,15 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━*/
 Status Algo_6_36(BiTree B1, BiTree B2)
 {
-	if(BiTreeEmpty(B1) && BiTreeEmpty(B2))			//都 is empty树 
+	if (BiTreeEmpty(B1) && BiTreeEmpty(B2)) {		//都 is empty树
 		return TRUE;
-	else
-	{
-		if(!BiTreeEmpty(B1) && !BiTreeEmpty(B2))	//都 not empty树 
-		{
-			if(Algo_6_36(B1->lchild, B2->lchild) && Algo_6_36(B1->rchild, B2->rchild))	//判断左右子树 
-				return TRUE;	
+	} else {
+		if (!BiTreeEmpty(B1) && !BiTreeEmpty(B2)) {	//都 not empty树
+			if (Algo_6_36(B1->lchild, B2->lchild) && Algo_6_36(B1->rchild, B2->rchild)) {	//判断左右子树
+				return TRUE;
+			}
 		}
 	}
-	
+
 	return FALSE;
 }

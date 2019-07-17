@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	PTree T;
 	int depth;
 	FILE *fp;
-	
+
 	InitTree_P(&T);
 	fp = fopen("Data/Algo_6_64.txt", "r");
 	CreateTree_P(fp, &T);
@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 	depth = Algo_6_64(T);
-	
+
 	printf("此树的深度为： %d\n", depth);
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -34,5 +34,5 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━*/
 int Algo_6_64(PTree T)
 {
-	return TreeDepth_P(T); 				//已定义 
+	return TreeDepth_P(T); 				//已定义
 }

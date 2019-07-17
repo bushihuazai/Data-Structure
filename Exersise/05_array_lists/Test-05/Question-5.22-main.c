@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	TSMatrix A, B, C;
 	FILE *fp;													//作为输入源
-		 
+
 	printf("创建两个稀疏矩阵 A、B...\n");
 	fp = fopen("Data/Algo_5_22.txt", "r");
 	CreateSMatrix_T(fp, 2, &A, &B);
@@ -18,13 +18,13 @@ int main(int argc, char *argv[])
 	PrintSMatrix_T(A);
 	printf("B = \n");
 	PrintSMatrix_T(B);
-	printf("\n");	
+	printf("\n");
 
 	Algo_5_22(&A, B);
 	printf("A = A + B = \n");
 	PrintSMatrix_T(A);
-	printf("\n");	
-	
+	printf("\n");
+
 	return 0;
 }
 
@@ -34,53 +34,51 @@ int main(int argc, char *argv[])
 Status Algo_5_22(TSMatrix *A, TSMatrix B)
 {
 	int m, n, k;
-	
-	if((*A).mu!=B.mu || (*A).nu!=B.nu)
-	{
+
+	if ((*A).mu != B.mu || (*A).nu != B.nu) {
 		printf("两矩阵不能相加!!\n");
-		return ERROR;	
+		return ERROR;
 	}
-	
-	for(k=(*A).tu; k>0; k--)					//A中元素向后移动，移动长度为B的元素个数 
-		(*A).data[k+B.tu] = (*A).data[k];
-	
-	m = B.tu+1;
+
+	for (k = (*A).tu; k > 0; k--) {				//A中元素向后移动，移动长度为B的元素个数
+		(*A).data[k + B.tu] = (*A).data[k];
+	}
+
+	m = B.tu + 1;
 	n = 1;
 	k = 0;
-	while(m<=(*A).tu+B.tu && n<=B.tu)			//依次遍历A与B的三元组 
-	{
-		if((*A).data[m].i<B.data[n].i)
+	while (m <= (*A).tu + B.tu && n <= B.tu) {		//依次遍历A与B的三元组
+		if ((*A).data[m].i < B.data[n].i) {
 			(*A).data[++k] = (*A).data[m++];
-		else if((*A).data[m].i>B.data[n].i)
+		} else if ((*A).data[m].i > B.data[n].i) {
 			(*A).data[++k] = B.data[n++];
-		else									//位于同一行 
-		{
-			if((*A).data[m].j<B.data[n].j)
+		} else {								//位于同一行
+			if ((*A).data[m].j < B.data[n].j) {
 				(*A).data[++k] = (*A).data[m++];
-			else if((*A).data[m].j>B.data[n].j)
+			} else if ((*A).data[m].j > B.data[n].j) {
 				(*A).data[++k] = B.data[n++];
-			else								//位于同一相对位置 
-			{
-				if((*A).data[m].e+B.data[n].e)
-				{
+			} else {							//位于同一相对位置
+				if ((*A).data[m].e+B.data[n].e) {
 					k++;
 					(*A).data[k].i = (*A).data[m].i;
 					(*A).data[k].j = (*A).data[m].j;
 					(*A).data[k].e = (*A).data[m].e + B.data[n].e;
 				}
 				m++;
-				n++;	
+				n++;
 			}
-		}	
+		}
 	}
-	
-	while(m<=(*A).tu+B.tu)
+
+	while (m <= (*A).tu + B.tu) {
 		(*A).data[++k] = (*A).data[m++];
-	
-	while(n<=B.tu)
+	}
+
+	while (n <= B.tu) {
 		(*A).data[++k] = B.data[n++];
-		
+	}
+
 	(*A).tu = k;
-	
-	return OK;	
+
+	return OK;
 }

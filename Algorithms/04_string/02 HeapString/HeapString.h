@@ -1,6 +1,6 @@
 /*********************************
  *                               *
- * 文件夹: 04 串\02 HeapString *
+ * 文件夹: 04_string\02 HeapString *
  *                               *
  * 文件名: HeapString.h          *
  *                               *

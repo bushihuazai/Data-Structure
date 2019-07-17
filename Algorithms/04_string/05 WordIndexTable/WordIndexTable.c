@@ -1,6 +1,6 @@
 /*********************************************
  *						                     *
- * 文件夹: 04 串\05 WordIndexTable         *
+ * 文件夹: 04_string\05 WordIndexTable         *
  * 							                 *
  * 文件名: WordIndexTable.c                  *
  * 				     		                 *
@@ -11,7 +11,7 @@
 #ifndef WORDINDEXTABLE_C
 #define WORDINDEXTABLE_C
 
-#include "WordIndexTable.h"					//**04 串**//
+#include "WordIndexTable.h"					//**04_string**//
 
 /*════╗
 ║ 算法4.9║

@@ -1,6 +1,6 @@
 /*******************************
  *						       *
- * 文件夹: 04 串\04 KMP      *
+ * 文件夹: 04_string\04 KMP      *
  * 							   *
  * 文件名: KMP.h               *
  * 							   *
@@ -12,7 +12,7 @@
 #define KMP_H
 
 #include <stdio.h>
-#include "../01 SequenceString/SequenceString.c" 			//**04 串**//
+#include "../01 SequenceString/SequenceString.c" 			//**04_string**//
 
 /* KMP算法Func列表 */
 int Index_KMP(SString S, SString T, int pos, int next[]);

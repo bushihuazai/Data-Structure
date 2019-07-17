@@ -1,6 +1,6 @@
 /***************************************
  *                                     *
- * 文件夹: 04 串\03 BlockChainString *
+ * 文件夹: 04_string\03 BlockChainString *
  *                                     *
  * 文件名: BlockChainString.h          *
  *                                     *

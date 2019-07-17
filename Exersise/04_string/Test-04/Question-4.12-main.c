@@ -1,6 +1,6 @@
-#include <stdio.h>	
+#include <stdio.h>
 #include "../../../Algorithms/01_abstract/Status.h"  	                     //**01_abstract**//
-#include "../../../Algorithms/04 串/01 SequenceString/SequenceString.c"//**04 串**//
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"//**04_string**//
 
 /* Func原型 */
 Status Algo_4_12(SString S, SString T, SString V);
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *v = "^";
 	SString T, S, V;
 
-	printf("替换前...\n");	
+	printf("替换前...\n");
 	StrAssign_Sq(S, s);
 	StrAssign_Sq(T, t);
 	StrAssign_Sq(V, v);
@@ -40,8 +40,9 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━*/
 Status Algo_4_12(SString S, SString T, SString V)
 {
-	if(Replace_Sq(S, T, V))		//已定义 
+	if (Replace_Sq(S, T, V)) {	//已定义
 		return OK;
-	else
+	} else {
 		return ERROR;
-} 
+	}
+}

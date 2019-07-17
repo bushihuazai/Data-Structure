@@ -12,16 +12,16 @@ int main(int argc, char *argv[])
 	BiTree T;
 	char pre[] = "ABDGEHICFJ";
 	char in[] =  "GDBHEIAFJC";
-	
+
 	printf("二叉树先序序列为：%s\n", pre);
 	printf("二叉树中序序列为：%s\n", in);
 	printf("\n");
-		
-	Algo_6_65_1(&T, pre, in);	
+
+	Algo_6_65_1(&T, pre, in);
 	printf("由此构造的二叉树为：\n");
 	PrintTree(T);
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -35,75 +35,75 @@ Status Algo_6_65_1(BiTree *T, char pre[], char in[])
 	SElemType_Sq e;
 	int k;
 	BiTree p, q;
-	 
-	*T = NULL;	
+
+	*T = NULL;
 	k = -1;
-	
+
 	InitStack_Sq(&S);
-	
-	while(pre[k+1]!='\0')							//访问先序序列 
-	{
+
+	while (pre[k + 1] != '\0') {						//访问先序序列
 		k++;
-		
+
 		p = (BiTree)malloc(sizeof(BiTNode));
-		if(!p)
+		if (!p) {
 			exit(OVERFLOW);
+		}
 		p->data = pre[k];
 		p->lchild = p->rchild = NULL;
-		
-		if(!(*T))
+
+		if (!(*T)) {
 			*T = p;
-		else
-		{
+		} else {
 			GetTop_Sq(S, &e);
-			
-			if(RelativePosition_6_65(in, pre[k], e->data)<0)//由中序序列判断当前结点相对位置 
-				e->lchild = p;								//pre[k]在 e->data的左边 
-			else											//pre[k]在 e->data的右边时一直出栈找到最后一个在右边的 
-			{
-				do
-				{
+
+			if (RelativePosition_6_65(in, pre[k], e->data) < 0) { //由中序序列判断当前结点相对位置
+				e->lchild = p;    //pre[k]在 e->data的左边
+			} else {										//pre[k]在 e->data的右边时一直出栈找到最后一个在右边的
+				do {
 					Pop_Sq(&S, &e);
-					if(!StackEmpty_Sq(S))
+					if (!StackEmpty_Sq(S)) {
 						GetTop_Sq(S, &q);
-					else
+					} else {
 						break;
-				}
-				while(RelativePosition_6_65(in, pre[k], q->data)>0);
-				
-				e->rchild = p;	
+					}
+				} while (RelativePosition_6_65(in, pre[k], q->data) > 0);
+
+				e->rchild = p;
 			}
 		}
-		
+
 		Push_Sq(&S, p);
 	}
-	
+
 	return OK;
 }
 
-int RelativePosition_6_65(char *s, char A, char B)		//返回序列中A相对B的位置信息 
-{														//假设字符串s中A、B若exsists则唯一 
+int RelativePosition_6_65(char *s, char A, char B)		//返回序列中A相对B的位置信息
+{
+	//假设字符串s中A、B若exsists则唯一
 	int k, a, b;
-	
+
 	k = a = b = -1;
-	
-	while(s[k+1]!='\0')
-	{
+
+	while (s[k + 1] != '\0') {
 		k++;
-		
-		if(s[k]==A)
+
+		if (s[k] == A) {
 			a = k;
-		if(s[k]==B)
+		}
+		if (s[k] == B) {
 			b = k;
+		}
 	}
-	
-	if(a>=0 && b>=0)
-	{
-		if(a<b)
-			return -1;								//A在B的左边
-		if(a>b)
-			return 1;								//A在B的右边		
+
+	if (a >= 0 && b >= 0) {
+		if (a < b) {
+			return -1;    //A在B的左边
+		}
+		if (a > b) {
+			return 1;    //A在B的右边
+		}
+	} else {
+		return 0;    //表示非正常退出
 	}
-	else
-		return 0;									//表示非正常退出 
 }

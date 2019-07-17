@@ -2,15 +2,14 @@
 #include "../../../Algorithms/01_abstract/Status.h"  	                     	//**01_abstract**//
 
 /* 宏定义 */
-#define MAX 256 
+#define MAX 256
 
 /* 类型定义 */
-typedef struct
-{
+typedef struct {
 	int x;
 	int y;
 	int value;
-}Node;
+} Node;
 typedef Node SNode;
 
 /* Func原型 */
@@ -20,37 +19,38 @@ Status IsMax_col(int a[MAX][MAX], int row, Node v);
 
 int main(int argc, char *argv[])
 {
-	SNode p[MAX];	
+	SNode p[MAX];
 	int row = 4;
 	int col = 4;
 	int a[MAX][MAX] = {{ 1, 2,  1, 4},
-					   {-1, 6, -5, 2},
-					   {-2, 7,  0, 1},
-					   { 1, 2,  1, 3}};
+		{-1, 6, -5, 2},
+		{-2, 7,  0, 1},
+		{ 1, 2,  1, 3}
+	};
 	int i, j, k;
-	
+
 	printf("矩阵为...\n");
-	for(i=0; i<row; i++)
-	{
-		for(j=0; j<col; j++)
+	for (i = 0; i < row; i++) {
+		for (j = 0; j < col; j++) {
 			printf("%3d ", a[i][j]);
-		
+		}
+
 		printf("\n");
 	}
-	
+
 	printf("\n");
-	
-	if(Algo_5_19(a, row, col, p))
-	{
+
+	if (Algo_5_19(a, row, col, p)) {
 		printf("此矩阵中exsists马鞍点...\n");
-		for(k=1; k<=p[0].value; k++)
+		for (k = 1; k <= p[0].value; k++) {
 			printf("第 %d 行第 %d 列的马鞍点 %d\n", p[k].x, p[k].y, p[k].value);
-	}
-	else
+		}
+	} else {
 		printf("此矩阵中 not exsist马鞍点...\n");
-	
+	}
+
 	printf("\n");
-	
+
 	return 0;
 }
 
@@ -61,50 +61,47 @@ Status Algo_5_19(int a[MAX][MAX], int row, int col, SNode p[MAX])
 {
 	int i, k;
 	Node min[MAX];
-	
+
 	p[0].value = 0;
-	
-	for(i=0; i<row; i++)
-	{
+
+	for (i = 0; i < row; i++) {
 		Min_row(a, col, i, min);
-		for(k=1; k<=min[0].value; k++)
-		{
-			if(IsMax_col(a, row, min[k]))
-			{
+		for (k = 1; k <= min[0].value; k++) {
+			if (IsMax_col(a, row, min[k])) {
 				p[0].value++;
 				p[p[0].value] = min[k];
 			}
 		}
 	}
-	
-	if(p[0].value)
+
+	if (p[0].value) {
 		return TRUE;
-	else
-		return FALSE;	
+	} else {
+		return FALSE;
+	}
 }
 
 /* 找出矩阵a中第i行的最小值 */
 void Min_row(int a[MAX][MAX], int col, int i, Node min[MAX])
 {
 	int j;
-	
+
 	min[0].value = 0;
-	
-	for(j=0; j<col; j++)
-	{
-		if(!j || a[i][j]==min[j-1].value)
+
+	for (j = 0; j < col; j++) {
+		if (!j || a[i][j] == min[j - 1].value) {
 			min[0].value++;
-		else
-		{
-			if(a[i][j]<min[j-1].value)
+		} else {
+			if (a[i][j] < min[j - 1].value) {
 				min[0].value = 1;
-			else
+			} else {
 				continue;
+			}
 		}
-			
+
 		min[min[0].value].x = i;
 		min[min[0].value].y = j;
-		min[min[0].value].value = a[i][j];			
+		min[min[0].value].value = a[i][j];
 	}
 }
 
@@ -112,12 +109,12 @@ void Min_row(int a[MAX][MAX], int col, int i, Node min[MAX])
 Status IsMax_col(int a[MAX][MAX], int row, Node v)
 {
 	int i;
-	
-	for(i=0; i<row; i++)
-	{
-		if(a[i][v.y]>v.value)
+
+	for (i = 0; i < row; i++) {
+		if (a[i][v.y] > v.value) {
 			return FALSE;
+		}
 	}
-	
+
 	return TRUE;
 }

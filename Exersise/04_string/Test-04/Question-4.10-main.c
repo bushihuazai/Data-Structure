@@ -1,5 +1,5 @@
-#include <stdio.h>	
-#include "../../../Algorithms/04 ´®/01 SequenceString/SequenceString.c"//**04 ´®**//
+#include <stdio.h>
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"//**04_string**//
 
 /* FuncÔ­ÐÍ */
 void Algo_4_10(SString T, SString S);
@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
 	char *s = "0123456789";
 	SString T, S;
-	
+
 	printf("ÄæÖÃÇ°£¬T = ");
 	StrAssign_Sq(T, s);
 	StrPrint_Sq(T);
@@ -28,9 +28,10 @@ int main(int argc, char *argv[])
 void Algo_4_10(SString T, SString S)
 {
 	int i;
-	
-	for(i=T[0]; i>=1; i--)
-		S[T[0]-i+1] = T[i];
-	
+
+	for (i = T[0]; i >= 1; i--) {
+		S[T[0] - i + 1] = T[i];
+	}
+
 	S[0] = T[0];
-} 
+}

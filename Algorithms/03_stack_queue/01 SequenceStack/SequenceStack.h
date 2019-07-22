@@ -1,37 +1,37 @@
 /******************************************
- *						      			  *
+ *                                            *
  * 文件夹: 03_stack_queue\01 SequenceStack *
- * 							    		  *
- * 文件名: SequenceStack.h    			  *
- * 							  			  *
- * 内  容: 顺序栈相关操作列表 			  *
- *                            			  *
+ *                                           *
+ * 文件名: SequenceStack.h                  *
+ *                                             *
+ * 内  容: 顺序栈相关操作列表               *
+ *                                          *
  ******************************************/
 
 #ifndef SEQUENCESTACK_H
 #define SEQUENCESTACK_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 宏定义 */
-#define STACK_INIT_SIZE	100				//顺序栈存储空间的初始分配量
-#define STACKINCREMENT	10 				//顺序栈存储空间的分配增量
+#define STACK_INIT_SIZE    100                //顺序栈存储空间的初始分配量
+#define STACKINCREMENT    10                 //顺序栈存储空间的分配增量
 
 /* 顺序栈类型定义 */
 /*在迷宫、表达式、二叉树二叉链表、孩子兄弟树等算法中，此类型需要重新定义*/
-#if !defined MAZE_H				&&  \
-	!defined EXPRESSION_H		&&  \
-	!defined BINARYTREE_H		&&  \
-	!defined CHILDSIBLINGTREE_H	&&  \
-	!defined Question_8
-	typedef int SElemType_Sq;
+#if !defined MAZE_H                &&  \
+    !defined EXPRESSION_H        &&  \
+    !defined BINARYTREE_H        &&  \
+    !defined CHILDSIBLINGTREE_H    &&  \
+    !defined Question_8
+    typedef int SElemType_Sq;
 #endif
 typedef struct {
-	SElemType_Sq *base;				//在栈构造之前和销毁之后，base的值为NULL
-	SElemType_Sq *top;				//栈顶指针
-	int stacksize;					//当前已分配的存储空间，以元素为单位
+    SElemType_Sq *base;                //在栈构造之前和销毁之后，base的值为NULL
+    SElemType_Sq *top;                //栈顶指针
+    int stacksize;                    //当前已分配的存储空间，以元素为单位
 } SqStack;
 
 /* 顺序栈Func列表 */

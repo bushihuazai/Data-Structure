@@ -12,14 +12,14 @@
 #define SEQUENCESTRING_H
 
 #include <stdio.h>
-#include <string.h>								//提供strlen原型 
-#include "../../01_abstract/Status.h"				//**01_abstract**//
+#include <string.h>                                //提供strlen原型 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
 
 /* 宏定义 */
-#define MAXSTRLEN 255							//顺序串的最大串长 
+#define MAXSTRLEN 255                            //顺序串的最大串长 
 
 /* 串的顺序存储类型定义 */
-typedef unsigned char SString[MAXSTRLEN + 1];		//0号单元存放串的长度
+typedef unsigned char SString[MAXSTRLEN + 1];        //0号单元存放串的长度
 
 /* 顺序串Func列表 */
 Status StrAssign_Sq(SString T, const char *chars);

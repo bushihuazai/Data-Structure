@@ -9,40 +9,40 @@
 #ifndef STATICLINKEDLISTTYPE_C
 #define STATICLINKEDLISTTYPE_C
 
-#include "StaticLinkedListType.h" 		//**10_internal_sort**//
+#include "StaticLinkedListType.h"         //**10_internal_sort**//
 
 Status CreateSortList(FILE *fp, SLinkList_sort *L)
 {
-	int i;
+    int i;
 
-	Scanf(fp, "%d", &((*L).length));
+    Scanf(fp, "%d", &((*L).length));
 
-	if ((*L).length > MAXSIZE) {
-		return ERROR;
+    if ((*L).length > MAXSIZE) {
+        return ERROR;
 
-	}
+    }
 
-	(*L).r[0].rc.key = MAXINT;
-	(*L).r[0].next = 0;
+    (*L).r[0].rc.key = MAXINT;
+    (*L).r[0].next = 0;
 
-	for (i = 1; i <= (*L).length; i++) {
-		Scanf(fp, "%d", &((*L).r[i].rc.key));
-		(*L).r[i].next = -1;
-	}
+    for (i = 1; i <= (*L).length; i++) {
+        Scanf(fp, "%d", &((*L).r[i].rc.key));
+        (*L).r[i].next = -1;
+    }
 
-	return OK;
+    return OK;
 }
 
 void Traverse(SLinkList_sort L, void(Visit)(KeyType))
 {
-	int i;
+    int i;
 
-	for (i = 1; i <= L.length; i++) {
-		Vi si t(L.r [i ].rc.key);
-	} {
+    for (i = 1; i <= L.length; i++) {
+        Vi si t(L.r [i ].rc.key);
+    } {
 
-	}
-	printf("\n");
+    }
+    printf("\n");
 }
 
 #endif

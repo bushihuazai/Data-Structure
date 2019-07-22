@@ -12,24 +12,24 @@
 #define MFSET_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 并查集（等价类）的树的双亲表类型定义 */
-typedef int TElemType_P;						//假设集合中元素均为整数
-#include "../05 ParentTree/ParentTree.c" 		//**06_tree_binaryTree**//
+typedef int TElemType_P;                        //假设集合中元素均为整数
+#include "../05 ParentTree/ParentTree.c"         //**06_tree_binaryTree**//
 typedef PTree MFSet;
 
 /* 二元关系 */
 typedef struct {
-	int i;
-	int j;
+    int i;
+    int j;
 } Node;
 
 /* 等价关系 */
 typedef struct {
-	Node nodes[MAX_TREE_SIZE];					//足够大的集合空间
-	int n;
+    Node nodes[MAX_TREE_SIZE];                    //足够大的集合空间
+    int n;
 } Relation;
 
 /* 并查集（等价类）Func列表 */

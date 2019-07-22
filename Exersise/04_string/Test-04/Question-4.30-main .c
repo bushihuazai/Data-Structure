@@ -6,25 +6,25 @@ Status Algo_4_30(SString S, SString Sub, int *pos);
 
 int main(int argc, char *argv[])
 {
-	char *s = "abcdeabcabcbcdefbcdefefghefgh";
-	SString Sub, S;
-	int pos;
+    char *s = "abcdeabcabcbcdefbcdefefghefgh";
+    SString Sub, S;
+    int pos;
 
-	StrAssign_Sq(S, s);
-	printf("主串...\n");
-	printf("S   = ");
-	StrPrint_Sq(S);
-	printf("\n\n");
+    StrAssign_Sq(S, s);
+    printf("主串...\n");
+    printf("S   = ");
+    StrPrint_Sq(S);
+    printf("\n\n");
 
-	printf("首个最长不重复子串...\n");
-	printf("Sub = ");
-	Algo_4_30(S, Sub, &pos);
-	StrPrint_Sq(Sub);
-	printf("\n");
-	printf("Sub 在 S中首次出现的位置为 %d\n", pos);
-	printf("\n");
+    printf("首个最长不重复子串...\n");
+    printf("Sub = ");
+    Algo_4_30(S, Sub, &pos);
+    StrPrint_Sq(Sub);
+    printf("\n");
+    printf("Sub 在 S中首次出现的位置为 %d\n", pos);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━┓
@@ -36,44 +36,44 @@ int main(int argc, char *argv[])
 **第二：子串间可以重叠，比如求取abcabca的结果为abca；
 **第三：子串内可以重复，如求取aaaa的结果为aaa。
 */
-Status Algo_4_30(SString S, SString Sub, int *pos)	//0号单元
+Status Algo_4_30(SString S, SString Sub, int *pos)    //0号单元
 {
-	int i, j, k, len, start, end;
+    int i, j, k, len, start, end;
 
-	if (S[0] < 2) {							//主串元素个数不能少于2
-		return ERROR;
-	}
+    if (S[0] < 2) {                            //主串元素个数不能少于2
+        return ERROR;
+    }
 
-	Sub[0] = 0;
+    Sub[0] = 0;
 
-	for (k = 1; k < S[0]; k++) {			//范围从1到S[0]-1
-		i = k;
-		j = k + 1;
+    for (k = 1; k < S[0]; k++) {            //范围从1到S[0]-1
+        i = k;
+        j = k + 1;
 
-		while (j <= S[0] && S[i] != S[j]) {
-			j++;    //找到首个潜在的循环起点
-		}
+        while (j <= S[0] && S[i] != S[j]) {
+            j++;    //找到首个潜在的循环起点
+        }
 
-		if (j <= S[0]) {
-			start = i;
-			end = j;
-			len = 0;
-			while (j <= S[0] && S[i] == S[j]) {
-				i++;
-				j++;
-				len++;
-			}
+        if (j <= S[0]) {
+            start = i;
+            end = j;
+            len = 0;
+            while (j <= S[0] && S[i] == S[j]) {
+                i++;
+                j++;
+                len++;
+            }
 
-			if (len > Sub[0] && start + len - 1 >= end - 1) {	//保证连续性和最长这两个特性
-				*pos = start;
-				SubString_Sq(Sub, S, start, len);
-			}
-		}
-	}
+            if (len > Sub[0] && start + len - 1 >= end - 1) {    //保证连续性和最长这两个特性
+                *pos = start;
+                SubString_Sq(Sub, S, start, len);
+            }
+        }
+    }
 
-	if (Sub[0]) {
-		return OK;
-	} else {
-		return ERROR;
-	}
+    if (Sub[0]) {
+        return OK;
+    } else {
+        return ERROR;
+    }
 }

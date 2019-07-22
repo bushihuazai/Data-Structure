@@ -12,26 +12,26 @@
 #define SEQUENCELISTTYPE_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
 /* 宏定义 */
 #ifndef MAXSIZE
-	#define MAXSIZE 20						//一个用作示例的小顺序表的最大长度
+    #define MAXSIZE 20                        //一个用作示例的小顺序表的最大长度
 #endif
 #define LT(a,b) ((a)<(b))
 #define LQ(a,b) ((a)<=(b))
 
 /* 类型定义 */
-typedef int KeyType;					//定义关键字类型为整数类型
-typedef struct {						//顺序表结构
-	KeyType key;						//关键字项
-	//使用结构体便于使用中扩展
-} RcdType;								//记录类型
+typedef int KeyType;                    //定义关键字类型为整数类型
+typedef struct {                        //顺序表结构
+    KeyType key;                        //关键字项
+    //使用结构体便于使用中扩展
+} RcdType;                                //记录类型
 typedef struct {
-	RcdType r[MAXSIZE + 1];				//r[0]闲置或用作哨兵单元
-	int length;							//顺序表长度
-} SqList_sort;							//顺序表类型
+    RcdType r[MAXSIZE + 1];                //r[0]闲置或用作哨兵单元
+    int length;                            //顺序表长度
+} SqList_sort;                            //顺序表类型
 
 /* 顺序表存储结构Func列表 */
 Status CreateSortList(FILE *fp, SqList_sort *L);

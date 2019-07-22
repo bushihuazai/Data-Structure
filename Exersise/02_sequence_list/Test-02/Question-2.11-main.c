@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>											//提供malloc、realloc、free、exit原型
-#include "../../../Algorithms/01_abstract/Status.h"  							//**01_abstract**//
-#include "../../../Algorithms/02_sequence_list/01 SequenceList/SequenceList.c"	//**02_sequence_list**//
+#include <stdlib.h>                                            //提供malloc、realloc、free、exit原型
+#include "../../../Algorithms/01_abstract/Status.h"                              //**01_abstract**//
+#include "../../../Algorithms/02_sequence_list/01 SequenceList/SequenceList.c"    //**02_sequence_list**//
 
 /* Func原型 */
 Status Algo_2_11(SqList *va, LElemType_Sq x);
@@ -11,26 +11,26 @@ void PrintElem(LElemType_Sq e);
 
 int main(int argc, char *argv[])
 {
-	SqList L;
-	int i;
+    SqList L;
+    int i;
 
-	if (InitList_Sq(&L)) {				//链表L创建成功
-		for (i = 1; i <= 10; i++) {		//链表L中元素1~20
-			ListInsert_Sq(&L, i, 2 * i);
-		}
-	}
+    if (InitList_Sq(&L)) {                //链表L创建成功
+        for (i = 1; i <= 10; i++) {        //链表L中元素1~20
+            ListInsert_Sq(&L, i, 2 * i);
+        }
+    }
 
-	printf("L = ");
-	ListTraverse_Sq(L, PrintElem); 			//输出L
-	printf("\n\n");
+    printf("L = ");
+    ListTraverse_Sq(L, PrintElem);             //输出L
+    printf("\n\n");
 
-	printf("将元素 \"5\" 插入到链表L中...\n");
-	Algo_2_11(&L, 5);
-	printf("此时L = ");
-	ListTraverse_Sq(L, PrintElem); 			//输出L
-	printf("\n\n");
+    printf("将元素 \"5\" 插入到链表L中...\n");
+    Algo_2_11(&L, 5);
+    printf("此时L = ");
+    ListTraverse_Sq(L, PrintElem);             //输出L
+    printf("\n\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━┓
@@ -38,39 +38,39 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━*/
 Status Algo_2_11(SqList *va, LElemType_Sq x)
 {
-	int i;
-	LElemType_Sq *newbase;
+    int i;
+    LElemType_Sq *newbase;
 
-	if (!(*va).length) {
-		return ERROR;
-	}
+    if (!(*va).length) {
+        return ERROR;
+    }
 
-	if ((*va).length == (*va).listsize) {	//若存储空间已满，需开辟新空间
-		newbase = (LElemType_Sq *)realloc((*va).elem, ((*va).listsize + LISTINCREMENT) * sizeof(LElemType_Sq));
-		if (!newbase) {
-			exit(OVERFLOW);
+    if ((*va).length == (*va).listsize) {    //若存储空间已满，需开辟新空间
+        newbase = (LElemType_Sq *)realloc((*va).elem, ((*va).listsize + LISTINCREMENT) * sizeof(LElemType_Sq));
+        if (!newbase) {
+            exit(OVERFLOW);
 
-		}
+        }
 
-		(*va).elem = newbase;
-		(*va).listsize += LISTINCREMENT;
-	}
-	
+        (*va).elem = newbase;
+        (*va).listsize += LISTINCREMENT;
+    }
+    
 for(i=(*va).length; i>=1; i--)
-	{      	if((*va).elem[i-1]>x)
-			( *va).elem[i]  =  ( * va {).elem[i-1];
-		else	  
-		} 	bre {k;
-	}
-		}
-	
+    {          if((*va).elem[i-1]>x)
+            ( *va).elem[i]  =  ( * va {).elem[i-1];
+        else      
+        }     bre {k;
+    }
+        }
+    
 (*va).elem[i] = x;
-	(*va).length++;
-	
+    (*va).length++;
+    
 return OK;
 }
 
 void PrintElem(LElemType_Sq e)
 {
-	printf("%d ", e);
+    printf("%d ", e);
 }

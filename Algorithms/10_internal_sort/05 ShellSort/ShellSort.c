@@ -11,26 +11,26 @@
 #ifndef SHELLSORT_C
 #define SHELLSORT_C
 
-#include "ShellSort.h" 							//**10_internal_sort**//
+#include "ShellSort.h"                             //**10_internal_sort**//
 
 /*════╗
 ║算法10.4║
 ╚════*/
 void ShellInsert(SqList_sort *L, int dk)
 {
-	int i, j;
+    int i, j;
 
-	for (i = dk + 1; i <= (*L).length; i++) {		//dk为前后记录的位置增量，r[0]作暂存单元
-		if (LT((*L).r[i].key, (*L).r[i - dk].key)) {	//将L.r[i]插入有序增量子表
-			(*L).r[0] = (*L).r[i];				//暂exsistsL.r[0]
+    for (i = dk + 1; i <= (*L).length; i++) {        //dk为前后记录的位置增量，r[0]作暂存单元
+        if (LT((*L).r[i].key, (*L).r[i - dk].key)) {    //将L.r[i]插入有序增量子表
+            (*L).r[0] = (*L).r[i];                //暂exsistsL.r[0]
 
-			for (j = i - dk; j > 0 && LT((*L).r[0].key, (*L).r[j].key); j -= dk) {
-				(*L).r[j + dk] = (*L).r[j];    //记录后移，查找插入位置
-			}
+            for (j = i - dk; j > 0 && LT((*L).r[0].key, (*L).r[j].key); j -= dk) {
+                (*L).r[j + dk] = (*L).r[j];    //记录后移，查找插入位置
+            }
 
-			(*L).r[j + dk] = (*L).r[0];			//插入
-		}
-	}
+            (*L).r[j + dk] = (*L).r[0];            //插入
+        }
+    }
 }
 
 /*════╗
@@ -38,11 +38,11 @@ void ShellInsert(SqList_sort *L, int dk)
 ╚════*/
 void ShellSort(SqList_sort *L, int dlta[], int t)
 {
-	int k;
+    int k;
 
-	for (k = 0; k < t; k++) {
-		ShellInsert(L, dlta[k]);    //一趟增量为dlta[k]的插入排序
-	}
+    for (k = 0; k < t; k++) {
+        ShellInsert(L, dlta[k]);    //一趟增量为dlta[k]的插入排序
+    }
 }
 
 #endif

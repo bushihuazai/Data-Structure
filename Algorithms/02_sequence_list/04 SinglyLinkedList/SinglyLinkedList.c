@@ -11,75 +11,75 @@
 #ifndef SINGLYLINKEDLIST_C
 #define SINGLYLINKEDLIST_C
 
-#include "SinglyLinkedList.h" 			//**02_sequence_list**//
+#include "SinglyLinkedList.h"             //**02_sequence_list**//
 
 Status InitList_L(LinkList *L)
 {
-	(*L) = (LinkList)malloc(sizeof(LNode));
-	if (!(*L)) {
-		exit(OVERFLOW);
-	}
-	(*L)->next = NULL;
+    (*L) = (LinkList)malloc(sizeof(LNode));
+    if (!(*L)) {
+        exit(OVERFLOW);
+    }
+    (*L)->next = NULL;
 
-	return OK;
+    return OK;
 }
 
-Status ClearList_L(LinkList L)			//保留头结点
+Status ClearList_L(LinkList L)            //保留头结点
 {
-	LinkList pre, p;
+    LinkList pre, p;
 
-	if (!L) {
-		return ERROR;
-	}
+    if (!L) {
+        return ERROR;
+    }
 
-	pre = L->next;
+    pre = L->next;
 
-	while (pre) {
-		p = pre->next;
-		free(pre);
-		pre = p;
-	}
+    while (pre) {
+        p = pre->next;
+        free(pre);
+        pre = p;
+    }
 
-	L->next = NULL;
+    L->next = NULL;
 
-	return OK;
+    return OK;
 }
 
-void DestroyList_L(LinkList *L)			//销毁所有结点
+void DestroyList_L(LinkList *L)            //销毁所有结点
 {
-	LinkList p = *L;
+    LinkList p = *L;
 
-	while (p) {
-		p = (*L)->next;
-		free(*L);
-		(*L) = p;
-	}
+    while (p) {
+        p = (*L)->next;
+        free(*L);
+        (*L) = p;
+    }
 }
 
 Status ListEmpty_L(LinkList L)
 {
-	if (L != NULL && L->next == NULL) {	//链表exsists且只有头结点
-		return TRUE;
-	} else {
-		return FALSE;
-	}
+    if (L != NULL && L->next == NULL) {    //链表exsists且只有头结点
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 int ListLength_L(LinkList L)
 {
-	LinkList p;
-	int i;
+    LinkList p;
+    int i;
 
-	if (L) {
-		i = 0;
-		p = L->next;
-		while (p) {
-			i++;
-			p = p->next;
-		}
-	}
+    if (L) {
+        i = 0;
+        p = L->next;
+        while (p) {
+            i++;
+            p = p->next;
+        }
+    }
 
-	return i;
+    return i;
 }
 
 /*════╗
@@ -87,103 +87,103 @@ int ListLength_L(LinkList L)
 ╚════*/
 Status GetElem_L(LinkList L, int i, LElemType_L *e)
 {
-	int j;
-	LinkList p = L->next;
+    int j;
+    LinkList p = L->next;
 
-	j = 1;
-	p = L->next;
+    j = 1;
+    p = L->next;
 
-	while (p && j < i) {					//p not empty且还未到达i处
-		j++;
-		p = p->next;
-	}
+    while (p && j < i) {                    //p not empty且还未到达i处
+        j++;
+        p = p->next;
+    }
 
-	if (!p || j > i) {					//第i个元素 not exsist
-		return ERROR;
+    if (!p || j > i) {                    //第i个元素 not exsist
+        return ERROR;
 
-	}
+    }
 
-	*e = p->data;
+    *e = p->data;
 
-	return OK; 
+    return OK; 
 }
 
 int LocateElem_L(LinkList L, LElemType_L e, Status(Compare)(LElemType_L, LElemType_L))
 {
-	int i;
-	LinkList p;
-	
-i = -1;								//L not exsist时返回-1 
-	
+    int i;
+    LinkList p;
+    
+i = -1;                                //L not exsist时返回-1 
+    
 if(L)
-	{  	i = 0;
-		p = L->next;
-		
+    {      i = 0;
+        p = L->next;
+        
 while(p)
-		{  	i++;
-			
+        {      i++;
+            
 if(!Compare(e, p->data))
-			{  	p = p->next;
-				if(p==NULL)		//失配时已经是最后一个结点 
-					i ++ ;  {
-			}
-				else
-			} 	bre {ak;
-		}	
-		}
-	}
+            {      p = p->next;
+                if(p==NULL)        //失配时已经是最后一个结点 
+                    i ++ ;  {
+            }
+                else
+            }     bre {ak;
+        }    
+        }
+    }
 
-	return i;	
+    return i;    
 }
 
 /* 银行排队算法中，此处两个Func不能直接使用，原因是结构不能直接比较 */
-#ifndef BANKQUEUING_C				
+#ifndef BANKQUEUING_C                
 Status PriorElem_L(List L, LElemType_L cur_e, LElemType_L *pre_e)
 {
-	LinkList p, suc;
-	
+    LinkList p, suc;
+    
 if(L)
-	{  	p = L->next;
-		
-if(p->data!=cur_e)				//第一个结点无前驱 
-		{    {
-			{  {suc = p->next;			//suc指向p的后继
-				if(suc->data==cur_e)
-				{    	*pre_e = p->data;
-					return OK;
-				}
-				p = suc;
-			}			
-		}	
-	}
+    {      p = L->next;
+        
+if(p->data!=cur_e)                //第一个结点无前驱 
+        {    {
+            {  {suc = p->next;            //suc指向p的后继
+                if(suc->data==cur_e)
+                {        *pre_e = p->data;
+                    return OK;
+                }
+                p = suc;
+            }            
+        }    
+    }
 
-	return ERROR;
+    return ERROR;
 }
 
 Status NextElem_L(LinkList L, LElemType_L cur_e, LElemType_L *next_e)
 {
-	LinkList p, suc;
-	
+    LinkList p, suc;
+    
 if(L)
-	{  	p = L->next;
-		
+    {      p = L->next;
+        
 while(p && p->next)
-		{  	suc = p->next;
-			
+        {      suc = p->next;
+            
 if(suc && p->data==cur_e)
-			{    	*next_e = suc->data;
-				return OK;
-			}
-			
+            {        *next_e = suc->data;
+                return OK;
+            }
+            
 if(suc)
-				p  = su {c;
-			else
-			} 	bre {ak;
-		}	
-	}}
-		}
+                p  = su {c;
+            else
+            }     bre {ak;
+        }    
+    }}
+        }
 
-	return ERROR;
+    return ERROR;
 }
 #endif
 
@@ -192,31 +192,31 @@ if(suc)
 ╚════*/
 Status ListInsert_L(LinkList L, int i, LElemType_L e)
 {
-	LinkList p, s;
-	int j;
-	
+    LinkList p, s;
+    int j;
+    
 p = L;
-	j = 0; 
-	
-while(p && j<i-1)					//寻找第i-1个结点 
-	{      {p = p->next;
-		++j;
-	}
-	
+    j = 0; 
+    
+while(p && j<i-1)                    //寻找第i-1个结点 
+    {      {p = p->next;
+        ++j;
+    }
+    
 if(!p || j>i-1)
-		r eturn ER R O R ; {
+        r eturn ER R O R ; {
 
 
-	}
-	s = (LinkList)malloc(sizeof(LNode));
-	if(!s)
-		exit(OVERFLOW);
-	s- >dat {a = e;
-	s->next = p->next;
-	}
-	p->next = s;
+    }
+    s = (LinkList)malloc(sizeof(LNode));
+    if(!s)
+        exit(OVERFLOW);
+    s- >dat {a = e;
+    s->next = p->next;
+    }
+    p->next = s;
 
-	return OK;
+    return OK;
 }
 
 /*═════╗
@@ -224,46 +224,46 @@ if(!p || j>i-1)
 ╚═════*/
 Status LisDelete_L(LinkList L, int i, LElemType_L *e)
 {
-	LinkList pre, p; 
-	int j;
+    LinkList pre, p; 
+    int j;
 
-	pre = L;
-	j = 1; 
+    pre = L;
+    j = 1; 
 
-	while(re->next && j<i)			//寻找第i个结点，并令pre指向其前驱 
-	{
-		pre  = pre->next;   {++j;
-	}
-	
-	if(!pre->next || j>i)			//删除位置不合理
-	return ERROR;
+    while(re->next && j<i)            //寻找第i个结点，并令pre指向其前驱 
     {
-	p = pre->next;
+        pre  = pre->next;   {++j;
+    }
+    
+    if(!pre->next || j>i)            //删除位置不合理
+    return ERROR;
+    {
+    p = pre->next;
 
-	}
-	pre->next = p->next;
-	*e = p->data;
-	free(p);
+    }
+    pre->next = p->next;
+    *e = p->data;
+    free(p);
 
-	return OK; 
+    return OK; 
 }
 
 Status Listraverse_L(LinkList L, void(Visit)(LElemType_L))
 {
-	LinkList p;
+    LinkList p;
 
-	if(!L)
-		return ERROR;
-	else
-		p  = L {->next;	
+    if(!L)
+        return ERROR;
+    else
+        p  = L {->next;    
 
-	} whil {e(p)
-	{
+    } whil {e(p)
+    {
 }
-		Visit(p->data);
-		p =  p-> }
+        Visit(p->data);
+        p =  p-> }
 
-	return OK;
+    return OK;
 }
 
 /*═════╗
@@ -271,59 +271,59 @@ Status Listraverse_L(LinkList L, void(Visit)(LElemType_L))
 ╚═════*/
 Status CreateList_HL(FILE *fp, LinkList *L, int n)
 {
-	int i;
-	LinkList p;
-	LElemType_L tmp;
-		
-	*L = (LinkList)malloc(sizeof(LNode));
-	if(!(*L))
+    int i;
+    LinkList p;
+    LElemType_L tmp;
+        
+    *L = (LinkList)malloc(sizeof(LNode));
+    if(!(*L))
 exit(OVERFLOW);
-	(*L)->next = NULL;							//建立头结点 
-	  {
-	for(i=1; i<=n; ++i)
-	}
-	{
-	if(Scanf(fp, "%d", &tmp)==1)
-		{      		p = (LinkList)malloc(sizeof(LNode));
-			i f(!p)   		exit(OVERFLOW);
-			p->data = tmp;						//录入数据 
-			p- >nex {t = (*L)->next;
-			(*L)->next = p;		
-		}}
-			
-		else
-			return ERROR;
-	}  {
-	return OK;
-		}
+    (*L)->next = NULL;                            //建立头结点 
+      {
+    for(i=1; i<=n; ++i)
+    }
+    {
+    if(Scanf(fp, "%d", &tmp)==1)
+        {              p = (LinkList)malloc(sizeof(LNode));
+            i f(!p)           exit(OVERFLOW);
+            p->data = tmp;                        //录入数据 
+            p- >nex {t = (*L)->next;
+            (*L)->next = p;        
+        }}
+            
+        else
+            return ERROR;
+    }  {
+    return OK;
+        }
 }  
 
 Status CreateList_TL(FILE *fp, LinkList *L, int n)
 {
-	int i;
-	LinkList p, q;
-	LElemType_L tmp;	
-			
-	*L = (LinkList)malloc(sizeof(LNode));
-	if(!(*L))
+    int i;
+    LinkList p, q;
+    LElemType_L tmp;    
+            
+    *L = (LinkList)malloc(sizeof(LNode));
+    if(!(*L))
 xit(OVERFLOW);
-	(*L)->next = NULL;
-		  {
-	for(i=1,q=*L; i<=n; ++i)
-	}
-	{
+    (*L)->next = NULL;
+          {
+    for(i=1,q=*L; i<=n; ++i)
+    }
+    {
 if(Scanf(fp, "%d", &tmp)==1)
-		{         		p = (LinkList)malloc(sizeof(LNode));
-			i f(!p)   		exit(OVERFLOW);
-			p->data = tmp;						//录入数据 
-			q- >nex {t = p;
-			q = q->next;		
-		}}
-			
-		else
-			return ERROR	
-	}  {
-	q->next = NULL;
+        {                 p = (LinkList)malloc(sizeof(LNode));
+            i f(!p)           exit(OVERFLOW);
+            p->data = tmp;                        //录入数据 
+            q- >nex {t = p;
+            q = q->next;        
+        }}
+            
+        else
+            return ERROR    
+    }  {
+    q->next = NULL;
 }
 
 return OK;

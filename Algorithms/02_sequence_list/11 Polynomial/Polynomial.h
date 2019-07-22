@@ -1,9 +1,9 @@
 /*************************************
- *						             *
+ *                                     *
  * 文件夹: 02_sequence_list\11 Polynomial *
- * 							         *
+ *                                      *
  * 文件名: Polynomial.h              *
- * 							         *
+ *                                      *
  * 内  容: 一元多项式相关操作列表    *
  *                                   *
  *************************************/
@@ -12,16 +12,16 @@
 #define POLYNOMIAL_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
 
 /* 多项式类型定义 */
-typedef struct {						//用来表示多项式的项
-	float	coef;						//系数
-	int		expn;						//指数
-} LElemType_E;							//重新定义扩展的线性表中元素类型
+typedef struct {                        //用来表示多项式的项
+    float    coef;                        //系数
+    int        expn;                        //指数
+} LElemType_E;                            //重新定义扩展的线性表中元素类型
 #include "../09 ExtenLinkedList/ExtenLinkedList.c"//**02_sequence_list**//
-typedef LElemType_E  ElemType_P;		//一元多项式项的类型
-typedef ELinkList  Polynomial;			//一元多项式
+typedef LElemType_E  ElemType_P;        //一元多项式项的类型
+typedef ELinkList  Polynomial;            //一元多项式
 
 /* 一元多项式Func列表 */
 void CreatPolyn_P(FILE *fp, Polynomial *P, int m);

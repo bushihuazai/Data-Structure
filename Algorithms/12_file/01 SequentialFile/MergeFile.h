@@ -12,17 +12,17 @@
 #define MERGEFILE_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"			//**01_abstract**//
+#include "../../01_abstract/Status.h"            //**01_abstract**//
 
 /* 文件类型定义 */
-typedef struct {			//主文件
-	int key;				//账号
-	int balance;			//余额
+typedef struct {            //主文件
+    int key;                //账号
+    int balance;            //余额
 } MainFile;
-typedef struct {			//事务文件
-	char code;				//操作：I-插入，D删去，U更改
-	int key;				//账号
-	int money;				//金额变动，存"+"，取"-"
+typedef struct {            //事务文件
+    char code;                //操作：I-插入，D删去，U更改
+    int key;                //账号
+    int money;                //金额变动，存"+"，取"-"
 } AffairFile;
 
 /* 文件归并Func列表 */

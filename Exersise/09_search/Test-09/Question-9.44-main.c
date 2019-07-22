@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../../../Algorithms/01_abstract/Status.h"	//**01_abstract**//
+#include "../../../Algorithms/01_abstract/Status.h"    //**01_abstract**//
 #include "../../../Algorithms/01_abstract/Scanf.c"
 
 /* 宏定义 */
@@ -8,7 +8,7 @@
 
 /* 类型定义 */
 typedef struct {
-	char s[27];		//关键字长度不超过26
+    char s[27];        //关键字长度不超过26
 } HNode;
 typedef HNode HashTable[MAXSIZE];
 
@@ -19,19 +19,19 @@ int fHash_9_44(char s[]);//返回s首字母(大写)在字母表中的位置
 
 int main(int argc, char *argv[])
 {
-	FILE *fp;
-	int p;
-	HashTable H;
+    FILE *fp;
+    int p;
+    HashTable H;
 
-	fp = fopen("Data/Algo_9_44.txt", "r");
-	CreateHash_9_44(fp, H);
-	fclose(fp);
+    fp = fopen("Data/Algo_9_44.txt", "r");
+    CreateHash_9_44(fp, H);
+    fclose(fp);
 
-	printf("按首字母字典顺序输出哈希表中所有关键字：\n");
-	Algo_9_44(H);
-	printf("\n");
+    printf("按首字母字典顺序输出哈希表中所有关键字：\n");
+    Algo_9_44(H);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━┓
@@ -39,47 +39,47 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━━━━*/
 void Algo_9_44(HashTable H)
 {
-	int i, j;
+    int i, j;
 
-	for (i = 1; i <= 26; i++) {
-		j = i;
+    for (i = 1; i <= 26; i++) {
+        j = i;
 
-		while (strcmp(H[j].s, "") != 0) {
-			if (fHash_9_44(H[j].s) == i) {
-				printf("%s ", H[j].s);
-			}
-			j = (j + 1) % MAXSIZE;
-		}
-	}
+        while (strcmp(H[j].s, "") != 0) {
+            if (fHash_9_44(H[j].s) == i) {
+                printf("%s ", H[j].s);
+            }
+            j = (j + 1) % MAXSIZE;
+        }
+    }
 }
 
 Status CreateHash_9_44(FILE *fp, HashTable H)
 {
-	int i, p;
-	char tmp[26];
+    int i, p;
+    char tmp[26];
 
-	for (i = 0; i < MAXSIZE; i++) {
-		strcpy(H[i].s, "");
-	}
+    for (i = 0; i < MAXSIZE; i++) {
+        strcpy(H[i].s, "");
+    }
 
-	while (Scanf(fp, "%s", tmp) == 1) {		//录入关键字到哈希表
-		p = fHash_9_44(tmp);
+    while (Scanf(fp, "%s", tmp) == 1) {        //录入关键字到哈希表
+        p = fHash_9_44(tmp);
 
-		while (strcmp(H[p].s, "") != 0) {	//出现冲突
-			p = (p + 1) % MAXSIZE;
-		}
+        while (strcmp(H[p].s, "") != 0) {    //出现冲突
+            p = (p + 1) % MAXSIZE;
+        }
 
-		if (strcmp(H[p].s, "") == 0) {
-			strcpy(H[p].s, tmp);
-		} else {							//此处未对失败情况做限制
-			return ERROR;
-		}
-	}
+        if (strcmp(H[p].s, "") == 0) {
+            strcpy(H[p].s, tmp);
+        } else {                            //此处未对失败情况做限制
+            return ERROR;
+        }
+    }
 
-	return OK;
+    return OK;
 }
 
-int fHash_9_44(char s[])		//哈希Func
+int fHash_9_44(char s[])        //哈希Func
 {
-	return s[0] - 'A' + 1;			//设定关键字首字母为大写
+    return s[0] - 'A' + 1;            //设定关键字首字母为大写
 }

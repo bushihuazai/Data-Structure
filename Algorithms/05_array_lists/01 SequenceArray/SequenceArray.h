@@ -12,20 +12,20 @@
 #define SEQUENCEARRAY_H
 
 #include <stdio.h>
-#include <stdlib.h>								//提供malloc、realloc、free、exit原型
-#include <stdarg.h>								//提供宏va_start、va_arg、va_end 
-#include "../../01_abstract/Status.h"				//**01_abstract**//
+#include <stdlib.h>                                //提供malloc、realloc、free、exit原型
+#include <stdarg.h>                                //提供宏va_start、va_arg、va_end 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
 
 /* 宏定义 */
-#define MAX_ARRAY_DIM 8							//数组的最大维度为8 
+#define MAX_ARRAY_DIM 8                            //数组的最大维度为8 
 
 /* 数组类型定义 */
 typedef int AElemType_Sq;
-typedef struct {								//数组的顺序存储表示
-	AElemType_Sq *base;							//数组元素基址（存放数组元素）
-	int dim;									//数组维数
-	int *bounds;								//数组维界基址（存放数组行、列信息）
-	int *constants;								//数组映像Func常量基址（存储跨越某个维度时需要越过的元素个数）
+typedef struct {                                //数组的顺序存储表示
+    AElemType_Sq *base;                            //数组元素基址（存放数组元素）
+    int dim;                                    //数组维数
+    int *bounds;                                //数组维界基址（存放数组行、列信息）
+    int *constants;                                //数组映像Func常量基址（存储跨越某个维度时需要越过的元素个数）
 } Array;
 
 /* 数组Func列表 */

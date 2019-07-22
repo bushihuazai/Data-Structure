@@ -12,24 +12,24 @@
 #define LINKQUEUE_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 链队类型定义 */
 /* 在模拟银行排队、二叉树三叉链表存储的算法中，QElemType_L需重新定义*/
 #if !defined BANKQUEUING_H     &&  \
-	!defined TRI_BINARYTREE_H
-	typedef int QElemType_L;
+    !defined TRI_BINARYTREE_H
+    typedef int QElemType_L;
 #endif
 typedef struct QNode {
-	QElemType_L data;
-	struct QNode *next;
+    QElemType_L data;
+    struct QNode *next;
 } QNode;
 typedef QNode *QueuePtr;
 typedef struct {
-	QueuePtr front;					//头指针
-	QueuePtr rear;					//尾指针
-} LinkQueue;							//队列的链式存储表示
+    QueuePtr front;                    //头指针
+    QueuePtr rear;                    //尾指针
+} LinkQueue;                            //队列的链式存储表示
 
 /* 链栈Func列表 */
 Status InitQueue_L(LinkQueue *Q);

@@ -12,22 +12,22 @@
 #define TRIPLESPARSEMATRIX_H
 
 #include <stdio.h>
-#include <stdarg.h>							//提供宏va_list、va_start、va_arg、va_end
-#include "../../01_abstract/Status.h"			//**01_abstract**//
-#include "../../01_abstract/Scanf.c"			//**01_abstract**//
+#include <stdarg.h>                            //提供宏va_list、va_start、va_arg、va_end
+#include "../../01_abstract/Status.h"            //**01_abstract**//
+#include "../../01_abstract/Scanf.c"            //**01_abstract**//
 
 /* 宏定义 */
-#define MAXSIZE 400							//假设非零元个数的最大值为400
+#define MAXSIZE 400                            //假设非零元个数的最大值为400
 
 /* 三元组稀疏矩阵类型定义 */
 typedef int MElemType_TSq;
 typedef struct {
-	int i, j;								//该非零元的行下标和列下标
-	MElemType_TSq e;
+    int i, j;                                //该非零元的行下标和列下标
+    MElemType_TSq e;
 } Triple;
 typedef struct {
-	Triple data[MAXSIZE + 1];					//非零元三元组表，data[0]未用
-	int mu, nu, tu;							//矩阵的行数、列数和非零元个数
+    Triple data[MAXSIZE + 1];                    //非零元三元组表，data[0]未用
+    int mu, nu, tu;                            //矩阵的行数、列数和非零元个数
 } TSMatrix;
 
 /* 三元组顺序表（稀疏矩阵）Func列表 */

@@ -1,9 +1,9 @@
 /*****************************************
- *						                 *
+ *                                         *
  * 文件夹: 06_tree_binaryTree\05 ParentTree *
- *						                 *
+ *                                         *
  * 文件名: ParentTree.h                  *
- * 										 *
+ *                                          *
  * 内  容: 树的双亲表示结构相关操作列表  *
  *                                       *
  *****************************************/
@@ -12,24 +12,24 @@
 #define PARENTTREE_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
-#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"    //**03_stack_queue**// 
 
 /* 宏定义 */
-#define MAX_TREE_SIZE 100						//树的最大结点数
+#define MAX_TREE_SIZE 100                        //树的最大结点数
 
 /* 双亲树类型定义 */
-#ifndef MFSET_H									/* 在并查集结构中此类型将重新定义 */
-	typedef char TElemType_P;						//假设树中元素均为字符
+#ifndef MFSET_H                                    /* 在并查集结构中此类型将重新定义 */
+    typedef char TElemType_P;                        //假设树中元素均为字符
 #endif
-typedef struct PTNode {						//结点结构
-	TElemType_P data;
-	int parent;									//双亲位置域
+typedef struct PTNode {                        //结点结构
+    TElemType_P data;
+    int parent;                                    //双亲位置域
 } PTNode;
-typedef struct {								//树结构
-	PTNode nodes[MAX_TREE_SIZE];				//根结点位置默认到0，为了操作方便
-	int n;										//树的结点数
+typedef struct {                                //树结构
+    PTNode nodes[MAX_TREE_SIZE];                //根结点位置默认到0，为了操作方便
+    int n;                                        //树的结点数
 } PTree;
 
 /* 树的双亲存储结构Func列表 */

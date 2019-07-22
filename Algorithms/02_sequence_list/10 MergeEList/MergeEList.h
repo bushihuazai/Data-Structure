@@ -1,9 +1,9 @@
 /****************************************
- *							            *
+ *                                        *
  * 文件夹: 02_sequence_list\10 MergeEList    *
- * 							            *
+ *                                         *
  * 文件名: MergeEList.h                 *
- * 							            *
+ *                                         *
  * 内  容: 归并扩展的 SingleLinkedList 相关操作列表 *
  *                                      *
  ****************************************/
@@ -12,7 +12,7 @@
 #define MERGEELIST_H
 
 #include <stdio.h>
-#include "../09 ExtenLinkedList/ExtenLinkedList.c"			//**02_sequence_list**//
+#include "../09 ExtenLinkedList/ExtenLinkedList.c"            //**02_sequence_list**//
 
 /* 归并扩展的 SingleLinkedList Func列表 */
 Status MergeEList_L(ELinkList La, ELinkList Lb, ELinkList *Lc, int(Compare)(LElemType_E c1, LElemType_E c2));

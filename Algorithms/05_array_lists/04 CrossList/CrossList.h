@@ -1,9 +1,9 @@
 /********************************************
- * 							                *
+ *                                             *
  * 文件夹: 05_array_lists\04 CrossList   *
- * 							                *
+ *                                             *
  * 文件名: CrossList.h                      *
- * 							                *
+ *                                             *
  * 内  容: 十字链表（稀疏矩阵）相关操作列表 *
  *                                          *
  ********************************************/
@@ -12,24 +12,24 @@
 #define CROSSLIST_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include <stdarg.h>						//提供宏va_list、va_start、va_arg、va_end
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include <stdarg.h>                        //提供宏va_list、va_start、va_arg、va_end
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
 /* 十字链表类型定义 */
 typedef int CElemType;
 typedef struct OLNode {
-	int i, j;				//该非零元的行下标和列下标
-	CElemType e;
-	struct OLNode *right;	//该非零元所在的行表的后继链域
-	struct OLNode *down;	//该非零元所在的列表的后继链域
+    int i, j;                //该非零元的行下标和列下标
+    CElemType e;
+    struct OLNode *right;    //该非零元所在的行表的后继链域
+    struct OLNode *down;    //该非零元所在的列表的后继链域
 } OLNode;
-typedef OLNode *OLink;		//指向某一结点的指针
+typedef OLNode *OLink;        //指向某一结点的指针
 typedef struct {
-	OLink *rhead;			//行链表头指针
-	OLink *chead;			//列链表头指针
-	int mu, nu, tu;			//矩阵的行数、列数和非零元个数
+    OLink *rhead;            //行链表头指针
+    OLink *chead;            //列链表头指针
+    int mu, nu, tu;            //矩阵的行数、列数和非零元个数
 } CrossList;
 
 /* 十字链表（稀疏矩阵）Func列表 */

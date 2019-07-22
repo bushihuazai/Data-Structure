@@ -13,28 +13,28 @@
 
 #include <stdio.h>
 #include <limits.h>
-#include "../../01_abstract/Status.h"			//**01_abstract**//
-#include "../../01_abstract/Scanf.c"			//**01_abstract**//
+#include "../../01_abstract/Status.h"            //**01_abstract**//
+#include "../../01_abstract/Scanf.c"            //**01_abstract**//
 
 /* 宏定义 */
-#define MAXSIZE 100							//静态链表容量  
+#define MAXSIZE 100                            //静态链表容量  
 #define MAXINT INT_MAX
 #define LT(a,b) ((a)<(b))
 
 /* 类型定义 */
-typedef int KeyType;						//定义关键字类型为整数类型
-typedef struct {							//静态链表
-	KeyType key;							//关键字项
-	//使用结构体便于使用中扩展
-} RcdType;									//记录类型
+typedef int KeyType;                        //定义关键字类型为整数类型
+typedef struct {                            //静态链表
+    KeyType key;                            //关键字项
+    //使用结构体便于使用中扩展
+} RcdType;                                    //记录类型
 typedef struct {
-	RcdType rc;								//记录项
-	int next;								//指针项
-} SLNode;									//表结点类型
+    RcdType rc;                                //记录项
+    int next;                                //指针项
+} SLNode;                                    //表结点类型
 typedef struct {
-	SLNode r[MAXSIZE];						//0号单元为表头结点
-	int length;								//链表当前长度
-} SLinkList_sort;							//静态链表类型
+    SLNode r[MAXSIZE];                        //0号单元为表头结点
+    int length;                                //链表当前长度
+} SLinkList_sort;                            //静态链表类型
 
 /* 静态链表存储结构Func列表 */
 Status CreateSortList(FILE *fp, SLinkList_sort *L);

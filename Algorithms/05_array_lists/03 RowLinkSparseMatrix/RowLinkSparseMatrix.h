@@ -1,9 +1,9 @@
 /******************************************************
- *							                          *
+ *                                                      *
  * 文件夹: 05_array_lists\03 RowLinkSparseMatrix   *
- *							                          *
+ *                                                      *
  * 文件名: RowLinkSparseMatrix.h                      *
- *							                          *
+ *                                                      *
  * 内  容: 行逻辑链接的顺序表（稀疏矩阵）相关操作列表 *
  *                                                    *
  ******************************************************/
@@ -12,24 +12,24 @@
 #define ROWLINKSPARSEMATRIX_H
 
 #include <stdio.h>
-#include <stdarg.h>						//提供宏va_list、va_start、va_arg、va_end
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include <stdarg.h>                        //提供宏va_list、va_start、va_arg、va_end
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
 /* 宏定义 */
-#define MAXSIZE 400						//假设非零元个数的最大值为400
-#define MAXRC	20						//各行元素个数的最大值
+#define MAXSIZE 400                        //假设非零元个数的最大值为400
+#define MAXRC    20                        //各行元素个数的最大值
 
 /* 行逻辑链接的稀疏矩阵类型定义 */
 typedef int MElemType_RLSq;
 typedef struct {
-	int i, j;							//该非零元的行下标和列下标
-	MElemType_RLSq e;
+    int i, j;                            //该非零元的行下标和列下标
+    MElemType_RLSq e;
 } Triple;
 typedef struct {
-	Triple data[MAXSIZE + 1];				//非零元三元组表data[0]未用
-	int rpos[MAXRC + 1]; 					//各行第一个非零元在三元组表中的位置表
-	int mu, nu, tu;						//矩阵的行数、列数和非零元个数
+    Triple data[MAXSIZE + 1];                //非零元三元组表data[0]未用
+    int rpos[MAXRC + 1];                     //各行第一个非零元在三元组表中的位置表
+    int mu, nu, tu;                        //矩阵的行数、列数和非零元个数
 } RLSMatrix;
 
 /* 行逻辑链接的顺序表（稀疏矩阵）基础操作 */

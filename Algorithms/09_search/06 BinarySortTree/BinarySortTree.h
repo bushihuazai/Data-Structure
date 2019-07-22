@@ -12,24 +12,24 @@
 #define BINARYSORTTREE_H
 
 #include <stdlib.h>
-#include "../00 Base/Base.c" 				//**09_search**//
+#include "../00 Base/Base.c"                 //**09_search**//
 
 /* 宏Func */
 #define EQ(a,b) ((a)==(b))
 #define LT(a,b) ((a) < (b))
 
 /* 类型定义 */
-typedef ElemType_Search BSTElemType;		//二叉排序树元素类型
-typedef struct BSTNode {					//二叉排序树存储表示
-	BSTElemType data;
-	struct BSTNode *lchild;
-	struct BSTNode *rchild;
+typedef ElemType_Search BSTElemType;        //二叉排序树元素类型
+typedef struct BSTNode {                    //二叉排序树存储表示
+    BSTElemType data;
+    struct BSTNode *lchild;
+    struct BSTNode *rchild;
 
-	union {								//匿名联合体，仅在第9章习题test时使用
-		int RTag;							//线索标志
-	};
-} BSTNode;									//二叉排序树结点
-typedef BSTNode *BSTree;					//指向二叉排序树结点的指针
+    union {                                //匿名联合体，仅在第9章习题test时使用
+        int RTag;                            //线索标志
+    };
+} BSTNode;                                    //二叉排序树结点
+typedef BSTNode *BSTree;                    //指向二叉排序树结点的指针
 
 /* 二叉排序树Func列表 */
 Status CreateBSTree(BSTree *BST, Table T);

@@ -12,7 +12,7 @@
 #define ADDRESSSORT_H
 
 #include <limits.h>
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* 顺序表地址排序Func列表 */
 void AddressSort(SqList_sort *L);

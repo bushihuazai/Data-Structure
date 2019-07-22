@@ -11,37 +11,37 @@
 #ifndef NEARLYOPTIMALSEARCHTREE_C
 #define NEARLYOPTIMALSEARCHTREE_C
 
-#include "NearlyOptimalSearchTree.h" 			//**09_search**//
+#include "NearlyOptimalSearchTree.h"             //**09_search**//
 
 void FindSW(float sw[], Table T)
 {
-	int i;
+    int i;
 
-	sw[0] = 0.0;
+    sw[0] = 0.0;
 
-	for (i = 1; i <= T.length; i++) {
-		sw[i] = sw[i - 1] + T.elem[i].weight;
-	}
+    for (i = 1; i <= T.length; i++) {
+        sw[i] = sw[i - 1] + T.elem[i].weight;
+    }
 }
 
 int MinSW(float sw[], int low, int high)
 {
-	int i, j;
-	float min, tmp, dw;
+    int i, j;
+    float min, tmp, dw;
 
-	dw = sw[high] + sw[low - 1];
-	min = fabs(sw[high] - sw[low]);
+    dw = sw[high] + sw[low - 1];
+    min = fabs(sw[high] - sw[low]);
 
-	for (i = j = low; i <= high; i++) {
-		tmp = fabs(dw - sw[i] - sw[i - 1]);
+    for (i = j = low; i <= high; i++) {
+        tmp = fabs(dw - sw[i] - sw[i - 1]);
 
-		if (tmp < min) {
-			j = i;
-			min = tmp;
-		}
-	}
+        if (tmp < min) {
+            j = i;
+            min = tmp;
+        }
+    }
 
-	return j;
+    return j;
 }
 
 /*¨T¨T¨T¨T¨[
@@ -49,24 +49,24 @@ int MinSW(float sw[], int low, int high)
 ¨^¨T¨T¨T¨T*/
 void SecondOptimal(BiTree *BT, ElemType_Search R[], float sw[], int low, int high)
 {
-	int i;
+    int i;
 
-	i = MinSW(sw, low, high);
+    i = MinSW(sw, low, high);
 
-	*BT = (BiTree)malloc(sizeof(BiTNode));
-	(*BT)->data = ch[R[i].key];
+    *BT = (BiTree)malloc(sizeof(BiTNode));
+    (*BT)->data = ch[R[i].key];
 
-	if (i == low) {
-		(*BT)->lchild = NULL;
-	} else {
-		SecondOptimal(&((*BT)->lchild), R, sw, low, i - 1);
-	}
+    if (i == low) {
+        (*BT)->lchild = NULL;
+    } else {
+        SecondOptimal(&((*BT)->lchild), R, sw, low, i - 1);
+    }
 
-	if (i == high) {
-		(*BT)->rchild = NULL;
-	} else {
-		SecondOptimal(&((*BT)->rchild), R, sw, i + 1, high);
-	}
+    if (i == high) {
+        (*BT)->rchild = NULL;
+    } else {
+        SecondOptimal(&((*BT)->rchild), R, sw, i + 1, high);
+    }
 }
 
 /*¨T¨T¨T¨T¨[
@@ -74,31 +74,31 @@ void SecondOptimal(BiTree *BT, ElemType_Search R[], float sw[], int low, int hig
 ¨^¨T¨T¨T¨T*/
 Status CreateSOSTree(SOSTree *BT, Table T)
 {
-	float sw[T.length + 1];
+    float sw[T.length + 1];
 
-	if (T.length == 0) {
-		*BT = NULL;
-	} else {
-		FindSW(sw, T);
-		SecondOptimal(BT, T.elem, sw, 1, T.length);
-	}
+    if (T.length == 0) {
+        *BT = NULL;
+    } else {
+        FindSW(sw, T);
+        SecondOptimal(BT, T.elem, sw, 1, T.length);
+    }
 
-	return OK;
+    return OK;
 }
 
 Status Search_SOST(SOSTree BT, KeyType key)
 {
-	if (BT) {
-		if (ch[key] == BT->data) {
-			return OK;
-		} else if (ch[key] < BT->data) {
-			return Search_SOST(BT->lchild, key);
-		} else {
-			return Search_SOST(BT->rchild, key);
-		}
-	}
+    if (BT) {
+        if (ch[key] == BT->data) {
+            return OK;
+        } else if (ch[key] < BT->data) {
+            return Search_SOST(BT->lchild, key);
+        } else {
+            return Search_SOST(BT->rchild, key);
+        }
+    }
 
-	return FALSE;
+    return FALSE;
 }
 
 #endif

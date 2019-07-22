@@ -12,18 +12,18 @@
 #define CYLSEQQUEUE_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 宏定义 */
-#define MAXQSIZE 1000					//最大队列长度
+#define MAXQSIZE 1000                    //最大队列长度
 
 /* 循环队列类型定义 */
 typedef int QElemType_CSq;
-typedef struct {						//队列的顺序存储结构
-	QElemType_CSq *base;				//Initial的动态分配存储空间
-	int front;							//头指针，若队列不空，指向队头元素
-	int rear;							//尾指针，若队列不空，指向队列尾元素的下一个位置
+typedef struct {                        //队列的顺序存储结构
+    QElemType_CSq *base;                //Initial的动态分配存储空间
+    int front;                            //头指针，若队列不空，指向队头元素
+    int rear;                            //尾指针，若队列不空，指向队列尾元素的下一个位置
 } CSqQueue;
 
 /* 循环队列Func列表 */

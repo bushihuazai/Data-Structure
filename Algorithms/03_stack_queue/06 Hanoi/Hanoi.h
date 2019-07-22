@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 /* 全局变量 */
-int gStep;								//统计移动步数
+int gStep;                                //统计移动步数
 
 /* 汉诺塔Func列表 */
 void hanoi(int n, char x, char y, char z);

@@ -13,21 +13,21 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 查找表类型定义 */
-typedef int KeyType;			//关键字类型
+typedef int KeyType;            //关键字类型
 typedef struct {
-	int key;					//关键字域
-	float weight;				//其他域（此处可设为权重）
-} ElemType_Search;				//有序表元素类型
+    int key;                    //关键字域
+    float weight;                //其他域（此处可设为权重）
+} ElemType_Search;                //有序表元素类型
 
 //0号单元弃用
 typedef struct {
-	ElemType_Search *elem;		//数据元素存储空间基址，0号单元 is empty
-	int length;					//表长度
-} Table;							//查找表
+    ElemType_Search *elem;        //数据元素存储空间基址，0号单元 is empty
+    int length;                    //表长度
+} Table;                            //查找表
 
 /* Func列表 */
 Status Create(FILE *fp, Table *T, int n);

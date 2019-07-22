@@ -11,7 +11,7 @@
 #ifndef HEAPSORT_H
 #define HEAPSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* 类型定义 */
 typedef SqList_sort HeapType;

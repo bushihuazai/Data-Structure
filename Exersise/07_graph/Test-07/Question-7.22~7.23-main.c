@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"				//**01_abstract**//
-#include "../../../Algorithms/07_graph/02 ALGraph/ALGraph.c"		//**07_graph**//
+#include "../../../Algorithms/01_abstract/Status.h"                //**01_abstract**//
+#include "../../../Algorithms/07_graph/02 ALGraph/ALGraph.c"        //**07_graph**//
 
 /* 全局变量 */
 Status tag;
@@ -8,31 +8,31 @@ Status tag;
 /* Func原型 */
 Status Algo_7_22(ALGraph G, int i, int j);
 Status Algo_7_23(ALGraph G, int i, int j);
-void DFS_7_22(ALGraph G, int i, int j);	//通过深度优先遍历判断vi到vj之间是否有通路
-void BFS_7_23(ALGraph G, int i, int j);	//通过广度优先遍历判断vi到vj之间是否有通路
+void DFS_7_22(ALGraph G, int i, int j);    //通过深度优先遍历判断vi到vj之间是否有通路
+void BFS_7_23(ALGraph G, int i, int j);    //通过广度优先遍历判断vi到vj之间是否有通路
 
 int main(int argc, char *argv[])
 {
-	ALGraph G;
-	FILE *fp;									//作为输入源
+    ALGraph G;
+    FILE *fp;                                    //作为输入源
 
-	printf("创建并输出有向图...\n");
-	G.kind = DG;								//以无向图为例
-	fp = fopen("Data/Algo_7_22-7_23.txt", "r");
-	CreateDG_AL(fp, &G);
-	fclose(fp);
-	OutputALGraph(G);
-	printf("\n");
+    printf("创建并输出有向图...\n");
+    G.kind = DG;                                //以无向图为例
+    fp = fopen("Data/Algo_7_22-7_23.txt", "r");
+    CreateDG_AL(fp, &G);
+    fclose(fp);
+    OutputALGraph(G);
+    printf("\n");
 
-	printf("███ 题 7.22 验证... ███\n");
-	Algo_7_22(G, 1, 3);
-	printf("\n");
+    printf("███ 题 7.22 验证... ███\n");
+    Algo_7_22(G, 1, 3);
+    printf("\n");
 
-	printf("███ 题 7.23 验证... ███\n");
-	Algo_7_22(G, 4, 3);
-	printf("\n");
+    printf("███ 题 7.23 验证... ███\n");
+    Algo_7_22(G, 4, 3);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -40,30 +40,30 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
 Status Algo_7_22(ALGraph G, int i, int j)
 {
-	int v, w;
-	ArcNode *p;
+    int v, w;
+    ArcNode *p;
 
-	if (i == j) {
-		printf("参数错误!\n");
-		return ERROR;
-	}
+    if (i == j) {
+        printf("参数错误!\n");
+        return ERROR;
+    }
 
-	for (v = 1; v <= G.vexnum; v++) {
-		visited[v] = FALSE;    //Initial为未访问
-	}
+    for (v = 1; v <= G.vexnum; v++) {
+        visited[v] = FALSE;    //Initial为未访问
+    }
 
-	tag = FALSE;					//全局变量，标记vi到vj间是否有通路
-	visited[i] = TRUE;
+    tag = FALSE;                    //全局变量，标记vi到vj间是否有通路
+    visited[i] = TRUE;
 
-	DFS_7_22(G, i, j);				//深度优先遍历Func
+    DFS_7_22(G, i, j);                //深度优先遍历Func
 
-	if (tag) {
-		printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
-		return TRUE;
-	} else {
-		printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
-		return ERROR;
-	}
+    if (tag) {
+        printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
+        return TRUE;
+    } else {
+        printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
+        return ERROR;
+    }
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -71,80 +71,80 @@ Status Algo_7_22(ALGraph G, int i, int j)
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
 Status Algo_7_23(ALGraph G, int i, int j)
 {
-	int v, w;
-	ArcNode *p;
+    int v, w;
+    ArcNode *p;
 
-	if (i == j) {
-		printf("参数错误!\n");
-		return ERROR;
-	}
+    if (i == j) {
+        printf("参数错误!\n");
+        return ERROR;
+    }
 
-	for (v = 1; v <= G.vexnum; v++) {
-		visited[v] = FALSE;    //Initial为未访问
-	}
+    for (v = 1; v <= G.vexnum; v++) {
+        visited[v] = FALSE;    //Initial为未访问
+    }
 
-	tag = FALSE;					//全局变量，标记vi到vj间是否有通路
-	visited[i] = TRUE;
+    tag = FALSE;                    //全局变量，标记vi到vj间是否有通路
+    visited[i] = TRUE;
 
-	BFS_7_23(G, i, j);				//广度优先遍历Func
+    BFS_7_23(G, i, j);                //广度优先遍历Func
 
-	if (tag) {
-		printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
-		return TRUE;
-	} else {
-		printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
-		return ERROR;
-	}
+    if (tag) {
+        printf("%c 到 %c 之间有通路!\n", G.vertices[i].data, G.vertices[j].data);
+        return TRUE;
+    } else {
+        printf("%c 到 %c 之间无通路!!\n", G.vertices[i].data, G.vertices[j].data);
+        return ERROR;
+    }
 }
 
-void DFS_7_22(ALGraph G, int i, int j)	//深度优先遍历
+void DFS_7_22(ALGraph G, int i, int j)    //深度优先遍历
 {
-	int w;
+    int w;
 
-	for (w = FirstAdjVex_AL(G, G.vertices[i].data); w; w = NextAdjVex_AL(G, G.vertices[i].data, G.vertices[w].data)) {
-		if (tag) {
-			return;
-		}
+    for (w = FirstAdjVex_AL(G, G.vertices[i].data); w; w = NextAdjVex_AL(G, G.vertices[i].data, G.vertices[w].data)) {
+        if (tag) {
+            return;
+        }
 
-		if (!visited[w]) {
-			visited[w] = TRUE;
+        if (!visited[w]) {
+            visited[w] = TRUE;
 
-			if (w == j) {
-				tag = TRUE;
-			} else {
-				DFS_7_22(G, w, j);
-			}
-		}
-	}
+            if (w == j) {
+                tag = TRUE;
+            } else {
+                DFS_7_22(G, w, j);
+            }
+        }
+    }
 }
 
-void BFS_7_23(ALGraph G, int i, int j)	//广度优先遍历
+void BFS_7_23(ALGraph G, int i, int j)    //广度优先遍历
 {
-	int v, w;
-	LinkQueue Q;
-	QElemType_L e;
+    int v, w;
+    LinkQueue Q;
+    QElemType_L e;
 
-	for (v = 1; v <= G.vexnum; v++) {
-		visited[v] = FALSE;    //Initial为未访问
-	}
+    for (v = 1; v <= G.vexnum; v++) {
+        visited[v] = FALSE;    //Initial为未访问
+    }
 
-	visited[i] = TRUE;
+    visited[i] = TRUE;
 
-	InitQueue_L(&Q);
-	EnQueue_L(&Q, i);
-	while (!QueueEmpty_L(Q)) {
-		DeQueue_L(&Q, &e);
-		for (w = FirstAdjVex_AL(G, G.vertices[e].data); w; w = NextAdjVex_AL(G, G.vertices[e].data, G.vertices[w].data)) {
-			if (!visited[w]) {
-				visited[w] = TRUE;
+    InitQueue_L(&Q);
+    EnQueue_L(&Q, i);
+    while (!QueueEmpty_L(Q)) {
+        DeQueue_L(&Q, &e);
+        for (w = FirstAdjVex_AL(G, G.vertices[e].data); w; w = NextAdjVex_AL(G, G.vertices[e].data, G.vertices[w].data)) {
+            if (!visited[w]) {
+                visited[w] = TRUE;
 
-				if (w == j) {
-					tag = TRUE;
-					return;
-				}
+                if (w == j) {
+                    tag = TRUE;
+                    return;
+                }
 
-				EnQueue_L(&Q, w);
-			}
-		}
-	}
+                EnQueue_L(&Q, w);
+            }
+        }
+    }
 }

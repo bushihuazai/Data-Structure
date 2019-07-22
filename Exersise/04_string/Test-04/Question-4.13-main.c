@@ -6,27 +6,27 @@ void Algo_4_13(SString S, SString T);
 
 int main(int argc, char *argv[])
 {
-	char *s = "----***--*-**-****-*****-----";
-	char *t = "**";
-	SString T, S;
+    char *s = "----***--*-**-****-*****-----";
+    char *t = "**";
+    SString T, S;
 
-	printf("É¾³ýÇ°...\n");
-	StrAssign_Sq(S, s);
-	StrAssign_Sq(T, t);
-	printf("S = ");
-	StrPrint_Sq(S);
-	printf("\n");
-	printf("T = ");
-	StrPrint_Sq(T);
-	printf("\n\n");
+    printf("É¾³ýÇ°...\n");
+    StrAssign_Sq(S, s);
+    StrAssign_Sq(T, t);
+    printf("S = ");
+    StrPrint_Sq(S);
+    printf("\n");
+    printf("T = ");
+    StrPrint_Sq(T);
+    printf("\n\n");
 
-	printf("É¾³ýºó...\n");
-	printf("S = ");
-	Algo_4_13(S, T);
-	StrPrint_Sq(S);
-	printf("\n\n");
+    printf("É¾³ýºó...\n");
+    printf("S = ");
+    Algo_4_13(S, T);
+    StrPrint_Sq(S);
+    printf("\n\n");
 
-	return 0;
+    return 0;
 }
 
 /*©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥*/
 void Algo_4_13(SString S, SString T)
 {
-	int i;
+    int i;
 
-	for (i = 1; i = Index_Sq_1(S, T, 1); i++) {
-		StrDelete_Sq(S, i, T[0]);
-	}
+    for (i = 1; i = Index_Sq_1(S, T, 1); i++) {
+        StrDelete_Sq(S, i, T[0]);
+    }
 }

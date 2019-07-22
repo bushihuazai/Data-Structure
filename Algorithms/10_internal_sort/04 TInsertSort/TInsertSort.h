@@ -11,7 +11,7 @@
 #ifndef TINSERTSORT_H
 #define TINSERTSORT_H
 
-#include "../00 StaticLinkedListType/StaticLinkedListType.c"	//**10_internal_sort**//
+#include "../00 StaticLinkedListType/StaticLinkedListType.c"    //**10_internal_sort**//
 
 /* 表插入排序Func列表 */
 void TInsertSort(SLinkList_sort *L);

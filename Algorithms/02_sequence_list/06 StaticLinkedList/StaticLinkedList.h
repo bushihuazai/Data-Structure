@@ -1,9 +1,9 @@
 /********************************
- *						        *
+ *                                *
  * 文件夹: 02_sequence_list          *
- * 							    *
+ *                                 *
  * 文件名: StaticLinkedList.h   *
- * 							    *
+ *                                 *
  * 内  容: 静态链表相关操作列表 *
  *                              *
  ********************************/
@@ -18,24 +18,24 @@
 #ifndef STATICLINKEDLIST_H
 #define STATICLINKEDLIST_H
 
-#include <stdlib.h>						////提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        ////提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 宏定义 */
-#define MAXSIZE 1000					//静态链表的最大长度
+#define MAXSIZE 1000                    //静态链表的最大长度
 
 /* 静态链表类型定义 */
-typedef int SLinkList;					//静态链表类型
+typedef int SLinkList;                    //静态链表类型
 typedef int LElemType_S;
 typedef struct {
-	LElemType_S data;
-	int cur;							//cur是游标，做指针用，区别于数组下标
-} Component[MAXSIZE];					//链表空间类型
+    LElemType_S data;
+    int cur;                            //cur是游标，做指针用，区别于数组下标
+} Component[MAXSIZE];                    //链表空间类型
 
 /* 全局变量 */
-Component SPACE;						//静态链表空间
+Component SPACE;                        //静态链表空间
 
-/*	静态链表Func列表 */
+/*    静态链表Func列表 */
 void InitSpace_SL();
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃(01)算法2.14：将一维数组SPACE中各分量链成一个大的备用空间。 ┃

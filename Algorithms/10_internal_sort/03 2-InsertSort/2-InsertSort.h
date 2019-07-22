@@ -11,7 +11,7 @@
 #ifndef TWOWAYINSERTSORT_H
 #define TWOWAYINSERTSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* 2-路插入排序Func列表 */
 void TwoTayInsertSort(SqList_sort *L);

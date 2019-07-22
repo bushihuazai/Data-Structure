@@ -1,9 +1,9 @@
 /***********************************************
- *							                   *
+ *                                               *
  * 文件夹: 06_tree_binaryTree\04 ThreadBinaryTree *
- *							                   *
+ *                                               *
  * 文件名: ThreadBinaryTree.h                  *
- *							                   *
+ *                                               *
  * 内  容: 线索二叉树相关操作列表              *
  *                                             *
  ***********************************************/
@@ -12,26 +12,26 @@
 #define THREADBINARYTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>								//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"				//**01_abstract**// 
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include <stdlib.h>                                //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"                //**01_abstract**// 
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 线索二叉树类型定义 */
-typedef char TElemType_Thr;						//假设二叉树元素均为字符
-typedef enum {Link, Thread} PointerTag;			//Link==0：孩子；Thread==1：线索
+typedef char TElemType_Thr;                        //假设二叉树元素均为字符
+typedef enum {Link, Thread} PointerTag;            //Link==0：孩子；Thread==1：线索
 typedef struct ThrBiNode {
-	TElemType_Thr data;
-	struct ThrBiNode *lchild;					//左右孩子指针
-	struct ThrBiNode *rchild;
-	PointerTag LTag;							//左右标志
-	PointerTag RTag;
+    TElemType_Thr data;
+    struct ThrBiNode *lchild;                    //左右孩子指针
+    struct ThrBiNode *rchild;
+    PointerTag LTag;                            //左右标志
+    PointerTag RTag;
 
-	struct ThrBiNode *parent;					//双亲结点指针，仅在非递归后序遍历后继线索二叉树时使用
+    struct ThrBiNode *parent;                    //双亲结点指针，仅在非递归后序遍历后继线索二叉树时使用
 } ThrBiNode;
 typedef ThrBiNode *ThrBiTree;
 
 /*全局变量*/
-ThrBiTree pre;									//指向当前访问结点的上一个结点
+ThrBiTree pre;                                    //指向当前访问结点的上一个结点
 
 /* 线索二叉树Func列表 */
 Status CreateBiTree_Thr(FILE *fp, ThrBiTree *T);

@@ -11,7 +11,7 @@
 #ifndef INTERPOLATIONSEARCH_H
 #define INTERPOLATIONSEARCH_H
 
-#include "../00 Base/Base.c" 					//**09_search**//
+#include "../00 Base/Base.c"                     //**09_search**//
 
 /* 插值查找Func列表 */
 int Search_Int(Table T, KeyType key);

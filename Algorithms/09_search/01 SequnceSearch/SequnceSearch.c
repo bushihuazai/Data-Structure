@@ -11,21 +11,21 @@
 #ifndef SEQUNCESEARCH_C
 #define SEQUNCESEARCH_C
 
-#include "SequnceSearch.h" 					//**09_search**//
+#include "SequnceSearch.h"                     //**09_search**//
 
 /*®T®T®T®T®[
 ®U À„∑®9.1®U
 ®^®T®T®T®T*/
 int Search_Seq(Table T, KeyType key)
 {
-	int i;
+    int i;
 
-	T.elem[0].key = key;
+    T.elem[0].key = key;
 
-	for (i = T.length; !EQ(T.elem[i].key, key); --i)
-		;
+    for (i = T.length; !EQ(T.elem[i].key, key); --i)
+        ;
 
-	return i;
+    return i;
 }
 
 #endif

@@ -15,27 +15,27 @@
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
 /* 宏定义 */
 #ifndef MAXSIZE
-#define MAXSIZE 2000					//一个用作示例的顺序表的最大长度
+#define MAXSIZE 2000                    //一个用作示例的顺序表的最大长度
 #endif
 #include "../../10_internal_sort/10 MergingSort/MergingSort.c"//**10_internal_sort**//
 
-#define MAX 2500						//随机数表关键字个数 
-#define K 5								//K-路归并							
-#define MAXKEY INT_MAX					//关键字可能的最大值
-#define MINKEY INT_MIN					//关键字可能的最小值
+#define MAX 2500                        //随机数表关键字个数 
+#define K 5                                //K-路归并                            
+#define MAXKEY INT_MAX                    //关键字可能的最大值
+#define MINKEY INT_MIN                    //关键字可能的最小值
 
 /* k-路归并败者树类型定义 */
-typedef int LoserTree[K];				//败者树是完全二叉树且不含叶子，可采用顺序存储结构 
+typedef int LoserTree[K];                //败者树是完全二叉树且不含叶子，可采用顺序存储结构 
 typedef struct
 {
-	KeyType key;
-}ExNode;								//外结点，只存放待归并记录的关键字 
-typedef ExNode External[K+1];		
+    KeyType key;
+}ExNode;                                //外结点，只存放待归并记录的关键字 
+typedef ExNode External[K+1];        
 
 /* 败者树Func列表 */
 void K_Merge(FILE *fp_out, LoserTree ls, External b);

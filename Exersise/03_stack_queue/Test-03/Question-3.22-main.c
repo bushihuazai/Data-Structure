@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <ctype.h>										//提供isdigit原型 
-#include "../../../Algorithms/01_abstract/Status.h"  	//**01_abstract**//
+#include <ctype.h>                                        //提供isdigit原型 
+#include "../../../Algorithms/01_abstract/Status.h"      //**01_abstract**//
 #include "../../../Algorithms/03_stack_queue/01 SequenceStack/SequenceStack.c"  //**03_stack_queue**//
 
 /* Func原型 */
@@ -9,16 +9,16 @@ char Operate(char a, char oper, char b);
 
 int main(int argc, char *argv[])
 {
-	char c[] = "134*+62/-";
-	SElemType_Sq value;
+    char c[] = "134*+62/-";
+    SElemType_Sq value;
 
-	printf("已知逆波兰式为：");
-	printf("%s\n", c);
-	Algo_3_22(c, &value);
-	printf("逆波兰式的计算结果为：%d\n", value - 48);
-	printf("\n");
+    printf("已知逆波兰式为：");
+    printf("%s\n", c);
+    Algo_3_22(c, &value);
+    printf("逆波兰式的计算结果为：%d\n", value - 48);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━┓
@@ -27,53 +27,53 @@ int main(int argc, char *argv[])
 /* 预设操作符为'+','-','*','/'，变量为单数字 */
 Status Algo_3_22(char c[], SElemType_Sq *Value)
 {
-	int i;
-	SqStack S;
-	SElemType_Sq a, b;
+    int i;
+    SqStack S;
+    SElemType_Sq a, b;
 
-	InitStack_Sq(&S);
-	i = 0;
+    InitStack_Sq(&S);
+    i = 0;
 
-	while (c[i]) {
-		if (isdigit(c[i])) {			//遇到数字
-			Push_Sq(&S, c[i]);
-		} else {
-			Pop_Sq(&S, &b);				//先弹出来的在操作数后边
-			Pop_Sq(&S, &a);
-			Push_Sq(&S, Operate(a, c[i], b));
-		}
+    while (c[i]) {
+        if (isdigit(c[i])) {            //遇到数字
+            Push_Sq(&S, c[i]);
+        } else {
+            Pop_Sq(&S, &b);                //先弹出来的在操作数后边
+            Pop_Sq(&S, &a);
+            Push_Sq(&S, Operate(a, c[i], b));
+        }
 
-		i++;
-	}
+        i++;
+    }
 
-	Pop_Sq(&S, Value);
+    Pop_Sq(&S, Value);
 
-	if (!StackEmpty_Sq(S)) {
-		return ERROR;
-	} else {
-		return OK;
-	}
+    if (!StackEmpty_Sq(S)) {
+        return ERROR;
+    } else {
+        return OK;
+    }
 }
 
 /* 计算a<oper>b */
 char Operate(char a, char oper, char b)
 {
-	char c;
+    char c;
 
-	switch (oper) {
-		case '+':
-			c = (a - 48) + (b - 48) + 48;
-			break;
-		case '-':
-			c = (a - 48) - (b - 48) + 48;
-			break;
-		case '*':
-			c = (a - 48) * (b - 48) + 48;
-			break;
-		case '/':
-			c = (a - 48) / (b - 48) + 48;
-			break;
-	}
+    switch (oper) {
+        case '+':
+            c = (a - 48) + (b - 48) + 48;
+            break;
+        case '-':
+            c = (a - 48) - (b - 48) + 48;
+            break;
+        case '*':
+            c = (a - 48) * (b - 48) + 48;
+            break;
+        case '/':
+            c = (a - 48) / (b - 48) + 48;
+            break;
+    }
 
-	return c;
+    return c;
 }

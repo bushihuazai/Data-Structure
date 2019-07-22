@@ -12,7 +12,7 @@
 #define MERGESQLIST_H
 
 #include <stdlib.h>
-#include "../01 SequenceList/SequenceList.c"		//**02_sequence_list**//
+#include "../01 SequenceList/SequenceList.c"        //**02_sequence_list**//
 
 /* 顺序表归并Func列表 */
 void MergeSqList_1(SqList La, SqList Lb, SqList *Lc);

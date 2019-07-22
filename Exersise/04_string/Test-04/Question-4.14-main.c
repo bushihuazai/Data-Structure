@@ -2,51 +2,51 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "../../../Algorithms/01_abstract/Status.h"  	                     	//**01_abstract**//
-#include "../../../Algorithms/02_sequence_list/01 SequenceList/SequenceList.c"	//**02_sequence_list**//
-#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"	//**04_string**//
+#include "../../../Algorithms/01_abstract/Status.h"                               //**01_abstract**//
+#include "../../../Algorithms/02_sequence_list/01 SequenceList/SequenceList.c"    //**02_sequence_list**//
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"    //**04_string**//
 
 /* 宏定义 */
-#define STACK_INIT_SIZE	100				//顺序栈存储空间的初始分配量
-#define STACKINCREMENT	10 				//顺序栈存储空间的分配增量	
+#define STACK_INIT_SIZE    100                //顺序栈存储空间的初始分配量
+#define STACKINCREMENT    10                 //顺序栈存储空间的分配增量    
 
 /* 类型定义 */
-typedef SString SElemType;				//栈元素类型为字符串数组
-typedef struct {						//栈结构类型
-	SElemType	*base;					//在栈构造之前和销毁之后，base的值为NULL
-	SElemType	*top;					//栈顶指针
-	int			stacksize;				//当前已分配的存储空间，以元素为单位
+typedef SString SElemType;                //栈元素类型为字符串数组
+typedef struct {                        //栈结构类型
+    SElemType    *base;                    //在栈构造之前和销毁之后，base的值为NULL
+    SElemType    *top;                    //栈顶指针
+    int            stacksize;                //当前已分配的存储空间，以元素为单位
 } SqStack;
 
 /* Func原型 */
-Status InitStack_4_14(SqStack *S);					//字符串栈的Initial
-Status Push_4_14(SqStack *S, SElemType e); 			//入栈
-Status Pop_4_14(SqStack *S, SElemType *e);			//出栈
+Status InitStack_4_14(SqStack *S);                    //字符串栈的Initial
+Status Push_4_14(SqStack *S, SElemType e);             //入栈
+Status Pop_4_14(SqStack *S, SElemType *e);            //出栈
 Status Algo_4_14(SqList P, SString Str);
 
 int main(int argc, char *argv[])
 {
-	char *p = "-+a*bc/de";			//后缀：abc*+de/-
-	int i;
-	SqList P;
-	SString Str;
+    char *p = "-+a*bc/de";            //后缀：abc*+de/-
+    int i;
+    SqList P;
+    SString Str;
 
-	InitList_Sq(&P);
-	for (i = 1; i <= strlen(p); i++) {
-		ListInsert_Sq(&P, i, p[i - 1]);
-	}
-	printf("前缀表达式：P   = ");
-	for (i = 0; i < P.length; i++) {
-		printf("%c", P.elem[i]);
-	}
-	printf("\n\n");
+    InitList_Sq(&P);
+    for (i = 1; i <= strlen(p); i++) {
+        ListInsert_Sq(&P, i, p[i - 1]);
+    }
+    printf("前缀表达式：P   = ");
+    for (i = 0; i < P.length; i++) {
+        printf("%c", P.elem[i]);
+    }
+    printf("\n\n");
 
-	Algo_4_14(P, Str);
-	printf("后缀表达式：Str = ");
-	StrPrint_Sq(Str);
-	printf("\n\n");
+    Algo_4_14(P, Str);
+    printf("后缀表达式：Str = ");
+    StrPrint_Sq(Str);
+    printf("\n\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━┓
@@ -55,87 +55,87 @@ int main(int argc, char *argv[])
 /* 假设表达式变量均为单字符 */
 Status Algo_4_14(SqList P, SString Str)
 {
-	int i;
-	SElemType e1, e2, tmp;
-	SqStack S;
+    int i;
+    SElemType e1, e2, tmp;
+    SqStack S;
 
-	InitStack_4_14(&S);
+    InitStack_4_14(&S);
 
-	for (i = P.length - 1; i >= 0; i--) {	//从后往前读取
-		tmp[0] = 1;
-		tmp[1] = P.elem[i];
+    for (i = P.length - 1; i >= 0; i--) {    //从后往前读取
+        tmp[0] = 1;
+        tmp[1] = P.elem[i];
 
-		if (isalpha(P.elem[i])) {		//遇到变量入栈
-			Push_4_14(&S, tmp);
-		} else {
-			Pop_4_14(&S, &e1);			//遇到操作符连续出栈
-			Pop_4_14(&S, &e2);
+        if (isalpha(P.elem[i])) {        //遇到变量入栈
+            Push_4_14(&S, tmp);
+        } else {
+            Pop_4_14(&S, &e1);            //遇到操作符连续出栈
+            Pop_4_14(&S, &e2);
 
-			Concat_Sq(e1, e1, e2);		//将出栈的两个变量与操作符正确连接
-			Concat_Sq(e1, e1, tmp);
+            Concat_Sq(e1, e1, e2);        //将出栈的两个变量与操作符正确连接
+            Concat_Sq(e1, e1, tmp);
 
-			Push_4_14(&S, e1);			//连接好的字符串入栈
-		}
-	}
+            Push_4_14(&S, e1);            //连接好的字符串入栈
+        }
+    }
 
-	Pop_4_14(&S, &tmp);					//弹出转换完成后的字符串
-	StrCopy_Sq(Str, tmp);
+    Pop_4_14(&S, &tmp);                    //弹出转换完成后的字符串
+    StrCopy_Sq(Str, tmp);
 
-	if (S.base == S.top) {				//最后栈应该 is empty
-		return OK;
-	} else {
-		return ERROR;
-	}
+    if (S.base == S.top) {                //最后栈应该 is empty
+        return OK;
+    } else {
+        return ERROR;
+    }
 }
 
 Status InitStack_4_14(SqStack *S)
 {
-	(*S).base = (SElemType *)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-	if (!(*S).base) {
-		exit(OVERFLOW);
-	}
+    (*S).base = (SElemType *)malloc(STACK_INIT_SIZE * sizeof(SElemType));
+    if (!(*S).base) {
+        exit(OVERFLOW);
+    }
 
-	(*S).top = (*S).base;
-	(*S).stacksize = STACK_INIT_SIZE;
+    (*S).top = (*S).base;
+    (*S).stacksize = STACK_INIT_SIZE;
 
-	return OK;
+    return OK;
 }
 
 Status Push_4_14(SqStack *S, SElemType e)
 {
-	int i;
+    int i;
 
-	if ((*S).top - (*S).base >= (*S).stacksize) {	//栈满，追加存储空间
-		(*S).base = (SElemType *)realloc((*S).base, ((*S).stacksize + STACKINCREMENT) * sizeof(SElemType));
-		if (!(*S).base) {
-			exit(OVERFLOW);    //存储分配失败
-		}
-		(*S).top = (*S).base + (*S).stacksize;
-		(*S).stacksize += STACKINCREMENT;
-	}
+    if ((*S).top - (*S).base >= (*S).stacksize) {    //栈满，追加存储空间
+        (*S).base = (SElemType *)realloc((*S).base, ((*S).stacksize + STACKINCREMENT) * sizeof(SElemType));
+        if (!(*S).base) {
+            exit(OVERFLOW);    //存储分配失败
+        }
+        (*S).top = (*S).base + (*S).stacksize;
+        (*S).stacksize += STACKINCREMENT;
+    }
 
-	for (i = 0; i <= e[0]; i++) {
-		(*(S->top))[i] = e[i];    //进栈先赋值，栈顶指针再自增
-	}
+    for (i = 0; i <= e[0]; i++) {
+        (*(S->top))[i] = e[i];    //进栈先赋值，栈顶指针再自增
+    }
 
-	(S->top)++;
+    (S->top)++;
 
-	return OK;
+    return OK;
 }
 
 Status Pop_4_14(SqStack *S, SElemType *e)
 {
-	int i;
+    int i;
 
-	if ((*S).top == (*S).base) {
-		return ERROR;
-	}
+    if ((*S).top == (*S).base) {
+        return ERROR;
+    }
 
-	(*S).top--;									//出栈栈顶指针先递减，再赋值
+    (*S).top--;                                    //出栈栈顶指针先递减，再赋值
 
-	for (i = 0; i <= (*((*S).top))[0]; i++) {
-		(*e)[i] = (*((*S).top))[i];
-	}
+    for (i = 0; i <= (*((*S).top))[0]; i++) {
+        (*e)[i] = (*((*S).top))[i];
+    }
 
-	return OK;
+    return OK;
 }

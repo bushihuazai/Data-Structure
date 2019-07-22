@@ -12,7 +12,7 @@
 #define SCC_H
 
 #include <stdio.h>
-#include "../03 OLGraph/OLGraph.c"			//**07_graph**//
+#include "../03 OLGraph/OLGraph.c"            //**07_graph**//
 
 /* 全局变量 */
 int count;

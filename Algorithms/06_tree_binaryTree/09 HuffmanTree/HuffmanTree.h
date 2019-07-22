@@ -1,9 +1,9 @@
 /******************************************
- *								          *
+ *                                          *
  * 文件夹: 06_tree_binaryTree\09 HuffmanTree *
- * 								          *
+ *                                           *
  * 文件名: HuffmanTree.h                  *
- * 								          *
+ *                                           *
  * 内  容: 哈夫曼树相关操作列表           *
  *                                        *
  ******************************************/
@@ -12,24 +12,24 @@
 #define HUFFMANTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include <string.h>						//提供strcpy原型 
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include <string.h>                        //提供strcpy原型 
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
 /* 宏定义 */
-#define MAX_TREE_SIZE 100			//树的最大结点数
+#define MAX_TREE_SIZE 100            //树的最大结点数
 
 /* 哈夫曼树和哈夫曼编码类型定义 */
 typedef struct {
-	unsigned int weight;			//权值
-	unsigned int parent;
-	unsigned int lchild;
-	unsigned int rchild;
+    unsigned int weight;            //权值
+    unsigned int parent;
+    unsigned int lchild;
+    unsigned int rchild;
 } HTNode;
-typedef HTNode *HuffmanTree;		//动态分配数组存储哈夫曼树
+typedef HTNode *HuffmanTree;        //动态分配数组存储哈夫曼树
 typedef char *HCNode;
-typedef HCNode *HuffmanCode;		//动态分配数组存储哈夫曼编码表
+typedef HCNode *HuffmanCode;        //动态分配数组存储哈夫曼编码表
 
 /* 哈夫曼树Func列表 */
 void InitTree_HT(HuffmanTree *HT);

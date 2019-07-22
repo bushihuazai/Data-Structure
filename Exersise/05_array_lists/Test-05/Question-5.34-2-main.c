@@ -1,30 +1,30 @@
 #include <stdio.h>
 #include "../../../Algorithms/05_array_lists/06 GeneralizedList-E/GeneralizedList-E.c" //**05_array_lists**//
-#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c" 	//**04_string**//
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"     //**04_string**//
 
 /* Func原型 */
 void Algo_5_34_2(GList *L);
 
 int main(int argc, char *argv[])
 {
-	GList L;
-	char *s = "(a,((b,c),()),(((d),e),f))";
-	SString S;
+    GList L;
+    char *s = "(a,((b,c),()),(((d),e),f))";
+    SString S;
 
-	printf("创建广义表 L ...\n");
-	StrAssign_Sq(S, s);
-	CreateGList_GL_E(&L, S);
-	printf("L = ");
-	Output_GL_E(L);
-	printf("\n\n");
+    printf("创建广义表 L ...\n");
+    StrAssign_Sq(S, s);
+    CreateGList_GL_E(&L, S);
+    printf("L = ");
+    Output_GL_E(L);
+    printf("\n\n");
 
-	printf("逆置广义表...\n");
-	Algo_5_34_2(&L);
-	printf("L = ");
-	Output_GL_E(L);
-	printf("\n\n");
+    printf("逆置广义表...\n");
+    Algo_5_34_2(&L);
+    printf("L = ");
+    Output_GL_E(L);
+    printf("\n\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━┓
@@ -33,22 +33,22 @@ int main(int argc, char *argv[])
 /* 扩展线性链表存储表示 */
 void Algo_5_34_2(GList *L)
 {
-	GList head, tail;
+    GList head, tail;
 
-	if (*L) {
-		head = *L;
-		tail = (*L)->tp;
+    if (*L) {
+        head = *L;
+        tail = (*L)->tp;
 
-		if (head->tag == List && head->Union.hp) {
-			Algo_5_34_2(&(head->Union.hp));
-		}
+        if (head->tag == List && head->Union.hp) {
+            Algo_5_34_2(&(head->Union.hp));
+        }
 
-		if (tail) {					//对表尾进行逆置
-			Algo_5_34_2(&((*L)->tp));
+        if (tail) {                    //对表尾进行逆置
+            Algo_5_34_2(&((*L)->tp));
 
-			*L = (*L)->tp;				//头尾交换
-			tail->tp = head;
-			head->tp = NULL;
-		}
-	}
+            *L = (*L)->tp;                //头尾交换
+            tail->tp = head;
+            head->tp = NULL;
+        }
+    }
 }

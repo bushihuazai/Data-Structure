@@ -1,32 +1,32 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"							//**01_abstract**//
-#include "../../../Algorithms/06_tree_binaryTree/05 ParentTree/ParentTree.c" 	//**06 数和二叉树**//
+#include "../../../Algorithms/01_abstract/Status.h"                            //**01_abstract**//
+#include "../../../Algorithms/06_tree_binaryTree/05 ParentTree/ParentTree.c"     //**06 数和二叉树**//
 
 /* Func原型 */
 int Algo_6_64(PTree T);
 
 int main(int argc, char *argv[])
 {
-	PTree T;
-	int depth;
-	FILE *fp;
+    PTree T;
+    int depth;
+    FILE *fp;
 
-	InitTree_P(&T);
-	fp = fopen("Data/Algo_6_64.txt", "r");
-	CreateTree_P(fp, &T);
-	fclose(fp);
-	printf("\n");
+    InitTree_P(&T);
+    fp = fopen("Data/Algo_6_64.txt", "r");
+    CreateTree_P(fp, &T);
+    fclose(fp);
+    printf("\n");
 
-	printf("构建的树为：\n");
-	Print_P(T);
-	printf("\n");
+    printf("构建的树为：\n");
+    Print_P(T);
+    printf("\n");
 
-	depth = Algo_6_64(T);
+    depth = Algo_6_64(T);
 
-	printf("此树的深度为： %d\n", depth);
-	printf("\n");
+    printf("此树的深度为： %d\n", depth);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━┓
@@ -34,5 +34,5 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━*/
 int Algo_6_64(PTree T)
 {
-	return TreeDepth_P(T); 				//已定义
+    return TreeDepth_P(T);                 //已定义
 }

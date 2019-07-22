@@ -1,7 +1,7 @@
 /***********************************
- *						           *
+ *                                   *
  * 文件夹: 07_graph\11 ShortestPath *
- * 						           *
+ *                                    *
  * 文件名: ShortestPath.h          *
  *                                 *
  * 内  容: 最短路径相关操作列表    *
@@ -12,8 +12,8 @@
 #define SHORTESTPATH_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"							//**01_abstract**//
-#include "../01 MGraph/MGraph.c" 							//**07_graph**//
+#include "../../01_abstract/Status.h"                            //**01_abstract**//
+#include "../01 MGraph/MGraph.c"                             //**07_graph**//
 
 /* 最短路径类型定义 */
 typedef int PathMatrix;

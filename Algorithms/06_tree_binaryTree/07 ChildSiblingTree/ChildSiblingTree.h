@@ -1,9 +1,9 @@
 /*****************************************************
- *										             *
+ *                                                     *
  * 文件夹: 06_tree_binaryTree\07 ChildSiblingTree       *
- * 									                 *
+ *                                                      *
  * 文件名: ChildSiblingTree.h                        *
- * 										             *
+ *                                                      *
  * 内  容: 树的二叉链表（孩子-兄弟）结构相关操作列表 *
  *                                                   *
  *****************************************************/
@@ -12,22 +12,22 @@
 #define CHILDSIBLINGTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>								//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include <stdlib.h>                                //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 树的二叉链表（孩子-兄弟）类型定义 */
-typedef char TElemType_CS;						//假设树中元素均为字符
+typedef char TElemType_CS;                        //假设树中元素均为字符
 typedef struct CSNode {
-	TElemType_CS data;
-	struct CSNode *firstchild;					//指向孩子
-	struct CSNode *nextsibling;					//指向兄弟
+    TElemType_CS data;
+    struct CSNode *firstchild;                    //指向孩子
+    struct CSNode *nextsibling;                    //指向兄弟
 } CSNode;
 typedef CSNode *CSTree;
 
 /* 自定义栈元素类型 */
 typedef CSTree SElemType_Sq;
-#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"    //**03_stack_queue**// 
 
 /* 树的二叉链表存储结构Func列表 */
 void InitTree_CS(CSTree *T);

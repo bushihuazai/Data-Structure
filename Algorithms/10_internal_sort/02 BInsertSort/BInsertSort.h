@@ -11,7 +11,7 @@
 #ifndef BINSERTSORT_H
 #define BINSERTSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* ’€∞Î≤Â»Î≈≈–ÚFunc¡–±Ì */
 void BInsertSort(SqList_sort *L);

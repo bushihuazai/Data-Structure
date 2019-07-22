@@ -1,9 +1,9 @@
 /********************************************
- *										    *
+ *                                            *
  * 文件夹: 06_tree_binaryTree\01 SeqBinaryTree *
- * 									        *
+ *                                             *
  * 文件名: SeqBinaryTree.h                  *
- * 										    *
+ *                                             *
  * 内  容: 二叉树顺序存储结构相关操作列表   *
  *                                          *
  ********************************************/
@@ -12,21 +12,21 @@
 #define SEQBINARYTREE_H
 
 #include <stdio.h>
-#include <math.h>								//提供pow原型 
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include <math.h>                                //提供pow原型 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 宏定义 */
-#define MAX_TREE_SIZE 100						//二叉树的最大结点数
+#define MAX_TREE_SIZE 100                        //二叉树的最大结点数
 
 /* 二叉树（顺序存储结构）相关类型定义 */
-typedef char TElemType_Sq;						//假设顺序二叉树元素均为字符
-typedef TElemType_Sq SqBiTree[MAX_TREE_SIZE];	//0号单元存储根结点
+typedef char TElemType_Sq;                        //假设顺序二叉树元素均为字符
+typedef TElemType_Sq SqBiTree[MAX_TREE_SIZE];    //0号单元存储根结点
 
 /* 结点“坐标”类型 */
 typedef struct {
-	int level;			//结点所在层
-	int order;			//结点在本层序号（按完全二叉树计算）
+    int level;            //结点所在层
+    int order;            //结点在本层序号（按完全二叉树计算）
 } Position;
 
 /* 二叉树顺序存储结构Func列表 */

@@ -1,28 +1,28 @@
 #include <stdio.h>
-#include <limits.h>										//提供宏INT_MAX 
-#include "../../../Algorithms/01_abstract/Status.h"  	//**01_abstract**//
+#include <limits.h>                                        //提供宏INT_MAX 
+#include "../../../Algorithms/01_abstract/Status.h"      //**01_abstract**//
 
 /* 宏定义 */
-#define arrsize 20										//数组长度 
-#define maxint INT_MAX									//最大的整数 
+#define arrsize 20                                        //数组长度 
+#define maxint INT_MAX                                    //最大的整数 
 
 /* Func原型 */
 Status Algo_1_19(int i, int a[]);
 
 int main(int argc, char *argv[])
 {
-	int i, a[arrsize];
+    int i, a[arrsize];
 
-	i = 5;
+    i = 5;
 
-	printf("计算i!*2^i...\n");
+    printf("计算i!*2^i...\n");
 
-	if (Algo_1_19(i, a) == OK) {
-		printf("作为示例，计算当i = %d 时，a[i-1] = %d\n", i, a[i - 1]);
-	}
-	printf("\n");
+    if (Algo_1_19(i, a) == OK) {
+        printf("作为示例，计算当i = %d 时，a[i-1] = %d\n", i, a[i - 1]);
+    }
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━┓
@@ -30,23 +30,23 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━*/
 Status Algo_1_19(int i, int a[])
 {
-	int j;
+    int j;
 
-	if (i < 1 || i > arrsize) {
-		return ERROR;
-	}
+    if (i < 1 || i > arrsize) {
+        return ERROR;
+    }
 
-	for (j = 1; j <= i; j++) {
-		if (j == 1) {
-			a[j - 1] = 2;
-		} else {
-			if (maxint / (2 * j) < a[j - 2]) {
-				return OVERFLOW;
-			}
+    for (j = 1; j <= i; j++) {
+        if (j == 1) {
+            a[j - 1] = 2;
+        } else {
+            if (maxint / (2 * j) < a[j - 2]) {
+                return OVERFLOW;
+            }
 
-			a[j - 1] = 2 * j * a[j - 2];
-		}
-	}
+            a[j - 1] = 2 * j * a[j - 2];
+        }
+    }
 
-	return OK;
+    return OK;
 }

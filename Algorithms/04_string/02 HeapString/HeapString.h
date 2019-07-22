@@ -12,14 +12,14 @@
 #define HEAPSTRING_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include <string.h>						//提供strlen原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include <string.h>                        //提供strlen原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 串的堆存储表示 */
 typedef struct {
-	char *ch;							//若是非空串，则按串长分配存储区，否则ch为NULL
-	int length;
+    char *ch;                            //若是非空串，则按串长分配存储区，否则ch为NULL
+    int length;
 } HString;
 
 /* 堆串Func列表 */

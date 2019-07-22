@@ -11,7 +11,7 @@
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* 快速排序Func列表 */
 int Partition_1(SqList_sort *L, int low, int high);

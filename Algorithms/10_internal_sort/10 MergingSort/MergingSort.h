@@ -11,7 +11,7 @@
 #ifndef MERGINGSORT_H
 #define MERGINGSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* πÈ≤¢≈≈–ÚFunc¡–±Ì */
 void Merge(RcdType SR[], RcdType TR[], int i, int m, int n);

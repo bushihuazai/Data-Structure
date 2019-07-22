@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"				//**01_abstract**//
-#include "../../../Algorithms/07_graph/03 OLGraph/OLGraph.c"		//**07_graph**//
+#include "../../../Algorithms/01_abstract/Status.h"                //**01_abstract**//
+#include "../../../Algorithms/07_graph/03 OLGraph/OLGraph.c"        //**07_graph**//
 
 /* Func原型 */
 Status InsertVex_7_17(OLGraph *G, VertexType_OL v);
@@ -10,39 +10,39 @@ Status DeleteArc_7_17(OLGraph *G, VertexType_OL v, VertexType_OL w);
 
 int main(int argc, char *argv[])
 {
-	OLGraph G;
-	FILE *fp;									//作为输入源
+    OLGraph G;
+    FILE *fp;                                    //作为输入源
 
-	printf("创建并输出有向图...\n");
-	fp = fopen("Data/Algo_7_17.txt", "r");
-	CreateDG_OL(fp, &G);						//以有向图为例
-	fclose(fp);
-	OutputOLGraph(G);
-	printf("\n");
+    printf("创建并输出有向图...\n");
+    fp = fopen("Data/Algo_7_17.txt", "r");
+    CreateDG_OL(fp, &G);                        //以有向图为例
+    fclose(fp);
+    OutputOLGraph(G);
+    printf("\n");
 
-	printf("插入顶点 '%c'...\n", 'H');
-	InsertVex_7_17(&G, 'H');
-	OutputOLGraph(G);
-	printf("\n");
+    printf("插入顶点 '%c'...\n", 'H');
+    InsertVex_7_17(&G, 'H');
+    OutputOLGraph(G);
+    printf("\n");
 
-	printf("插入弧 <%c, %c>...\n", 'H', 'C');
-	printf("插入弧 <%c, %c>...\n", 'D', 'H');
-	InsertArc_7_17(&G, 'H', 'C');
-	InsertArc_7_17(&G, 'D', 'H');
-	OutputOLGraph(G);
-	printf("\n");
+    printf("插入弧 <%c, %c>...\n", 'H', 'C');
+    printf("插入弧 <%c, %c>...\n", 'D', 'H');
+    InsertArc_7_17(&G, 'H', 'C');
+    InsertArc_7_17(&G, 'D', 'H');
+    OutputOLGraph(G);
+    printf("\n");
 
-	printf("删除弧 <%c, %c>...\n", 'H', 'C');
-	DeleteArc_7_17(&G, 'H', 'C');
-	OutputOLGraph(G);
-	printf("\n");
+    printf("删除弧 <%c, %c>...\n", 'H', 'C');
+    DeleteArc_7_17(&G, 'H', 'C');
+    OutputOLGraph(G);
+    printf("\n");
 
-	printf("删除顶点 '%c'...\n", 'H');
-	DeleteVex_7_17(&G, 'H');
-	OutputOLGraph(G);
-	printf("\n");
+    printf("删除顶点 '%c'...\n", 'H');
+    DeleteVex_7_17(&G, 'H');
+    OutputOLGraph(G);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━┓
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━*/
 Status InsertVex_7_17(OLGraph *G, VertexType_OL v)
 {
-	return InsertVex_OL(G, v);
+    return InsertVex_OL(G, v);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -58,7 +58,7 @@ Status InsertVex_7_17(OLGraph *G, VertexType_OL v)
 ┗━━━━━━━━━━━━━*/
 Status InsertArc_7_17(OLGraph *G, VertexType_OL v, VertexType_OL w, ...)
 {
-	return InsertArc_OL(G, v, w);
+    return InsertArc_OL(G, v, w);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -66,7 +66,7 @@ Status InsertArc_7_17(OLGraph *G, VertexType_OL v, VertexType_OL w, ...)
 ┗━━━━━━━━━━━━━*/
 Status DeleteVex_7_17(OLGraph *G, VertexType_OL v)
 {
-	return DeleteVex_OL(G, v);
+    return DeleteVex_OL(G, v);
 }
 
 /*━━━━━━━━━━━━━━┓
@@ -74,5 +74,5 @@ Status DeleteVex_7_17(OLGraph *G, VertexType_OL v)
 ┗━━━━━━━━━━━━━━*/
 Status DeleteArc_7_17(OLGraph *G, VertexType_OL v, VertexType_OL w)
 {
-	return DeleteArc_OL(G, v, w);
+    return DeleteArc_OL(G, v, w);
 }

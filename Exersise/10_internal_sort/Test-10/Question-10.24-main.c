@@ -7,21 +7,21 @@ void PrintKey(KeyType e);
 
 int main(int argc, char *argv[])
 {
-	FILE *fp;
-	SqList_sort L;
+    FILE *fp;
+    SqList_sort L;
 
-	printf("创建并输出一个任意序列...\n");
-	fp = fopen("Data/Algo_10_24.txt", "r");
-	CreateSortList(fp, &L);
-	Traverse(L, PrintKey);
-	printf("\n");
+    printf("创建并输出一个任意序列...\n");
+    fp = fopen("Data/Algo_10_24.txt", "r");
+    CreateSortList(fp, &L);
+    Traverse(L, PrintKey);
+    printf("\n");
 
-	printf("将关键字按递增顺序排列...\n");
-	Algo_10_24(&L);
-	Traverse(L, PrintKey);
-	printf("\n");
+    printf("将关键字按递增顺序排列...\n");
+    Algo_10_24(&L);
+    Traverse(L, PrintKey);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━┓
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━*/
 void Algo_10_24(SqList_sort *L)
 {
-	TwoTayInsertSort(L);				//已定义
+    TwoTayInsertSort(L);                //已定义
 }
 
 void PrintKey(KeyType e)
 {
-	printf("%d ", e);
+    printf("%d ", e);
 }

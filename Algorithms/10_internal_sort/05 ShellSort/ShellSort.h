@@ -11,11 +11,11 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* 全局变量 */
-int t = 3;												//增量序列容量
-int dlta[] = {5, 3, 1};									//增量序列
+int t = 3;                                                //增量序列容量
+int dlta[] = {5, 3, 1};                                    //增量序列
 
 /* 希尔插入排序Func列表 */
 void ShellInsert(SqList_sort *L, int dk);

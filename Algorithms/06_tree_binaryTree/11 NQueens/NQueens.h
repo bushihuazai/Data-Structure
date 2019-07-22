@@ -1,9 +1,9 @@
 /**************************************
- *							          *
+ *                                      *
  * 文件夹: 06_tree_binaryTree\11 NQueens *
- * 							          *
+ *                                       *
  * 文件名: NQueens.h                  *
- * 							          *
+ *                                       *
  * 内  容: N皇后问题相关操作列表      *
  *                                    *
  *************************************/
@@ -12,16 +12,16 @@
 #define NQUEENS_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"				//**01_abstract**//
+#include "../../01_abstract/Status.h"                //**01_abstract**//
 
 /* 宏定义 */
-#define N 8										//棋盘最大范围N*N
+#define N 8                                        //棋盘最大范围N*N
 
 /* N皇后问题类型定义 */
-typedef int ChessBoard;							//棋盘类型
+typedef int ChessBoard;                            //棋盘类型
 
 /* 全局变量 */
-int order;										//跟踪每一种解法
+int order;                                        //跟踪每一种解法
 
 /* N皇后问题Func列表 */
 void InitChessBoard_CB(ChessBoard c[N][N]);

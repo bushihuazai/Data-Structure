@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"	//**01_abstract**//
+#include "../../../Algorithms/01_abstract/Status.h"    //**01_abstract**//
 #include "../../../Algorithms/01_abstract/Scanf.c"
 
 /* 宏定义 */
@@ -7,10 +7,10 @@
 
 /* 类型定义 */
 typedef struct {
-	int row;
-	int col;
-	int key;
-	int tag;					//tag=0:结点 is empty
+    int row;
+    int col;
+    int key;
+    int tag;                    //tag=0:结点 is empty
 } HNode;
 typedef HNode HashTable[MAXSIZE];
 
@@ -21,20 +21,20 @@ int fHash_9_46(int row, int col);//根据行列值生成哈希地址
 
 int main(int argc, char *argv[])
 {
-	FILE *fp;
-	int p;
-	HashTable H;
+    FILE *fp;
+    int p;
+    HashTable H;
 
-	fp = fopen("Data/Algo_9_46.txt", "r");
-	CreateHash_9_46(fp, H);
-	fclose(fp);
+    fp = fopen("Data/Algo_9_46.txt", "r");
+    CreateHash_9_46(fp, H);
+    fclose(fp);
 
-	printf("查找test：\n");
-	p = Algo_9_46(H, 622, 64);
-	printf("下标为(%d %d)的关键字在哈希表第 %d 个位置。\n", 622, 64, p);
-	printf("\n");
+    printf("查找test：\n");
+    p = Algo_9_46(H, 622, 64);
+    printf("下标为(%d %d)的关键字在哈希表第 %d 个位置。\n", 622, 64, p);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━┓
@@ -42,57 +42,57 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━*/
 int Algo_9_46(HashTable H, int row, int col)
 {
-	int p;
+    int p;
 
-	p = fHash_9_46(row, col);
+    p = fHash_9_46(row, col);
 
-	while (H[p].tag == 1 && (H[p].row != row || H[p].col != col)) {
-		p = (p + 1) % MAXSIZE;    //若出现“无效碰撞”则顺次往下查找
-	}
+    while (H[p].tag == 1 && (H[p].row != row || H[p].col != col)) {
+        p = (p + 1) % MAXSIZE;    //若出现“无效碰撞”则顺次往下查找
+    }
 
-	if (H[p].tag == 1 && H[p].row == row && H[p].col == col) {
-		return p;
-	} else {
-		return -1;    //此行列值下的关键字 not exsist时返回-1
-	}
+    if (H[p].tag == 1 && H[p].row == row && H[p].col == col) {
+        return p;
+    } else {
+        return -1;    //此行列值下的关键字 not exsist时返回-1
+    }
 }
 
 Status CreateHash_9_46(FILE *fp, HashTable H)
 {
-	int i, p;
-	int row, col, key;
+    int i, p;
+    int row, col, key;
 
-	for (i = 0; i < MAXSIZE; i++) {
-		H[i].tag = 0;
-	}
+    for (i = 0; i < MAXSIZE; i++) {
+        H[i].tag = 0;
+    }
 
-	while (Scanf(fp, "%d%d%d", &row, &col, &key) == 3) { //录入关键字到哈希表
-		p = fHash_9_46(row, col);
+    while (Scanf(fp, "%d%d%d", &row, &col, &key) == 3) { //录入关键字到哈希表
+        p = fHash_9_46(row, col);
 
-		while (H[p].tag == 1) {			//出现冲突
-			p = (p + 1) % MAXSIZE;
-		}
+        while (H[p].tag == 1) {            //出现冲突
+            p = (p + 1) % MAXSIZE;
+        }
 
-		if (H[p].tag == 0) {
-			H[p].tag = 1;
-			H[p].row = row;
-			H[p].col = col;
-			H[p].key = key;
-		} else {						//此处未对失败情况做限制
-			return ERROR;
-		}
-	}
+        if (H[p].tag == 0) {
+            H[p].tag = 1;
+            H[p].row = row;
+            H[p].col = col;
+            H[p].key = key;
+        } else {                        //此处未对失败情况做限制
+            return ERROR;
+        }
+    }
 
-	return OK;
+    return OK;
 }
 
-int fHash_9_46(int row, int col)	//哈希Func
+int fHash_9_46(int row, int col)    //哈希Func
 {
-	int a, b, c;
+    int a, b, c;
 
-	a = row % 100;					//取行列值的后两位
-	b = col % 100;
-	c = a * 100 + b;					//c的范围在0~9999
+    a = row % 100;                    //取行列值的后两位
+    b = col % 100;
+    c = a * 100 + b;                    //c的范围在0~9999
 
-	return 2 * c;
+    return 2 * c;
 }

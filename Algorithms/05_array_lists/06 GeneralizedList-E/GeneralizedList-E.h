@@ -1,9 +1,9 @@
 /******************************************************
- *						                              *
+ *                                                      *
  * 文件夹: 05_array_lists\06 GeneralizedList-E     *
- * 						                              *
+ *                                                       *
  * 文件名: GeneralizedList-E.h                        *
- * 							                          *
+ *                                                       *
  * 内  容: 广义表（扩展线性链表存储表示）相关操作列表 *
  *                                                    *
  ******************************************************/
@@ -12,22 +12,22 @@
 #define GENERALIZEDLIST_E_H
 
 #include <stdio.h>
-#include <stdlib.h>								            //提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"				            //**01_abstract**//
-#include "../../04_string/01 SequenceString/SequenceString.c"	//**04_string**//
+#include <stdlib.h>                                            //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"                            //**01_abstract**//
+#include "../../04_string/01 SequenceString/SequenceString.c"    //**04_string**//
 
 /* 广义表（扩展线性链表存储表示）类型定义 */
-typedef enum { Atom, List } ElemTag;			//Atom==0：原子结点，List==1：表结点
-typedef char AtomType;						//原子类型
+typedef enum { Atom, List } ElemTag;            //Atom==0：原子结点，List==1：表结点
+typedef char AtomType;                        //原子类型
 typedef struct GLNode {
-	ElemTag tag;							//公共部分，用于区分原子结点和表结点
-	union {								//原子结点和表结点的联合部分
-		AtomType atom;						//原子结点值域
-		struct GLNode *hp;					//表结点的表头指针
-	} Union;
-	struct GLNode *tp;						//相当于线性链表的next，指向下一个元素结点
+    ElemTag tag;                            //公共部分，用于区分原子结点和表结点
+    union {                                //原子结点和表结点的联合部分
+        AtomType atom;                        //原子结点值域
+        struct GLNode *hp;                    //表结点的表头指针
+    } Union;
+    struct GLNode *tp;                        //相当于线性链表的next，指向下一个元素结点
 } GLNode;
-typedef GLNode *GList;						//广义表类型
+typedef GLNode *GList;                        //广义表类型
 
 /* 广义表（扩展线性链表存储）基础操作 */
 /* ★每一层带上括号考察★ */

@@ -14,19 +14,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../01_abstract/Status.h"							//**01_abstract**//
+#include "../../01_abstract/Status.h"                            //**01_abstract**//
 
 /* 宏定义 */
 #define MAX 1000
 
 /* 全局变量 */
 struct {
-	int stadr;					//当前内存块起始地址
-	int length;					//当前内存块大小
-} Record[MAX + 1];					//内存地址表
+    int stadr;                    //当前内存块起始地址
+    int length;                    //当前内存块大小
+} Record[MAX + 1];                    //内存地址表
 
-int start, end;					//空闲内存块下阕和上阕（固定）
-int cur;						//当前空闲内存块起点（浮动）
+int start, end;                    //空闲内存块下阕和上阕（固定）
+int cur;                        //当前空闲内存块起点（浮动）
 
 /* 存储紧缩Func列表 */
 void InitMemory(int n);

@@ -1,9 +1,9 @@
 /***************************************
- *							           *
+ *                                       *
  * 文件夹: 03_stack_queue\05 Expression *
- * 							           *
+ *                                        *
  * 文件名: Expression.h                *
- * 							           *
+ *                                        *
  * 内  容: 表达式求值相关操作列表      *
  *                                     *
  ***************************************/
@@ -15,10 +15,10 @@
 
 /* 类型定义 */
 typedef char SElemType_Sq;
-#include "../01 SequenceStack/SequenceStack.c" 	//**03_stack_queue**//
+#include "../01 SequenceStack/SequenceStack.c"     //**03_stack_queue**//
 
-typedef SElemType_Sq OperandType;				//操作数类型
-typedef SElemType_Sq OperatorType;				//运算符类型
+typedef SElemType_Sq OperandType;                //操作数类型
+typedef SElemType_Sq OperatorType;                //运算符类型
 
 OperandType EvaluateExpression(char exp[]);
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓

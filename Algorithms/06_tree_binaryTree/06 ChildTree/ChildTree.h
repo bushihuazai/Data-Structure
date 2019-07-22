@@ -3,7 +3,7 @@
  * 文件夹: 06_tree_binaryTree\06 ChildTree             *
  *                                                  *
  * 文件名: ChildTree.h                              *
- *    	    			                            *
+ *                                                    *
  * 内  容: 树的孩子链表(带双亲)存储表示相关操作列表 *
  *                                                  *
  ****************************************************/
@@ -12,31 +12,31 @@
 #define CHILDTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>										//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"						//**01_abstract**//
-#include "../../01_abstract/Scanf.c"						//**01_abstract**//
+#include <stdlib.h>                                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"                        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                        //**01_abstract**//
 #include "../../03_stack_queue/07 LinkQueue/LinkQueue.c" //**03_stack_queue**//
-#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"    //**03_stack_queue**// 
 
 /* 宏定义 */
-#define MAX_TREE_SIZE 100						//树的最大结点数
+#define MAX_TREE_SIZE 100                        //树的最大结点数
 
 /* 孩子树类型定义 */
-typedef char TElemType_C;						//假设树中元素均为字符
-typedef struct CTNode {						//孩子结点
-	int child;
-	struct CTNode *next;
+typedef char TElemType_C;                        //假设树中元素均为字符
+typedef struct CTNode {                        //孩子结点
+    int child;
+    struct CTNode *next;
 } CTNode;
-typedef CTNode *ChildPtr;						//孩子结点指针
+typedef CTNode *ChildPtr;                        //孩子结点指针
 typedef struct {
-	int parent;									//双亲结点位置
-	TElemType_C data;
-	ChildPtr firstchild;						//孩子链表头指针
+    int parent;                                    //双亲结点位置
+    TElemType_C data;
+    ChildPtr firstchild;                        //孩子链表头指针
 } CTBox;
 typedef struct {
-	CTBox nodes[MAX_TREE_SIZE];
-	int r;										//根的位置
-	int n;										//树的结点数
+    CTBox nodes[MAX_TREE_SIZE];
+    int r;                                        //根的位置
+    int n;                                        //树的结点数
 } CTree;
 
 /* 树的孩子链表存储结构Func列表 */

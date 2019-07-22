@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include "../../../Algorithms/05_array_lists/06 GeneralizedList-E/GeneralizedList-E.c" //**05_array_lists**//
-#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c" 	//**04_string**//
+#include "../../../Algorithms/04_string/01 SequenceString/SequenceString.c"     //**04_string**//
 
 /* Func原型 */
 void Algo_5_38_2(GList L, int d, int l);
 
 int main(int argc, char *argv[])
 {
-	GList L;
-	char *s = "((a),(b),(c,(d,e,f)),(g,((h),i)))";
-	SString S;
+    GList L;
+    char *s = "((a),(b),(c,(d,e,f)),(g,((h),i)))";
+    SString S;
 
-	printf("创建广义表 L ...\n");
-	StrAssign_Sq(S, s);
-	CreateGList_GL_E(&L, S);
-	printf("L = ");
-	Output_GL_E(L);
-	printf("\n\n");
+    printf("创建广义表 L ...\n");
+    StrAssign_Sq(S, s);
+    CreateGList_GL_E(&L, S);
+    printf("L = ");
+    Output_GL_E(L);
+    printf("\n\n");
 
-	printf("广义表第 2 层的原子项为：");
-	Algo_5_38_2(L, 0, 2);
-	printf("\n\n");
+    printf("广义表第 2 层的原子项为：");
+    Algo_5_38_2(L, 0, 2);
+    printf("\n\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -31,17 +31,17 @@ int main(int argc, char *argv[])
 /* 扩展线性链表存储表示 */
 void Algo_5_38_2(GList L, int d, int l)
 {
-	int i = d;									//d初值赋为0
+    int i = d;                                    //d初值赋为0
 
-	if (L && l >= i) {
-		if (L->tag == Atom) {
-			if (l == i) {
-				printf("%c ", L->Union.atom);
-			}
-		} else {
-			Algo_5_38_2(L->Union.hp, i + 1, l);    //表头指针指向表的话层数增一
-		}
+    if (L && l >= i) {
+        if (L->tag == Atom) {
+            if (l == i) {
+                printf("%c ", L->Union.atom);
+            }
+        } else {
+            Algo_5_38_2(L->Union.hp, i + 1, l);    //表头指针指向表的话层数增一
+        }
 
-		Algo_5_38_2(L->tp, i, l);
-	}
+        Algo_5_38_2(L->tp, i, l);
+    }
 }

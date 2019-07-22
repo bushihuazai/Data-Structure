@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"							//**01_abstract**//
+#include "../../../Algorithms/01_abstract/Status.h"                            //**01_abstract**//
 #include "../../../Algorithms/07_graph/09 TopologicalSort/TopologicalSort.c" //**07_graph**//
 
 /* Func原型 */
@@ -7,25 +7,25 @@ Status Algo_7_35(ALGraph G, char *root);
 
 int main(int argc, char *argv[])
 {
-	ALGraph G;
-	FILE *fp;										//作为输入源
-	char root;
+    ALGraph G;
+    FILE *fp;                                        //作为输入源
+    char root;
 
-	printf("创建并输出有向图...\n");
-	fp = fopen("Data/Algo_7_35.txt", "r");
-	CreateGraph_AL(fp, &G);
-	fclose(fp);
-	OutputALGraph(G);
-	printf("\n");
+    printf("创建并输出有向图...\n");
+    fp = fopen("Data/Algo_7_35.txt", "r");
+    CreateGraph_AL(fp, &G);
+    fclose(fp);
+    OutputALGraph(G);
+    printf("\n");
 
-	if (Algo_7_35(G, &root)) {
-		printf("此有向无环图的根为：%c\n", root);
-	} else {
-		printf("找不到此有向图的根!\n");
-	}
-	printf("\n");
+    if (Algo_7_35(G, &root)) {
+        printf("此有向无环图的根为：%c\n", root);
+    } else {
+        printf("找不到此有向图的根!\n");
+    }
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━━━━━━━━┓
@@ -33,21 +33,21 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━*/
 Status Algo_7_35(ALGraph G, char *root)
 {
-	int indegree[MAX_VERTEX_NUM + 1];
-	int k, count;
+    int indegree[MAX_VERTEX_NUM + 1];
+    int k, count;
 
-	FindInDegree(G, indegree);						//对各顶点求入度已定义
+    FindInDegree(G, indegree);                        //对各顶点求入度已定义
 
-	for (k = 1, count = 0; k <= G.vexnum; k++) {
-		if (!indegree[k]) {
-			count++;
-			*root = G.vertices[k].data;
-		}
-	}
+    for (k = 1, count = 0; k <= G.vexnum; k++) {
+        if (!indegree[k]) {
+            count++;
+            *root = G.vertices[k].data;
+        }
+    }
 
-	if (count == 1) {								//有向无环弱连通图的根若exsists则唯一
-		return OK;
-	} else {
-		return ERROR;
-	}
+    if (count == 1) {                                //有向无环弱连通图的根若exsists则唯一
+        return OK;
+    } else {
+        return ERROR;
+    }
 }

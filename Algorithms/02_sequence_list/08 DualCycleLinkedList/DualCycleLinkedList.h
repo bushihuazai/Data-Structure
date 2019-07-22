@@ -1,9 +1,9 @@
 /**********************************************
- *						                      *
+ *                                              *
  * 文件夹: 02_sequence_list\08 DualCycleLinkedList *
- * 							                  *
+ *                                               *
  * 文件名: DualCycleLinkedList.h              *
- * 							                  *
+ *                                               *
  * 内  容: 双向循环链表相关操作列表           *
  *                                            *
  **********************************************/
@@ -11,19 +11,19 @@
 #ifndef DUALCYCLELINKEDLIST_H
 #define DUALCYCLELINKEDLIST_H
 
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 双循环链表类型定义 */
 typedef int LElemType_DC;
 typedef struct DuLNode {
-	LElemType_DC data;
-	struct DuLNode *prior;
-	struct DuLNode *next;
+    LElemType_DC data;
+    struct DuLNode *prior;
+    struct DuLNode *next;
 } DuLNode;
-typedef DuLNode *DuLinkList;		 	//指向双循环链表结构的指针
+typedef DuLNode *DuLinkList;             //指向双循环链表结构的指针
 
-/*	双循环链表Func列表	*/
+/*    双循环链表Func列表    */
 Status InitList_DuL(DuLinkList *L);
 /*━━━━━━━━━━┓
 ┃(01)Initial双链表L。 ┃

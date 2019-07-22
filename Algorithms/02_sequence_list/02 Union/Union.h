@@ -11,7 +11,7 @@
 #ifndef UNION_H
 #define UNION_H
 
-#include "../01 SequenceList/SequenceList.c"	//**02_sequence_list**//
+#include "../01 SequenceList/SequenceList.c"    //**02_sequence_list**//
 
 /* 并集Func列表 */
 void Union(SqList *La, SqList Lb);

@@ -11,46 +11,46 @@
 #ifndef MERGESQLIST_C
 #define MERGESQLIST_C
 
-#include "MergeSqList.h"					//**02_sequence_list**//
+#include "MergeSqList.h"                    //**02_sequence_list**//
 
 /*════╗
 ║ 算法2.2║
 ╚════*/
-void MergeSqList_1(SqList La, SqList Lb, SqList *Lc)	//调用顺序表Func进行合并
+void MergeSqList_1(SqList La, SqList Lb, SqList *Lc)    //调用顺序表Func进行合并
 {
-	int La_len, Lb_len;
-	int i, j, k;
-	LElemType_Sq ai, bj;
+    int La_len, Lb_len;
+    int i, j, k;
+    LElemType_Sq ai, bj;
 
-	i = j = 1;
-	k = 0;
+    i = j = 1;
+    k = 0;
 
-	InitList_Sq(Lc);					//InitialLc
-	La_len = ListLength_Sq(La);			//获取La、Lb长度
-	Lb_len = ListLength_Sq(Lb);
+    InitList_Sq(Lc);                    //InitialLc
+    La_len = ListLength_Sq(La);            //获取La、Lb长度
+    Lb_len = ListLength_Sq(Lb);
 
-	while (i <= La_len && j <= Lb_len) {	//La及Lb均未扫描完
-		GetElem_Sq(La, i, &ai);
-		GetElem_Sq(Lb, j, &bj);
+    while (i <= La_len && j <= Lb_len) {    //La及Lb均未扫描完
+        GetElem_Sq(La, i, &ai);
+        GetElem_Sq(Lb, j, &bj);
 
-		if (ai <= bj) {
-			ListInsert_Sq(Lc, ++k, ai);
-			i++;
-		} else {
-			ListInsert_Sq(Lc, ++k, bj);
-			j++;
-		}
-	}
+        if (ai <= bj) {
+            ListInsert_Sq(Lc, ++k, ai);
+            i++;
+        } else {
+            ListInsert_Sq(Lc, ++k, bj);
+            j++;
+        }
+    }
 
-	while (i <= La_len) {				//表La还未扫描完
-		GetElem_Sq(La, i++, &ai);
-		ListInsert_Sq(Lc, ++k, ai);
-	}
+    while (i <= La_len) {                //表La还未扫描完
+        GetElem_Sq(La, i++, &ai);
+        ListInsert_Sq(Lc, ++k, ai);
+    }
 
-	while (j <= Lb_len) {				//表Lb还未扫描完
-		GetElem_Sq(Lb, j++, &bj);
-		ListInsert_Sq(Lc, ++k, bj);
-	}
+    while (j <= Lb_len) {                //表Lb还未扫描完
+        GetElem_Sq(Lb, j++, &bj);
+        ListInsert_Sq(Lc, ++k, bj);
+    }
 }
 
 /*════╗
@@ -58,37 +58,37 @@ void MergeSqList_1(SqList La, SqList Lb, SqList *Lc)	//调用顺序表Func进行合并
 ╚════*/
 void MergeSqList_2(SqList La, SqList Lb, SqList *Lc)
 {
-	LElemType_Sq *pa, *pb, *pc;
-	LElemType_Sq *pa_last, *pb_last;
+    LElemType_Sq *pa, *pb, *pc;
+    LElemType_Sq *pa_last, *pb_last;
 
-	pa = La.elem;						//指向La第一个元素
-	pb = Lb.elem;						//指向Lb第一个元素
+    pa = La.elem;                        //指向La第一个元素
+    pb = Lb.elem;                        //指向Lb第一个元素
 
-	//不用InitList_Sq创建Lc
-	(*Lc).listsize = (*Lc).length = La.length + Lb.length;
-	pc = (*Lc).elem = (LElemType_Sq *)malloc((*Lc).listsize * sizeof(LElemType_Sq));
-	if (!pc) {
-		exit(OVERFLOW);
-	}
+    //不用InitList_Sq创建Lc
+    (*Lc).listsize = (*Lc).length = La.length + Lb.length;
+    pc = (*Lc).elem = (LElemType_Sq *)malloc((*Lc).listsize * sizeof(LElemType_Sq));
+    if (!pc) {
+        exit(OVERFLOW);
+    }
 
-	pa_last = La.elem + La.length - 1;	//指向La最后一个元素
-	pb_last = Lb.elem + Lb.length - 1;	//指向Lb最后一个元素
+    pa_last = La.elem + La.length - 1;    //指向La最后一个元素
+    pb_last = Lb.elem + Lb.length - 1;    //指向Lb最后一个元素
 
-	while (pa <= pa_last && pb <= pb_last) {	//La和Lb均未扫描完
-		if (*pa <= *pb) {
-			*pc++ = *pa++;
-		} else {
-			*pc++ = *pb++;
-		}
-	}
+    while (pa <= pa_last && pb <= pb_last) {    //La和Lb均未扫描完
+        if (*pa <= *pb) {
+            *pc++ = *pa++;
+        } else {
+            *pc++ = *pb++;
+        }
+    }
 
-	while (pa <= pa_last) {			//表La未扫描完
-		*pc++ = *pa++;    //插入La的剩余元素
-	}
+    while (pa <= pa_last) {            //表La未扫描完
+        *pc++ = *pa++;    //插入La的剩余元素
+    }
 
-	while (pb <= pb_last) {			//表Lb未扫描完
-		*pc++ = *pb++;    //插入Lb的剩余元素
-	}
+    while (pb <= pb_last) {            //表Lb未扫描完
+        *pc++ = *pb++;    //插入Lb的剩余元素
+    }
 }
 
 #endif

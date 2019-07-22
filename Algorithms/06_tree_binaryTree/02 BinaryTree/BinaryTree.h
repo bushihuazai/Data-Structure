@@ -1,9 +1,9 @@
 /**********************************************
- *							                  *
+ *                                              *
  * 文件夹: 06_tree_binaryTree\02 BinaryTree      *
- * 							                  *
+ *                                               *
  * 文件名: BinaryTree.h                       *
- *    	    				                  *
+ *                                              *
  * 内  容: 二叉树（二叉链表存储）相关操作列表 *
  *                                            *
  **********************************************/
@@ -12,30 +12,30 @@
 #define BINARYTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>								//提供malloc、realloc、free、exit原型
-#include <math.h>								//提供pow、log原型 
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include <stdlib.h>                                //提供malloc、realloc、free、exit原型
+#include <math.h>                                //提供pow、log原型 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 二叉树（二叉链表存储）相关类型定义 */
-typedef char TElemType;							//假设二叉树元素均为字符
+typedef char TElemType;                            //假设二叉树元素均为字符
 typedef struct BiTNode {
-	TElemType data;								//结点元素
-	struct BiTNode *lchild;						//左孩子指针
-	struct BiTNode *rchild;						//右孩子指针
-} BiTNode;										//二叉树结点
-typedef BiTNode *BiTree;						//指向二叉树结点的指针
+    TElemType data;                                //结点元素
+    struct BiTNode *lchild;                        //左孩子指针
+    struct BiTNode *rchild;                        //右孩子指针
+} BiTNode;                                        //二叉树结点
+typedef BiTNode *BiTree;                        //指向二叉树结点的指针
 
 /* 栈元素类型 */
-typedef BiTree SElemType_Sq;					//重定义栈元素类型
-#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"	//**03_stack_queue**// 
+typedef BiTree SElemType_Sq;                    //重定义栈元素类型
+#include "../../03_stack_queue/01 SequenceStack/SequenceStack.c"    //**03_stack_queue**// 
 
 /* 存储当前结点信息 */
 /* 在按树结构打印树的时候使用 */
 typedef struct {
-	BiTree left;								//当前结点的左指针
-	BiTree right;								//当前结点的右指针
-	int n;										//当前结点的次序
+    BiTree left;                                //当前结点的左指针
+    BiTree right;                                //当前结点的右指针
+    int n;                                        //当前结点的次序
 } Node;
 
 /* 二叉树（二叉链表存储）Func列 表 */

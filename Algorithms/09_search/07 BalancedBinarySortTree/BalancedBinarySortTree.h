@@ -13,32 +13,32 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include "../00 Base/Base.c" 			//**09_search**//
+#include "../00 Base/Base.c"             //**09_search**//
 
 /* 宏定义 */
 #define EQ(a,b) ((a)==(b))
 #define LT(a,b) ((a) < (b))
 #define RT(a,b) ((a) > (b))
-#define LH  1							//左子树高 
-#define EH  0							//等高 
-#define RH -1							//右子树高 
+#define LH  1                            //左子树高 
+#define EH  0                            //等高 
+#define RH -1                            //右子树高 
 
 /* 类型定义 */
-typedef int Boolean;					//布尔值 
-typedef ElemType_Search BBSTElemType;	//平衡二叉排序树元素类型 
-typedef struct BBSTNode					//平衡二叉树（AVL树）存储表示
+typedef int Boolean;                    //布尔值 
+typedef ElemType_Search BBSTElemType;    //平衡二叉排序树元素类型 
+typedef struct BBSTNode                    //平衡二叉树（AVL树）存储表示
 {
-	BBSTElemType data;
-	int bf;								//结点的平衡因子 
-	struct BBSTNode* lchild;
-	struct BBSTNode* rchild;
-	
-	union								//只在习题test时候使用 
-	{
-		int lsize;						//其值为左子树中结点数加1 
-	};//匿名联合体 
-}BBSTNode;								//平衡二叉排序树结点 
-typedef BBSTNode* BBSTree;				//指向平衡二叉排序树结点的指针
+    BBSTElemType data;
+    int bf;                                //结点的平衡因子 
+    struct BBSTNode* lchild;
+    struct BBSTNode* rchild;
+    
+    union                                //只在习题test时候使用 
+    {
+        int lsize;                        //其值为左子树中结点数加1 
+    };//匿名联合体 
+}BBSTNode;                                //平衡二叉排序树结点 
+typedef BBSTNode* BBSTree;                //指向平衡二叉排序树结点的指针
  
 /* 平衡二叉树（AVL树）Func列表 */
 Status CreateAVL(BBSTree *BBST, Table T);

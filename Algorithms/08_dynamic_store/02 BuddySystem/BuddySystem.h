@@ -14,25 +14,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "../../01_abstract/Status.h"							//**01_abstract**//
+#include "../../01_abstract/Status.h"                            //**01_abstract**//
 
 /* 宏定义 */
-#define M 3						//可利用空间总容量64k字的2的幂次，子表的个数为M+1 
+#define M 3                        //可利用空间总容量64k字的2的幂次，子表的个数为M+1 
 
 /* 类型定义 */
 typedef struct WORD_b {
-	struct WORD_b *llink;		//指向前驱结点
-	int tag;					//块标志，0空闲，1占用
-	int kval;					//块大小，值为2的幂次k
-	struct WORD_b *rlink;		//头部域，指向后继结点
-} WORD_b;						//WORD_b：内存字类型，结点的第一个字也称为head
+    struct WORD_b *llink;        //指向前驱结点
+    int tag;                    //块标志，0空闲，1占用
+    int kval;                    //块大小，值为2的幂次k
+    struct WORD_b *rlink;        //头部域，指向后继结点
+} WORD_b;                        //WORD_b：内存字类型，结点的第一个字也称为head
 typedef struct HeadNode {
-	int nodesize;				//该链表的空闲块的大小
-	WORD_b *first;				//该链表的表头指针
-} FreeList[M + 1];					//表头向量类型
+    int nodesize;                //该链表的空闲块的大小
+    WORD_b *first;                //该链表的表头指针
+} FreeList[M + 1];                    //表头向量类型
 
 /* 全局变量 */
-WORD_b *start, *end;			//内存起点和终点
+WORD_b *start, *end;            //内存起点和终点
 
 /* 伙伴系统Func列表 */
 void InitSpace_b(FreeList avail);

@@ -11,7 +11,7 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
 
-#include "../00 SequenceListType/SequenceListType.c"	//**10_internal_sort**//
+#include "../00 SequenceListType/SequenceListType.c"    //**10_internal_sort**//
 
 /* ∆≈›≈≈–ÚFunc¡–±Ì */
 void BubbleSort(SqList_sort *L);

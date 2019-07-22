@@ -1,9 +1,9 @@
 /************************************
- *						            *
+ *                                    *
  * 文件夹: 02_sequence_list              *
- * 							        *
+ *                                     *
  * 文件名: ExtenLinkedList.h        *
- * 							        *
+ *                                     *
  * 内  容: 扩展的 SingleLinkedList 相关操作列表 *
  *                                  *
  ************************************/
@@ -11,26 +11,26 @@
 #ifndef EXTENLINKEDLIST_H
 #define EXTENLINKEDLIST_H
 
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
-#include "../../01_abstract/Scanf.c"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
+#include "../../01_abstract/Scanf.c"        //**01_abstract**//
 
-/*	扩展的 SingleLinkedList 类型定义	*/
-#ifndef POLYNOMIAL_H					//在多项式操作中，此类型需重新定义
-	typedef int LElemType_E;
+/*    扩展的 SingleLinkedList 类型定义    */
+#ifndef POLYNOMIAL_H                    //在多项式操作中，此类型需重新定义
+    typedef int LElemType_E;
 #endif
-typedef struct ELNode {				//结点类型
-	LElemType_E data;
-	struct ELNode *next;
+typedef struct ELNode {                //结点类型
+    LElemType_E data;
+    struct ELNode *next;
 } ELNode;
-typedef ELNode *Link;			 		//指向结构的指针
+typedef ELNode *Link;                     //指向结构的指针
 typedef ELNode *PositionPtr;
-typedef struct {						//链表类型
-	Link head, tail;					//分别指向线性链表中的头结点和尾结点
-	int len;							//指示线性链表中数据元素的个数
+typedef struct {                        //链表类型
+    Link head, tail;                    //分别指向线性链表中的头结点和尾结点
+    int len;                            //指示线性链表中数据元素的个数
 } ELinkList;
 
-/*	扩展的 SingleLinkedList Func列表 */
+/*    扩展的 SingleLinkedList Func列表 */
 Status MakeNode_E(Link *p, LElemType_E e);
 /*━━━━━━━━━━━━┓
 ┃(01)分配由p指向e的结点。┃

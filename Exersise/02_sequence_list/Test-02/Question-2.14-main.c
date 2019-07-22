@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../../Algorithms/02_sequence_list/04 SinglyLinkedList/SinglyLinkedList.c"	//**02_sequence_list**//
+#include "../../../Algorithms/02_sequence_list/04 SinglyLinkedList/SinglyLinkedList.c"    //**02_sequence_list**//
 
 /* Func原型 */
 int Algo_2_14(LinkList L);
@@ -9,23 +9,23 @@ void PrintElem(LElemType_L e);
 
 int main(int argc, char *argv[])
 {
-	LinkList L;
-	int i;
+    LinkList L;
+    int i;
 
-	if (InitList_L(&L)) {				//链表L创建成功
-		for (i = 1; i <= 10; i++) {		//链表L中元素1~20
-			ListInsert_L(L, i, 2 * i);
-		}
-	}
+    if (InitList_L(&L)) {                //链表L创建成功
+        for (i = 1; i <= 10; i++) {        //链表L中元素1~20
+            ListInsert_L(L, i, 2 * i);
+        }
+    }
 
-	printf("L = ");
-	ListTraverse_L(L, PrintElem); 			//输出L
-	printf("\n\n");
+    printf("L = ");
+    ListTraverse_L(L, PrintElem);             //输出L
+    printf("\n\n");
 
-	printf("链表L的长度为 %d \n", Algo_2_14(L));
-	printf("\n");
+    printf("链表L的长度为 %d \n", Algo_2_14(L));
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━┓
@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━*/
 int Algo_2_14(LinkList L)
 {
-	return ListLength_L(L);				//已定义
+    return ListLength_L(L);                //已定义
 }
 
 void PrintElem(LElemType_L e)
 {
-	printf("%d ", e);
+    printf("%d ", e);
 }

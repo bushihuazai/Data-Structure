@@ -11,7 +11,7 @@
 #ifndef SEQUNCESEARCH_H
 #define SEQUNCESEARCH_H
 
-#include "../00 Base/Base.c" 					//**09_search**//
+#include "../00 Base/Base.c"                     //**09_search**//
 
 /* ∫ÍFunc */
 #define EQ(a,b) ((a)==(b))

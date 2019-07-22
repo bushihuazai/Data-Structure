@@ -1,9 +1,9 @@
 /*********************************
- *							     *
+ *                                 *
  * 文件夹: 03_stack_queue\04 Maze *
- * 							     *
+ *                                  *
  * 文件名: Maze.h                *
- * 							     *
+ *                                  *
  * 内  容: 迷宫相关操作列表      *
  *                               *
  *********************************/
@@ -12,35 +12,35 @@
 #define MAZE_H
 
 #include <stdio.h>
-#include <stdlib.h> 					//提供system、rand、srand原型 
-#include <time.h>						//提供time原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                     //提供system、rand、srand原型 
+#include <time.h>                        //提供time原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 宏定义 */
-#define N 15							//迷宫的大小为N×N
-#define X 4								//X用于随机数取余，其生成的随机数范围是0到X-1
+#define N 15                            //迷宫的大小为N×N
+#define X 4                                //X用于随机数取余，其生成的随机数范围是0到X-1
 //X越大，生成可通行迷宫的概率就越大
-#define SleepTime 3						//SleepTime代表休眠时间间隔
+#define SleepTime 3                        //SleepTime代表休眠时间间隔
 
 /* 迷宫类型定义 */
-typedef enum {						//迷宫通道块类型
-	Wall,								//外墙
-	Obstacle,							//迷宫障碍
-	Way,								//路径
-	DeadLock,							//路径上的“死胡同”
-	East, South, West, North				//访问方向-东南西北
+typedef enum {                        //迷宫通道块类型
+    Wall,                                //外墙
+    Obstacle,                            //迷宫障碍
+    Way,                                //路径
+    DeadLock,                            //路径上的“死胡同”
+    East, South, West, North                //访问方向-东南西北
 } MazeNode;
-typedef struct {						//迷宫通道块坐标
-	int x;								//通道块的横、纵坐标定义
-	int y;
+typedef struct {                        //迷宫通道块坐标
+    int x;                                //通道块的横、纵坐标定义
+    int y;
 } PosType;
-typedef struct {						//通道块信息
-	int		ord;						//通道块的“序号”
-	PosType seat;						//通道块的“坐标位置”
-	int		di;							//下一个该访问的“方向”
+typedef struct {                        //通道块信息
+    int        ord;                        //通道块的“序号”
+    PosType seat;                        //通道块的“坐标位置”
+    int        di;                            //下一个该访问的“方向”
 } SElemType_Sq;
-#include "../01 SequenceStack/SequenceStack.c" 	//**03_stack_queue**//
-typedef int MazeType;					//迷宫元素类型
+#include "../01 SequenceStack/SequenceStack.c"     //**03_stack_queue**//
+typedef int MazeType;                    //迷宫元素类型
 
 /* 迷宫Func列表 */
 Status MazePath(MazeType maze[][N], PosType start, PosType end);

@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"				//**01_abstract**//
-#include "../../../Algorithms/07_graph/02 ALGraph/ALGraph.c"		//**07_graph**//
+#include "../../../Algorithms/01_abstract/Status.h"                //**01_abstract**//
+#include "../../../Algorithms/07_graph/02 ALGraph/ALGraph.c"        //**07_graph**//
 
 /* Func原型 */
 Status InsertVex_7_16(ALGraph *G, VertexType_AL v);
@@ -10,40 +10,40 @@ Status DeleteArc_7_16(ALGraph *G, VertexType_AL v, VertexType_AL w);
 
 int main(int argc, char *argv[])
 {
-	ALGraph G;
-	FILE *fp;									//作为输入源
+    ALGraph G;
+    FILE *fp;                                    //作为输入源
 
-	printf("创建并输出无向图...\n");
-	G.kind = UDG;								//以无向图为例
-	fp = fopen("Data/Algo_7_16.txt", "r");
-	CreateUDG_AL(fp, &G);
-	fclose(fp);
-	OutputALGraph(G);
-	printf("\n");
+    printf("创建并输出无向图...\n");
+    G.kind = UDG;                                //以无向图为例
+    fp = fopen("Data/Algo_7_16.txt", "r");
+    CreateUDG_AL(fp, &G);
+    fclose(fp);
+    OutputALGraph(G);
+    printf("\n");
 
-	printf("插入顶点 '%c'...\n", 'H');
-	InsertVex_7_16(&G, 'H');
-	OutputALGraph(G);
-	printf("\n");
+    printf("插入顶点 '%c'...\n", 'H');
+    InsertVex_7_16(&G, 'H');
+    OutputALGraph(G);
+    printf("\n");
 
-	printf("插入弧 <%c, %c>...\n", 'H', 'C');
-	printf("插入弧 <%c, %c>...\n", 'D', 'H');
-	InsertArc_7_16(&G, 'H', 'C');
-	InsertArc_7_16(&G, 'D', 'H');
-	OutputALGraph(G);
-	printf("\n");
+    printf("插入弧 <%c, %c>...\n", 'H', 'C');
+    printf("插入弧 <%c, %c>...\n", 'D', 'H');
+    InsertArc_7_16(&G, 'H', 'C');
+    InsertArc_7_16(&G, 'D', 'H');
+    OutputALGraph(G);
+    printf("\n");
 
-	printf("删除弧 <%c, %c>...\n", 'H', 'C');
-	DeleteArc_7_16(&G, 'H', 'C');
-	OutputALGraph(G);
-	printf("\n");
+    printf("删除弧 <%c, %c>...\n", 'H', 'C');
+    DeleteArc_7_16(&G, 'H', 'C');
+    OutputALGraph(G);
+    printf("\n");
 
-	printf("删除顶点 '%c'...\n", 'H');
-	DeleteVex_7_16(&G, 'H');
-	OutputALGraph(G);
-	printf("\n");
+    printf("删除顶点 '%c'...\n", 'H');
+    DeleteVex_7_16(&G, 'H');
+    OutputALGraph(G);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━┓
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━*/
 Status InsertVex_7_16(ALGraph *G, VertexType_AL v)
 {
-	return InsertVex_AL(G, v);
+    return InsertVex_AL(G, v);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -59,7 +59,7 @@ Status InsertVex_7_16(ALGraph *G, VertexType_AL v)
 ┗━━━━━━━━━━━━━*/
 Status InsertArc_7_16(ALGraph *G, VertexType_AL v, VertexType_AL w, ...)
 {
-	return InsertArc_AL(G, v, w);
+    return InsertArc_AL(G, v, w);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -67,7 +67,7 @@ Status InsertArc_7_16(ALGraph *G, VertexType_AL v, VertexType_AL w, ...)
 ┗━━━━━━━━━━━━━*/
 Status DeleteVex_7_16(ALGraph *G, VertexType_AL v)
 {
-	return DeleteVex_AL(G, v);
+    return DeleteVex_AL(G, v);
 }
 
 /*━━━━━━━━━━━━━━┓
@@ -75,5 +75,5 @@ Status DeleteVex_7_16(ALGraph *G, VertexType_AL v)
 ┗━━━━━━━━━━━━━━*/
 Status DeleteArc_7_16(ALGraph *G, VertexType_AL v, VertexType_AL w)
 {
-	return DeleteArc_AL(G, v, w);
+    return DeleteArc_AL(G, v, w);
 }

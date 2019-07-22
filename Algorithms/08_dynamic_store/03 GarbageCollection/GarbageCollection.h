@@ -12,7 +12,7 @@
 #define GARBAGECOLLECTION_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"												//**01_abstract**//
+#include "../../01_abstract/Status.h"                                                //**01_abstract**//
 #include "../../05_array_lists/05 GeneralizedList-H&T/GeneralizedList-H-T.c" //**05_array_lists**//
 
 /* 无用单元收集Func列表 */

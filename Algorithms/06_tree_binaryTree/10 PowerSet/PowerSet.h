@@ -1,20 +1,20 @@
 /***************************************
- *							           *
+ *                                       *
  * 文件夹: 06_tree_binaryTree\10 PowerSet *
- * 						               *
+ *                                        *
  * 文件名: PowerSet.h                  *
- * 						               *
+ *                                        *
  * 内  容: 幂集相关操作列表            *
- * 						               *
+ *                                        *
  ***************************************/
 
 #ifndef POWERSET_H
 #define POWERSET_H
 
 #include <stdio.h>
-#include "../../01_abstract/Status.h"					//**01_abstract**//
-#include "../../01_abstract/Scanf.c"					//**01_abstract**//
-#include "../../02_sequence_list/04 SinglyLinkedList/SinglyLinkedList.c"	//**02_sequence_list**// 
+#include "../../01_abstract/Status.h"                    //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                    //**01_abstract**//
+#include "../../02_sequence_list/04 SinglyLinkedList/SinglyLinkedList.c"    //**02_sequence_list**// 
 
 /* 幂集类型定义 */
 typedef LElemType_L PElemType;

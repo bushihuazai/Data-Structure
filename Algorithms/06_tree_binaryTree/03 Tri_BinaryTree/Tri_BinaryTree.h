@@ -1,9 +1,9 @@
 /**********************************************
- *											  *
+ *                                              *
  * 文件夹: 06_tree_binaryTree\03 Tri_BinaryTree  *
- * 									    	  *
+ *                                               *
  * 文件名: Tri_BinaryTree.h                   *
- * 											  *
+ *                                               *
  * 内  容: 二叉树三叉链表存储结构相关操作列表 *
  *                                            *
  **********************************************/
@@ -12,20 +12,20 @@
 #define TRI_BINARYTREE_H
 
 #include <stdio.h>
-#include <stdlib.h>								//提供malloc、realloc、free、exit原型
-#include <math.h>								//提供pow、log原型 
-#include "../../01_abstract/Status.h"				//**01_abstract**//
-#include "../../01_abstract/Scanf.c"				//**01_abstract**//
+#include <stdlib.h>                                //提供malloc、realloc、free、exit原型
+#include <math.h>                                //提供pow、log原型 
+#include "../../01_abstract/Status.h"                //**01_abstract**//
+#include "../../01_abstract/Scanf.c"                //**01_abstract**//
 
 /* 二叉树（三叉链表存储）相关类型定义 */
-typedef char TElemType_Tri;						//假设二叉树元素均为字符
+typedef char TElemType_Tri;                        //假设二叉树元素均为字符
 typedef struct TBiTNode {
-	TElemType_Tri data;							//结点元素
-	struct TBiTNode *parent;					//双亲结点指针
-	struct TBiTNode *lchild;					//左孩子指针
-	struct TBiTNode *rchild;					//右孩子指针
-} TBiTNode;										//二叉树结点
-typedef TBiTNode *TBiTree;						//指向二叉树结点的指针
+    TElemType_Tri data;                            //结点元素
+    struct TBiTNode *parent;                    //双亲结点指针
+    struct TBiTNode *lchild;                    //左孩子指针
+    struct TBiTNode *rchild;                    //右孩子指针
+} TBiTNode;                                        //二叉树结点
+typedef TBiTNode *TBiTree;                        //指向二叉树结点的指针
 
 /* 队列元素类型 */
 typedef TBiTree QElemType_L;

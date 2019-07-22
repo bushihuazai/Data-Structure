@@ -11,9 +11,9 @@
 #ifndef SPANNINGTREE_H
 #define SPANNINGTREE_H
 
-#include <stdlib.h>											//提供malloc、realloc、free、exit原型
-#include "../01 MGraph/MGraph.c"										//**07_graph**//
-#include "../../06_tree_binaryTree/07 ChildSiblingTree/ChildSiblingTree.c"	//**06_tree_binaryTree**//
+#include <stdlib.h>                                            //提供malloc、realloc、free、exit原型
+#include "../01 MGraph/MGraph.c"                                        //**07_graph**//
+#include "../../06_tree_binaryTree/07 ChildSiblingTree/ChildSiblingTree.c"    //**06_tree_binaryTree**//
 
 /* 无向图生成树Func列表 */
 void DFSForest(MGraph G, CSTree *T);

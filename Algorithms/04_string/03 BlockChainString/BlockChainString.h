@@ -12,21 +12,21 @@
 #define BLOCKCHAINSTRING_H
 
 #include <stdio.h>
-#include <stdlib.h>						//提供malloc、realloc、free、exit原型
-#include <string.h>						//提供strlen原型
-#include "../../01_abstract/Status.h"		//**01_abstract**//
+#include <stdlib.h>                        //提供malloc、realloc、free、exit原型
+#include <string.h>                        //提供strlen原型
+#include "../../01_abstract/Status.h"        //**01_abstract**//
 
 /* 宏定义 */
-#define CHUNKSIZE 3						//块大小（自定义） 
+#define CHUNKSIZE 3                        //块大小（自定义） 
 
 /* 串的块链存储类型定义 */
 typedef struct Chunk {
-	char ch[CHUNKSIZE];
-	struct Chunk *next;
+    char ch[CHUNKSIZE];
+    struct Chunk *next;
 } Chunk;
 typedef struct {
-	Chunk *head, *tail;					//串的头和尾指针
-	int curlen;							//串的当前长度
+    Chunk *head, *tail;                    //串的头和尾指针
+    int curlen;                            //串的当前长度
 } LString;
 
 /* 块链串Func列表 */

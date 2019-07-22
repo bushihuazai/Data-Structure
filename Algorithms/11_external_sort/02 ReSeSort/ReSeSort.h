@@ -14,30 +14,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "../../01_abstract/Status.h"			//**01_abstract**//
-#include "../../01_abstract/Scanf.c"			//**01_abstract**//
+#include "../../01_abstract/Status.h"            //**01_abstract**//
+#include "../../01_abstract/Scanf.c"            //**01_abstract**//
 
-#define RUNEND_SYMBOL INT_MAX				//初始归并段结束标志
-#define MAXKEY INT_MAX						//关键字可能的最大值 
-#define W 6									//工作区缓存
+#define RUNEND_SYMBOL INT_MAX                //初始归并段结束标志
+#define MAXKEY INT_MAX                        //关键字可能的最大值 
+#define W 6                                    //工作区缓存
 
 /* 类型定义 */
-typedef int KeyType;						//定义关键字类型为整数类型
+typedef int KeyType;                        //定义关键字类型为整数类型
 typedef struct {
-	KeyType key;							//关键字项
-} RcdType;									//记录类型
-typedef int LoserTree[W];					//败者树
-typedef struct {							//败者树叶节点存储结构
-	RcdType rec;							//记录
-	KeyType key;							//从记录中抽取的关键字
-	int rnum;								//所属归并段的段号
+    KeyType key;                            //关键字项
+} RcdType;                                    //记录类型
+typedef int LoserTree[W];                    //败者树
+typedef struct {                            //败者树叶节点存储结构
+    RcdType rec;                            //记录
+    KeyType key;                            //从记录中抽取的关键字
+    int rnum;                                //所属归并段的段号
 } RcdNode;
-typedef RcdNode WorkArea[W];				//内存工作区，容量为W
+typedef RcdNode WorkArea[W];                //内存工作区，容量为W
 
 /* 全局变量 */
-int part;									//统计初始归并段个数
-int rmax;									//rmax指示wa中关键字所属初始归并段的最大段号
-int rc;										//rc指示当前生成的初始归并段的段号
+int part;                                    //统计初始归并段个数
+int rmax;                                    //rmax指示wa中关键字所属初始归并段的最大段号
+int rc;                                        //rc指示当前生成的初始归并段的段号
 
 /* 置换选择排序Func列表 */
 void Replace_Selectiom(FILE *fi, LoserTree ls, WorkArea wa);

@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../../Algorithms/01_abstract/Status.h"				//**01_abstract**//
-#include "../../../Algorithms/07_graph/01 MGraph/MGraph.c"		//**07_graph**//
+#include "../../../Algorithms/01_abstract/Status.h"                //**01_abstract**//
+#include "../../../Algorithms/07_graph/01 MGraph/MGraph.c"        //**07_graph**//
 
 /* Func原型 */
 Status InsertVex_7_15(MGraph *G, VertexType_M v);
@@ -10,40 +10,40 @@ Status DeleteArc_7_15(MGraph *G, VertexType_M v, VertexType_M w);
 
 int main(int argc, char *argv[])
 {
-	MGraph G;
-	FILE *fp;									//作为输入源
+    MGraph G;
+    FILE *fp;                                    //作为输入源
 
-	printf("创建并输出无向图...\n");
-	G.kind = UDG;								//以无向图为例
-	fp = fopen("Data/Algo_7_15.txt", "r");
-	CreateUDG_M(fp, &G);
-	fclose(fp);
-	OutputMGraph(G);
-	printf("\n");
+    printf("创建并输出无向图...\n");
+    G.kind = UDG;                                //以无向图为例
+    fp = fopen("Data/Algo_7_15.txt", "r");
+    CreateUDG_M(fp, &G);
+    fclose(fp);
+    OutputMGraph(G);
+    printf("\n");
 
-	printf("插入顶点 '%c'...\n", 'H');
-	InsertVex_7_15(&G, 'H');
-	OutputMGraph(G);
-	printf("\n");
+    printf("插入顶点 '%c'...\n", 'H');
+    InsertVex_7_15(&G, 'H');
+    OutputMGraph(G);
+    printf("\n");
 
-	printf("插入弧 <%c, %c, 1>...\n", 'H', 'C');
-	printf("插入弧 <%c, %c, 1>...\n", 'D', 'H');
-	InsertArc_7_15(&G, 'H', 'C', 1);
-	InsertArc_7_15(&G, 'D', 'H', 1);
-	OutputMGraph(G);
-	printf("\n");
+    printf("插入弧 <%c, %c, 1>...\n", 'H', 'C');
+    printf("插入弧 <%c, %c, 1>...\n", 'D', 'H');
+    InsertArc_7_15(&G, 'H', 'C', 1);
+    InsertArc_7_15(&G, 'D', 'H', 1);
+    OutputMGraph(G);
+    printf("\n");
 
-	printf("删除弧 <%c, %c>...\n", 'H', 'C');
-	DeleteArc_7_15(&G, 'H', 'C');
-	OutputMGraph(G);
-	printf("\n");
+    printf("删除弧 <%c, %c>...\n", 'H', 'C');
+    DeleteArc_7_15(&G, 'H', 'C');
+    OutputMGraph(G);
+    printf("\n");
 
-	printf("删除顶点 '%c'...\n", 'H');
-	DeleteVex_7_15(&G, 'H');
-	OutputMGraph(G);
-	printf("\n");
+    printf("删除顶点 '%c'...\n", 'H');
+    DeleteVex_7_15(&G, 'H');
+    OutputMGraph(G);
+    printf("\n");
 
-	return 0;
+    return 0;
 }
 
 /*━━━━━━━━━━━━┓
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━*/
 Status InsertVex_7_15(MGraph *G, VertexType_M v)
 {
-	return InsertVex_M(G, v);
+    return InsertVex_M(G, v);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -59,7 +59,7 @@ Status InsertVex_7_15(MGraph *G, VertexType_M v)
 ┗━━━━━━━━━━━━━*/
 Status InsertArc_7_15(MGraph *G, VertexType_M v, VertexType_M w, VRType adj, ...)
 {
-	return InsertArc_M(G, v, w, 1);
+    return InsertArc_M(G, v, w, 1);
 }
 
 /*━━━━━━━━━━━━━┓
@@ -67,7 +67,7 @@ Status InsertArc_7_15(MGraph *G, VertexType_M v, VertexType_M w, VRType adj, ...
 ┗━━━━━━━━━━━━━*/
 Status DeleteVex_7_15(MGraph *G, VertexType_M v)
 {
-	return DeleteVex_M(G, v);
+    return DeleteVex_M(G, v);
 }
 
 /*━━━━━━━━━━━━━━┓
@@ -75,5 +75,5 @@ Status DeleteVex_7_15(MGraph *G, VertexType_M v)
 ┗━━━━━━━━━━━━━━*/
 Status DeleteArc_7_15(MGraph *G, VertexType_M v, VertexType_M w)
 {
-	return DeleteArc_M(G, v, w);
+    return DeleteArc_M(G, v, w);
 }
